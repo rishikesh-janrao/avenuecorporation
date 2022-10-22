@@ -23,7 +23,6 @@ function Navbar(props) {
   }, [homeContext.state.hamClicked]);
 
   function getPlatformBasedLogo() {
-
     return !homeContext.isMobile
       ? '/pixels/logo/blue-bg.png'
       : '/pixels/logo/white-bg.jpeg';
@@ -39,7 +38,7 @@ function Navbar(props) {
           height={100}
         />
       </div>
-      <nav>
+      <nav className={navbarStyles.menu}>
         <ul className={navbarStyles.list}>
           {navContext.menuList.map((menuItem) => (
             <li
@@ -94,37 +93,21 @@ function SubMenu({ id, description, name, path, subMenu }) {
   return (
     <div className={navbarStyles.subMenuTitle}>
       <a>
-        {description}{' '}
+        {description}
         <span className={navbarStyles.arrow}>
           <span className={navbarStyles.arrowLine1}></span>
           <span className={navbarStyles.arrowLine2}></span>
         </span>
       </a>
-      <motion.div
-        initial='pageInitial'
-        animate='pageAnimate'
-        variants={{
-          pageInitial: {
-            opacity: 0,
-            display:"none",
-          },
-          pageAnimate: {
-            opacity: 1,
-            display:"flex",
-            transition: {
-              delay: 0.2,
-            },
-          },
-        }}
-      >
-        <ul className={navbarStyles.subMenu}>
-          {subMenu.map((item) => (
-            <li key={item.id}>
+      <ul className={navbarStyles.subMenu}>
+        {subMenu.map((item) => (
+          <li key={item.id}>
+            <Link href={path+item.path}>
               <a>{item.description}</a>
-            </li>
-          ))}
-        </ul>
-      </motion.div>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

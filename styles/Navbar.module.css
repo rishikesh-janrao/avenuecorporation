@@ -20,7 +20,6 @@
     flex-direction: column;
     margin-left: 2em;
 }
-
 .list {
     list-style: none;
     right: 0.6em;
@@ -48,6 +47,7 @@
     display: inline-flex;
     margin-right: 30px;
     cursor: pointer;
+    padding: 1em 0em;
 }
 
 .listItem a:hover {
@@ -63,18 +63,12 @@
 }
 
 .menu {
-    display: none;
+    display: flex;
     position: fixed;
-    width: 50vw;
-    height: calc(100vh - 50px);
-    background-color: black;
-    top: 50px;
-    /* right: 0px; */
-    z-index: 9999;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    color: var(--avenue-light-gray);
+    right: 2em;
+    z-index: 2;
+    font-weight: 300;
+    color: var(--avenue-white);
     list-style: none;
     transition: all 1s ease;
 }
@@ -85,30 +79,31 @@
 }
 
 .subMenu{
-    display: flex;
+    display: none;
     position: absolute;
-    margin-top: 0em;
     list-style: none;
     justify-content:flex-start;
     text-align: left;
     align-items: center;
     padding: 0px;
-    padding-top: 1em;
-    padding-left: 1em;
     width: 15em;
-    border-top: 2px solid var(--avenue-white);
-    background-color: var(--avenue-blue);
+    background-color: transparent;
     flex-direction: column;
-    border-bottom-left-radius: 10%;
-    border-bottom-right-radius: 10%;overflow: hidden;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;overflow: hidden;
+    transition: 0.3s ease;
 }
 .subMenu:hover{
-    transition: 2s ease;
     display: flex;
 }
-
+.subMenu li:first-child{
+    margin-top: 1.5em;
+    border-top: 2px solid var(--avenue-white);
+}
 .subMenu li{
-    padding: 0.5em;
+    padding: 0.7em;
+    padding-left: 4em;
+    background-color: var(--avenue-blue);
     width: 100%;
     font-size: 0.9em;
     border-bottom: 1px solid var(--avenue-white);
@@ -116,21 +111,23 @@
 .subMenu li a:hover{
     text-shadow: 1px 1px 2px var(--avenue-white);
     letter-spacing: 0.006em;
+    display: flex;
 }
 .subMenu li:last-child{
     border-bottom: none
 }
 .subMenuTitle{
-
     z-index: 2;
 }
 .subMenuTitle a:hover + .subMenu{
     display: flex;
-}
-.subMenuTitle a:hover + .subMenu:hover .subMenu{
-    display: flex;
+    transition: 2s ease;
 }
 .subMenuTitle a{
+    display: inline-flex;
+    align-items: center;
+}
+.subMenuTitle a::after{
     display: inline-flex;
     align-items: center;
 }
@@ -162,8 +159,8 @@
     transition: 0.3s ease;
     transform: rotateZ(-45deg);
 }
-.subMenuTitle:hover  .arrow{
-    opacity: 0;
+.subMenuTitle:hover .arrow{
+    transform: rotateZ(-180deg) scale(0.5) translateY(-0.3em);
 }
 
 @media screen and (max-width: 480px) {
