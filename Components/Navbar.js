@@ -16,6 +16,7 @@ function Navbar(props) {
 
   useEffect(() => {
     homeContext.setHamClicked(hamClicked);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hamClicked]);
 
   useEffect(() => {
