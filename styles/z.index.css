@@ -1,0 +1,15 @@
+.hamChange-z-index{
+  z-index: 100;
+}
+.hamburger-container{
+    z-index: 101;
+}
+.body-container{
+    z-index: 10;
+}
+.body-sub-container{
+    z-index: 10;
+}
+.hamList{
+    z-index: 102;
+}
