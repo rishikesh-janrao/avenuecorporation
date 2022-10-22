@@ -48,7 +48,7 @@ function Navbar(props) {
                 menuItem.id == navContext.selectedMenuItem
                   ? navbarStyles.activeMenuItem
                   : ''
-              }`}
+              } ${menuItem.classes}`}
               onClick={() => navContext.setSelectedMenuItem(menuItem.id)}
             >
               {menuItem.subMenu.length > 0 ? (

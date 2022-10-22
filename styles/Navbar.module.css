@@ -1,7 +1,7 @@
 .container {
     height: 4em;
     background-color: var(--avenue-blue);
-    color: white;
+    color: var(--avenue-white);
     font-weight: 200;
     display: flex;
     align-items: center;
@@ -64,7 +64,7 @@
 
 .menu {
     display: flex;
-    position: fixed;
+    position: relative;
     right: 2em;
     z-index: 2;
     font-weight: 300;
@@ -74,7 +74,6 @@
 }
 .activeMenuItem{
     color: var(--avenue-white);
-    /* font-weight: 400; */
     border-bottom: 2px solid var(--avenue-white);
 }
 
@@ -161,6 +160,9 @@
 }
 .subMenuTitle:hover .arrow{
     transform: rotateZ(-180deg) scale(0.5) translateY(-0.3em);
+}
+.hasSubMenu{
+    margin-right: 10px;
 }
 
 @media screen and (max-width: 480px) {
@@ -275,6 +277,8 @@
     .container {
         height: 5em;
         font-size: 1em;
+        background-color: var(--avenue-white); 
+        color: var(--avenue-blue);
     }
 
     .logo {
@@ -291,5 +295,12 @@
     .hamburgerContainer {
         transition: 0.3s ease;
         display: none;
+    }
+    .menu,
+    .activeMenuItem{
+        color: var(--avenue-blue);
+    }
+    .arrowLine1,.arrowLine2{
+        background-color: var(--avenue-blue);
     }
 }
