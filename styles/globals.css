@@ -129,6 +129,13 @@ body::-webkit-scrollbar-button {
 .clientSwiper .swiper-slide img{
   object-fit: none;
 }
+.swiper-3d.swiper .swiper-slide-shadow-left {
+  background-image: linear-gradient(to left,rgba(0,0,0,.1),rgba(0,0,0,0))
+}
+
+.swiper-3d.swiper .swiper-slide-shadow-right {
+  background-image: linear-gradient(to right,rgba(0,0,0,.1),rgba(0,0,0,0))
+}
 @media screen and ( max-width:480px ){
   .swiper-slide p{
     position: absolute;
