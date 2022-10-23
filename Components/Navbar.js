@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useContext, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 
 import HomeContext from '../Contexts/HomeContext';
 import NavigationContext from '../Contexts/NavigationContext';
@@ -16,29 +15,34 @@ function Navbar(props) {
 
   useEffect(() => {
     homeContext.setHamClicked(hamClicked);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hamClicked]);
 
   useEffect(() => {
     setHamClicked(homeContext.state.hamClicked);
   }, [homeContext.state.hamClicked]);
-
-  function getPlatformBasedLogo() {
-    return !homeContext.isMobile
-      ? '/pixels/logo/blue-bg.png'
-      : '/pixels/logo/white-bg.jpeg';
-  }
   return (
     <header className={navbarStyles.container}>
       <div className={navbarStyles.logo}>
-        <Image
-          src={getPlatformBasedLogo()}
-          alt='Avenue Corporation Logo'
-          layout='responsive'
-          width={100}
-          height={50}
-          priority
-        />
+        {homeContext.platform =='ios' ||  homeContext.platform == 'android'? (
+          <Image
+            src='/pixels/logo/white-bg.png'
+            alt='Avenue Corporation Logo'
+            layout='responsive'
+            width={100}
+            height={50}
+            priority={true}
+          />
+        ) : (
+          <Image
+            src='/pixels/logo/blue-bg.png'
+            alt='Avenue Corporation Logo'
+            layout='responsive'
+            width={100}
+            height={50}
+            priority={true}
+          />
+        )}
       </div>
       <nav className={navbarStyles.menu}>
         <ul className={navbarStyles.list}>
@@ -104,7 +108,7 @@ function SubMenu({ id, description, name, path, subMenu }) {
       <ul className={navbarStyles.subMenu}>
         {subMenu.map((item) => (
           <li key={item.id}>
-            <Link href={path+item.path}>
+            <Link href={path + item.path}>
               <a>{item.description}</a>
             </Link>
           </li>

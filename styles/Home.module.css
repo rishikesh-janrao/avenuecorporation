@@ -17,34 +17,37 @@
   height: 1em;
   margin-left: 0.5rem;
 }
-.aboutUs{
+.panel{
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--avenue-white);
   width: 100%;
   position: relative;
-  height: 40vh;
+  height: 100%;
   flex-direction: column;
   color: var(--avenue-blue);
+  row-gap: 3em;
+  margin-top: 2em;
 }
-.aboutUsTitle{
+.panelTitle{
   font-size: 2em;
   font-weight: 600;
 }
-.aboutUsBody{
+.panelBody{
   display: flex;
   flex-direction: column;
 }
-.aboutUsBody_description{
+.panelBody_description{
   color: #484c50;
   display: flex;
-  padding: 0em 21em;
+  padding: 0em 22vw;
 }
-.aboutUsBody_description p{
+.panelBody_description p{
   text-align: center;
+  line-height: 2em;
 }
-.aboutUsBody_actions{
+.panelBody_actions{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -53,29 +56,111 @@
   column-gap: 1em;
   font-weight: 600;
 }
-.aboutUsButton{
+.panelButton{
   padding: 0.6em 2em;
   border-radius: 1.2em;
   color: var(--avenue-white);
   background-color: var(--avenue-blue);
 }
-.aboutUsButton:hover{
+.panelButton:hover{
   color: var(--avenue-white);
   background-color: var(--avenue-light-blue);
 }
+.faIcons{
+  height: 100%;
+  color: var(--avenue-white);
+}
+.whyUsPanelBody_actions{
+  background-color: var(--avenue-light-gray-white);
+  padding: 1em;
+}
+.strip{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  column-gap: 1em;
+  align-items: center;
+  padding: 0.1em 1em;
+  background-color: var(--avenue-white);
+  border-radius: 0.5em;
+  overflow: hidden;
+  z-index: 0;
+}
+.strip span{
+  display: flex;
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  padding: 0.4em;
+  justify-content: center;
+  z-index: 2;
+  background-color: var(--avenue-light-blue);
+}
+.strip:hover{
+  color: var(--avenue-white);
+  background-color: var(--avenue-blue);
+}
+.strip:hover span{
+  background-color: var(--avenue-white);
+}
+.strip:hover .faIcons{
+  color: var(--avenue-blue);
+}
+.strip:hover p{
+  margin-left: 1.5em;
+  transition: margin 0.1s linear 0.5s;
+}
+.panelBody_actions_animator{
+  position: absolute;
+  z-index: 1;
+}
+.strip:hover .panelBody_actions_animator{
 
+  position: absolute;
+  transform: scale(3);
+  transition: transform 0.5s ease;
+}
+
+
+.panelBody_actions_meet_our_clients_container
+{
+  display: flex;
+  background:url('/pixels/contact-us-home-page.png');
+  background-size: cover;
+  
+}
 @media screen and (max-width: 480px) {
   .container{
     position: relative;
   }
-  .aboutUs{
+  .panel{
     padding: 1em 0em;
   }
-  .aboutUsBody_description{
-    padding: 0em 1em;
+  .panelBody_description{
+    padding: 0em 5vw;
   }
-  .aboutUsBody_description p{
+  .panelBody_description p{
     line-height: 1.8em;
+  }
+  .whyUsPanel{
+    height: 100%;
+  }
+  .whyUsPanelBody_actions{
+    flex-direction: column;
+    row-gap: 1em;
+    height: 100%;
+  }
+  .strip{
+    flex-direction: column;
+    width: 90%;
+  }
+  .strip:hover .panelBody_actions_animator{
+    position: absolute;
+    transform: scale(1);
+    transition: none;
+  }
+  .strip:hover p{
+    margin-left: 0em;
   }
 }
 @media (min-width:480px) and (max-width: 1000px) {
@@ -83,8 +168,8 @@
     width: 100%;
     flex-direction: column;
   }
-  .aboutUsBody_description{
-    padding: 0em 5em;
+  .panelBody_description{
+    padding: 0em 10vw;
   }
 }
 

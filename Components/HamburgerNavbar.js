@@ -5,9 +5,11 @@ import HomeContext from '../Contexts/HomeContext';
 
 import navbarStyles from '../styles/Navbar.module.css';
 import styles from '../styles/Layout.module.css';
+import NavigationContext from '../Contexts/NavigationContext';
 
 function HamburgerNavbar(props) {
   const homeContext = useContext(HomeContext);
+  const navContext = useContext(NavigationContext);
   return (
     <>
       <div
@@ -20,34 +22,21 @@ function HamburgerNavbar(props) {
           homeContext.state.hamClicked ? navbarStyles.hamListHidden : ''
         }`}
       >
-        <li
-          className={navbarStyles.hamListItem}
-          onClick={() => homeContext.setHamClicked(false)}
-        >
-          <Link href='/'> Home </Link>
-        </li>
-        <li
-          className={navbarStyles.hamListItem}
-          onClick={() => homeContext.setHamClicked(false)}
-        >
-          <Link href='/about'> About us </Link>
-        </li>
-        <li className={navbarStyles.hamListItem}>
-          <Link href='/services'> Solutions </Link>
-        </li>
-        <li
-          className={`${navbarStyles.hamListItem} ${navbarStyles.tabletView}`}
-        >
-          <Link href='/sustainability'> Sustainability </Link>
-        </li>
-        <li
-          className={`${navbarStyles.hamListItem} ${navbarStyles.tabletView}`}
-        >
-          <Link href='/technology'>Technology</Link>
-        </li>
-        <li className={navbarStyles.hamListItem}>
-          <Link href='/contact'>Contact Us</Link>
-        </li>
+        {navContext.menuList.map((menuItem) => (
+          <li
+            key={menuItem.id}
+            className={`${navbarStyles.hamListItem} ${
+              menuItem.id == navContext.selectedMenuItem
+                ? navbarStyles.activeMenuItem
+                : ''
+            } ${menuItem.classes}`}
+            onClick={() => navContext.setSelectedMenuItem(menuItem.id)}
+          >
+            <Link href={menuItem.path}>
+              <a>{menuItem.description}</a>
+            </Link>
+          </li>
+        ))}
       </ul>
     </>
   );
