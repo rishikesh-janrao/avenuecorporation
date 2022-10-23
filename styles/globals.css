@@ -1,6 +1,7 @@
 /* COLORS */
 *{
   --avenue-blue : #0095DA;
+  --avenue-light-blue : #0baaf3;
   --avenue-white : #FFF;
   --avenue-light-gray : #ccc;
   --avenue-dark-black : #000;
@@ -40,6 +41,7 @@ a {
 
 body::-webkit-scrollbar {
   background-color:transparent;
+  display: none;
   width:16px
 }
 body::-webkit-scrollbar-track {

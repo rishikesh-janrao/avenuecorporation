@@ -11,5 +11,10 @@
     z-index: 10;
 }
 .hamList{
-    z-index: 102;
+    z-index: 1;
+}
+@media screen and (max-width: 480px) {
+    .hamList{
+        z-index: 102;
+    }
 }

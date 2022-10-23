@@ -14,9 +14,8 @@
 }
 
 .logo {
-    display: flex;
+    display: inline-block;
     width: 10vw;
-    height: 100%;
     flex-direction: column;
     margin-left: 2em;
 }
@@ -27,20 +26,27 @@
 
 .hamList {
     list-style: none;
-    right: 0.6em;
+    left: 55vw;
+    right: auto;
     position: absolute;
     top: 4em;
     color: var(--avenue-white);
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
     display: none;
-    transition: 0.5s ease;
+    z-index: 1;
 }
 .hamListHidden{
-    display: block;
+    opacity: 1;
+    transition: opacity 0.1s ease-in 0.3s;
+    z-index: 102;
 }
 
 .hamListItem{
     margin-bottom: 1em;
     font-size: 1.2em;
+    width: 100vw;
+    border-bottom: 1px solid var(--avenue-white);
 }
 
 .listItem {
@@ -66,7 +72,7 @@
     display: flex;
     position: relative;
     right: 2em;
-    z-index: 2;
+    z-index: 21;
     font-weight: 300;
     color: var(--avenue-white);
     list-style: none;
@@ -79,7 +85,7 @@
 
 .subMenu{
     display: none;
-    position: absolute;
+    position: fixed;
     list-style: none;
     justify-content:flex-start;
     text-align: left;
@@ -269,6 +275,13 @@
         height: 560px;
         transform: translate(60%, -30%);
         outline: 2px solid var(--avenue-white);
+    }
+
+    .change .hamburgerLine{
+        background-color: var(--avenue-white);
+    }
+    .hamList{
+        display: block;
     }
 
 }
