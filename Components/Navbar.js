@@ -23,27 +23,29 @@ function Navbar(props) {
   }, [homeContext.state.hamClicked]);
   return (
     <header className={navbarStyles.container}>
-      <div className={navbarStyles.logo}>
-        {homeContext.platform =='ios' ||  homeContext.platform == 'android'? (
+      {homeContext.isMobile ? (
+        <div className={navbarStyles.logo}>
           <Image
             src='/pixels/logo/white-bg.png'
             alt='Avenue Corporation Logo'
             layout='responsive'
             width={100}
             height={50}
-            priority={true}
+            // priority={true}
           />
-        ) : (
+        </div>
+      ) : (
+        <div className={navbarStyles.logo}>
           <Image
             src='/pixels/logo/blue-bg.png'
             alt='Avenue Corporation Logo'
             layout='responsive'
             width={100}
             height={50}
-            priority={true}
+            // priority={true}
           />
-        )}
-      </div>
+        </div>
+      )}
       <nav className={navbarStyles.menu}>
         <ul className={navbarStyles.list}>
           {navContext.menuList.map((menuItem) => (
