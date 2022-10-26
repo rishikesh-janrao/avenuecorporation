@@ -11,7 +11,9 @@ import {
   faGlobe,
   faMoneyCheckAlt,
   faLock,
+  faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
 function Home({ props }) {
   return (
     <div className={`body-container ${styles.container}`}>
@@ -130,7 +132,9 @@ const Section = {
           <SwiperSlider ClientsSlider={true} />
         </div>
         <div className={styles.panelBody_actions_meet_our_clients_container}>
-          Hello
+          <div className={styles.panelBody_actions_meet_our_clients_contact_us_image}>
+            <FontAwesomeIcon icon={faEnvelope} />
+          </div>
         </div>
       </div>
     </div>

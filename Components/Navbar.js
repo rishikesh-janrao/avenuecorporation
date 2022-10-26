@@ -31,7 +31,6 @@ function Navbar(props) {
             layout='responsive'
             width={100}
             height={50}
-            // priority={true}
           />
         </div>
       ) : (
@@ -42,7 +41,6 @@ function Navbar(props) {
             layout='responsive'
             width={100}
             height={50}
-            // priority={true}
           />
         </div>
       )}

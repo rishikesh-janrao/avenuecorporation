@@ -10,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  row-gap: 2em;
 }
 
 
@@ -27,11 +28,11 @@
   height: 100%;
   flex-direction: column;
   color: var(--avenue-blue);
-  row-gap: 3em;
+  row-gap: 1em;
   margin-top: 2em;
 }
 .panelTitle{
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: 600;
 }
 .panelBody{
@@ -46,6 +47,7 @@
 .panelBody_description p{
   text-align: center;
   line-height: 2em;
+  font-size: 1.3em;
 }
 .panelBody_actions{
   display: flex;
@@ -57,6 +59,7 @@
   font-weight: 600;
 }
 .panelButton{
+  font-size: 1.5em;
   padding: 0.6em 2em;
   border-radius: 1.2em;
   color: var(--avenue-white);
@@ -70,9 +73,14 @@
   height: 100%;
   color: var(--avenue-white);
 }
-.whyUsPanelBody_actions{
+.whyUsPanel{
+  height: 100%;
   background-color: var(--avenue-light-gray-white);
+  padding-top: 2em;
+}
+.whyUsPanelBody_actions{
   padding: 1em;
+  font-size: 1.3em;
 }
 .strip{
   display: flex;
@@ -124,10 +132,21 @@
 
 .panelBody_actions_meet_our_clients_container
 {
-  display: flex;
-  background:url('/pixels/contact-us-home-page.png');
-  background-size: cover;
-  
+  display: block;
+  height: 50vh;
+  width: 100vw;
+}
+
+.panelBody_actions_meet_our_clients_contact_us_image{
+  position: relative;
+  margin-left: 20vw;
+  margin-top: 8vh;
+  width: 20em;
+  height: 20em;
+  color: var(--avenue-blue);
+}
+.panelBody_actions_meet_our_clients_container:hover .panelBody_actions_meet_our_clients_contact_us_image {
+  color: var(--avenue-light-blue);
 }
 @media screen and (max-width: 480px) {
   .container{
@@ -141,6 +160,10 @@
   }
   .panelBody_description p{
     line-height: 1.8em;
+    font-size: 1.15em;
+  }
+  .panelButton{
+  font-size: 1.2em;
   }
   .whyUsPanel{
     height: 100%;

@@ -18,23 +18,33 @@ const SliderProps = {
     slides: [
       {
         id: 1,
-        path: 'https://econovus.co.in/wp-content/uploads/2022/03/New-1-3-scaled.jpg',
+        webPath: '/pixels/home-slider/slide-1.png',
+        mobilePath: '',
         alt: 'Avenue Corporation - Home Slider - Slide 1',
       },
       {
         id: 2,
-        path: '/pixels/eco-friendly-packaging.jpeg',
+        webPath: '/pixels/home-slider/slide-2.png',
+        mobilePath: '',
         alt: 'Avenue Corporation - Home Slider - Slide 2',
       },
       {
         id: 3,
-        path: '/pixels/home-page-slider-1.jpeg',
+        webPath: '/pixels/home-slider/slide-3.png',
+        mobilePath: '',
         alt: 'Avenue Corporation - Home Slider - Slide 3',
       },
       {
         id: 4,
-        path: 'https://econovus.co.in/wp-content/uploads/2022/03/New-1-3-scaled.jpg',
+        webPath: '/pixels/home-slider/slide-4.png',
+        mobilePath: '',
         alt: 'Avenue Corporation - Home Slider - Slide 4',
+      },
+      {
+        id: 5,
+        webPath: '/pixels/home-slider/slide-5.png',
+        mobilePath: '',
+        alt: 'Avenue Corporation - Home Slider - Slide 5',
       },
     ],
   },

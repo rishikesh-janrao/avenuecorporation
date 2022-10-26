@@ -14,12 +14,12 @@ function HamburgerNavbar(props) {
     <>
       <div
         className={`hamChange-z-index ${styles.hamMenu} ${
-          homeContext.state.hamClicked ? styles.hamMenuChange : ''
+          homeContext.state.hamClicked ? `${styles.hamMenuChange} hamChange-z-index--visible` : ''
         }`}
       ></div>
       <ul
         className={`hamList ${navbarStyles.hamList} ${
-          homeContext.state.hamClicked ? navbarStyles.hamListHidden : ''
+          homeContext.state.hamClicked ? `${styles.hamListHidden} hamList-z-index--visible`: ''
         }`}
       >
         {navContext.menuList.map((menuItem) => (

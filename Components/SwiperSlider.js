@@ -21,7 +21,7 @@ function SwiperSlider(props) {
         <Swiper modules={[Autoplay, Pagination, Navigation]} {...SliderHomePageProps.props}>
           {SliderHomePageProps.slides.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <img src={slide.path} alt={slide.alt} />
+              <img src={slide.webPath} alt={slide.alt} />
             </SwiperSlide>
           ))}
         </Swiper>
