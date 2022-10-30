@@ -15,7 +15,7 @@
 
 .logo {
     display: inline-block;
-    width: 10vw;
+    width: 15vw;
     flex-direction: column;
     margin-left: 2em;
 }
@@ -185,6 +185,9 @@
     .logo {
         width: 35vw;
         margin-left: 1em;
+    }
+    .logo img{
+        height: 2.5em;
     }
 
     .list {

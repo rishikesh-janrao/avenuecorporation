@@ -26,21 +26,21 @@ function Navbar(props) {
       {homeContext.isMobile ? (
         <div className={navbarStyles.logo}>
           <Image
-            src='/pixels/logo/white-bg.webp'
+            src='/pixels/logo/white-bg.png'
             alt='Avenue Corporation Logo'
             layout='responsive'
             width={100}
-            height={50}
+            height={40}
           />
         </div>
       ) : (
         <div className={navbarStyles.logo}>
           <Image
-            src='/pixels/logo/blue-bg.webp'
+            src='/pixels/logo/blue-bg.png'
             alt='Avenue Corporation Logo'
             layout='responsive'
             width={100}
-            height={50}
+            height={40}
           />
         </div>
       )}
