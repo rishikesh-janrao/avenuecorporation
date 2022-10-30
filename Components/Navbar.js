@@ -26,7 +26,7 @@ function Navbar(props) {
       {homeContext.isMobile ? (
         <div className={navbarStyles.logo}>
           <Image
-            src='/pixels/logo/white-bg.png'
+            src='/pixels/logo/white-bg.webp'
             alt='Avenue Corporation Logo'
             layout='responsive'
             width={100}
@@ -36,7 +36,7 @@ function Navbar(props) {
       ) : (
         <div className={navbarStyles.logo}>
           <Image
-            src='/pixels/logo/blue-bg.png'
+            src='/pixels/logo/blue-bg.webp'
             alt='Avenue Corporation Logo'
             layout='responsive'
             width={100}

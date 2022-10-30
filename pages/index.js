@@ -11,7 +11,7 @@ import {
   faGlobe,
   faMoneyCheckAlt,
   faLock,
-  faEnvelope
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 function Home({ props }) {
@@ -27,6 +27,7 @@ function Home({ props }) {
         <Section.AboutUs />
         <Section.WhyUs />
         <Section.MeetOurClients />
+        <Section.WorkCompleted />
       </main>
     </div>
   );
@@ -70,9 +71,9 @@ const Section = {
         <div className={styles.panelBody_description}>
           <p>
             Bringing the best-in-class industrial packaging solution to you,
-            Econovus is a packaging engineering company that stands out for its
-            eco-friendly, innovative, cost-effective & smart catalogue of
-            products
+            Avenue Corporation is a packaging engineering company that stands
+            out for its eco-friendly, innovative, cost-effective & smart
+            catalogue of products
           </p>
         </div>
         <div
@@ -132,11 +133,62 @@ const Section = {
           <SwiperSlider ClientsSlider={true} />
         </div>
         <div className={styles.panelBody_actions_meet_our_clients_container}>
-          <div className={styles.panelBody_actions_meet_our_clients_contact_us_image}>
+          <div
+            className={
+              styles.panelBody_actions_meet_our_clients_contact_us_image
+            }
+          >
             <FontAwesomeIcon icon={faEnvelope} />
+          </div>
+          <div
+            className={
+              styles.panelBody_actions_meet_our_clients_contact_us_note
+            }
+          >
+            <div
+              className={
+                styles.panelBody_actions_meet_our_clients_contact_us_title
+              }
+            >
+              Avenue Corporation engineered packaging solution
+            </div>
+            <div
+              className={
+                styles.panelBody_actions_meet_our_clients_contact_us_divider
+              }
+            ></div>
+            <div
+              className={
+                styles.panelBody_actions_meet_our_clients_contact_us_description
+              }
+            >
+              Our Packaging Solutions excels in terms of sustainability vision,
+              eco-friendly solutions, core values, and operations; an one stop
+              solution for all your industrial packaging needs. We are here to
+              deliver expert packaging solutions & meet your sustainability
+              goals as per your requirements. If you’re rethinking your
+              packaging strategy and are looking to partner with a like-minded
+              supplier.
+            </div>
+            <div
+              className={
+                styles.panelBody_actions_meet_our_clients_contact_us_button
+              }
+            >
+              <Link href='/about'>
+                <div>Contact Us</div>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
     </div>
   ),
+  WorkCompleted: () => {
+    return <div className={styles.workCompleted}>
+      <div className={styles.workCompleted__}></div>
+      <div className={styles.workCompleted__}></div>
+      <div className={styles.workCompleted__}></div>
+    </div>;
+  },
 };

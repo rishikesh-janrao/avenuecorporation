@@ -1,7 +1,7 @@
 import Layout from '../Components/Layout';
 import { UAParser } from 'ua-parser-js';
 import HomeContext from '../Contexts/HomeContext';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import '../styles/globals.css';
 import '../styles/z.index.css';
@@ -15,6 +15,7 @@ const parser = new UAParser();
 const os = parser.getOS();
 const osName = os.name?.toLowerCase();
 const IsMobile = osName === 'ios' || osName === 'android';
+const screen = this;
 
 function App({ Component, pageProps, router }) {
   const [hamClicked, setHamClicked] = useState(false);

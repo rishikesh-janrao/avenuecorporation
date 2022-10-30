@@ -18,7 +18,7 @@ const SliderProps = {
     slides: [
       {
         id: 1,
-        webPath: '/pixels/home-slider/slide-1.png',
+        webPath: '/pixels/home-slider/slide-1.webp',
         mobilePath: '',
         alt: 'Avenue Corporation - Home Slider - Slide 1',
       },

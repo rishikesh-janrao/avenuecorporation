@@ -7,6 +7,8 @@
   --avenue-dark-black: #000;
   --avenue-light-black: #333;
   --avenue-light-gray-white: #F8F8F8;
+  --avenue-light-text-color: #484c50;
+  --avenue-light-border: #888;
 
   --swiper-image-ratio: 33.3%;
   --swiper-width: 50%;
@@ -24,6 +26,14 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+body::selection,
+div::selection,
+p::selection,
+span::selection  {
+  color: var(--avenue-white);
+  background-color: var(--avenue-blue);
 }
 
 a {
@@ -137,7 +147,7 @@ body::-webkit-scrollbar-button {
 }
 
 .clientSwiper .swiper-slide img {
-  object-fit: none;
+  object-fit: contain;
 }
 
 .swiper-3d.swiper .swiper-slide-shadow-left {
