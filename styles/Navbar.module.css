@@ -15,9 +15,10 @@
 
 .logo {
     display: inline-block;
-    width: 15vw;
+    min-width: 10vw;
+    width: auto;
     flex-direction: column;
-    margin-left: 2em;
+    margin: 2em 0em 2em 2em;
 }
 .list {
     list-style: none;
