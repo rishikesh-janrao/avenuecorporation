@@ -29,8 +29,8 @@ function Navbar(props) {
             src='/pixels/logo/white-bg.png'
             alt='Avenue Corporation Logo'
             layout='responsive'
-            width={100}
-            height={35}
+            width={80}
+            height={40}
           />
         </div>
       ) : (

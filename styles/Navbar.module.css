@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
     font-size: 1.2em;
-    padding: 0 0em;
+    padding: 0;
     position: static;
     overflow: hidden;
     width: 100vw;
@@ -184,11 +184,13 @@
     }
 
     .logo {
-        width: 35vw;
-        margin-left: 1em;
+        margin: 0;
+        margin-left: 2em;
+        min-width: 30vw;
+        height: auto;
     }
-    .logo img{
-        height: 2.5em;
+    .logo span span{
+        padding-top: 40% !important;
     }
 
     .list {
