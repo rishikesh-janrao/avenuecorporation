@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--avenue-white);
+    color: var(--avenue-light-blue);
+}
+
+.counter{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+
+.description{
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: var(--avenue-light-text-color);
+}

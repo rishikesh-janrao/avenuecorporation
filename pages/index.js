@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SwiperSlider from '../Components/SwiperSlider';
 import styles from '../styles/Home.module.css';
 
@@ -14,6 +14,7 @@ import {
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
+import NumberCounter from '../Components/NumberCounter';
 function Home({ props }) {
   return (
     <div className={`body-container ${styles.container}`}>
@@ -27,7 +28,7 @@ function Home({ props }) {
         <Section.AboutUs />
         <Section.WhyUs />
         <Section.MeetOurClients />
-        <Section.WorkCompleted />
+        <Section.WorkCompleted reqCount={2500} />
       </main>
     </div>
   );
@@ -184,11 +185,34 @@ const Section = {
       </div>
     </div>
   ),
-  WorkCompleted: () => {
-    return <div className={styles.workCompleted}>
-      <div className={styles.workCompleted__}></div>
-      <div className={styles.workCompleted__}></div>
-      <div className={styles.workCompleted__}></div>
-    </div>;
+  WorkCompleted: ({ reqCount }) => {
+    return (
+      <div className={styles.workCompleted}>
+        <div className={styles.workCompleted__1}>
+          <NumberCounter
+            count={2500}
+            description='Requirements met'
+            isPositive={true}
+            delay={1}
+          />
+        </div>
+        <div className={styles.workCompleted__2}>
+          <NumberCounter
+            count={100}
+            description='Curated Products'
+            isPositive={true}
+            delay={50}
+          />
+        </div>
+        <div className={styles.workCompleted__3}>
+          <NumberCounter
+            count={20}
+            description='Product Categories'
+            isPositive={true}
+            delay={200}
+          />
+        </div>
+      </div>
+    );
   },
 };

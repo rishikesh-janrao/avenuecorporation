@@ -199,10 +199,17 @@
   flex-direction: row;
   padding: 5em;
 }
-.workCompleted__{
-  height: 10em;
+.workCompleted__1,
+.workCompleted__2,
+.workCompleted__3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-height: 10em;
+  min-height: 3em;
   width: 100%;
-  border-right: 1px solid var(--avenue-light-text-color);
+  border-right: 1px solid var(--avenue-light-border);
 }
 
 @media screen and (max-width: 480px) {
@@ -271,6 +278,10 @@
   .panelBody_actions_meet_our_clients_contact_us_description{
     text-align: center;
     justify-content: center;
+  }
+  .workCompleted{
+    flex-direction: column;
+    row-gap: 1em;
   }
 }
 @media (min-width:480px) and (max-width: 1000px) {

@@ -54,11 +54,11 @@ const SliderProps = {
       grabCursor: true,
       loop: true,
       centeredSlides: true,
-      slidesPerView: '4',
+      slidesPerView: '3',
       coverflowEffect: {
         rotate: 50,
         stretch: 0,
-        depth: 10,
+        depth: 100,
         modifier: 1,
         slideShadows: true,
       },
