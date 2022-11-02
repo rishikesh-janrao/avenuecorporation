@@ -71,39 +71,90 @@ const SliderProps = {
     slides: [
       {
         id: 1,
-        path: '/pixels/clients/gm.png',
+        path: '/pixels/clients/jcb.png',
         alt: 'Avenue Corporation - Clients Slider - Slide 1',
       },
       {
         id: 2,
-        path: '/pixels/clients/jaguar.png',
+        path: '/pixels/clients/nefab.png',
         alt: 'Avenue Corporation - Clients Slider - Slide 2',
       },
       {
         id: 3,
-        path: '/pixels/clients/land-rover.png',
+        path: '/pixels/clients/rieter.png',
         alt: 'Avenue Corporation - Clients Slider - Slide 3',
       },
       {
         id: 4,
-        path: '/pixels/clients/magneti.png',
+        path: '/pixels/clients/philips.png',
         alt: 'Avenue Corporation - Clients Slider - Slide 4',
       },
       {
         id: 5,
-        path: '/pixels/clients/mahindra.png',
+        path: '/pixels/clients/lg.png',
         alt: 'Avenue Corporation - Clients Slider - Slide 5',
       },
       {
         id: 6,
-        path: '/pixels/clients/mk-tron.png',
+        path: '/pixels/clients/glatt.png',
         alt: 'Avenue Corporation - Clients Slider - Slide 6',
       },
       {
         id: 7,
-        path: '/pixels/clients/ohsung.png',
+        path: '/pixels/clients/mellanox.png',
         alt: 'Avenue Corporation - Clients Slider - Slide 7',
       },
+      {
+        id: 8,
+        path: '/pixels/clients/toshiba.png',
+        alt: 'Avenue Corporation - Clients Slider - Slide 8',
+      },
+      {
+        id: 9,
+        path: '/pixels/clients/ksb.png',
+        alt: 'Avenue Corporation - Clients Slider - Slide 9',
+      },
+      {
+        id: 10,
+        path: '/pixels/clients/delval.png',
+        alt: 'Avenue Corporation - Clients Slider - Slide 10',
+      },
+      {
+        id: 11,
+        path: '/pixels/clients/vikrash.png',
+        alt: 'Avenue Corporation - Clients Slider - Slide 11',
+      },
+      {
+        id: 12,
+        path: '/pixels/clients/tetrapak.png',
+        alt: 'Avenue Corporation - Clients Slider - Slide 12',
+      },
+      {
+        id: 13,
+        path: '/pixels/clients/bharatforge.png',
+        alt: 'Avenue Corporation - Clients Slider - Slide 13',
+      },
+      {
+        id: 14,
+        path: '/pixels/clients/otif.png',
+        alt: 'Avenue Corporation - Clients Slider - Slide 14',
+      },
+      {
+        id: 15,
+        path: '/pixels/clients/konecranes.png',
+        alt: 'Avenue Corporation - Clients Slider - Slide 15',
+      },
+      {
+        id: 16,
+        path: '/pixels/clients/emerson.png',
+        alt: 'Avenue Corporation - Clients Slider - Slide 16',
+      },
+      {
+        id: 17,
+        path: '/pixels/clients/sandvik.png',
+        alt: 'Avenue Corporation - Clients Slider - Slide 17',
+      },
+      
     ],
   },
 };

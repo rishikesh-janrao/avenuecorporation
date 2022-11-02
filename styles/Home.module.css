@@ -211,6 +211,9 @@
   width: 100%;
   border-right: 1px solid var(--avenue-light-border);
 }
+.workCompleted__:last-child{
+  border-right: none;
+}
 
 @media screen and (max-width: 480px) {
   .container{
