@@ -13,7 +13,6 @@ import {
   faLock,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
-import Image from 'next/image';
 import NumberCounter from '../Components/NumberCounter';
 function Home({ props }) {
   return (
@@ -29,6 +28,7 @@ function Home({ props }) {
         <Section.WhyUs />
         <Section.MeetOurClients />
         <Section.WorkCompleted reqCount={2500} />
+        <Section.ContactForm />
       </main>
     </div>
   );
@@ -215,4 +215,11 @@ const Section = {
       </div>
     );
   },
+  ContactForm: ({}) =>{
+    return (
+      <div className={styles.ContactForm}>
+        
+      </div>
+    )
+  }
 };

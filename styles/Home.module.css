@@ -214,6 +214,9 @@
 .workCompleted__:last-child{
   border-right: none;
 }
+.ContactForm{
+  width: 100%;
+}
 
 @media screen and (max-width: 480px) {
   .container{
