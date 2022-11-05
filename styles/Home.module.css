@@ -517,6 +517,9 @@ a.FooterLinks__contactus {
   .contactForm_form p:first-child {
     text-align: center;
   }
+  .contactForm_form{
+    padding: 0;
+  }
 
   .button button {
     font-size: 1em;
@@ -530,6 +533,9 @@ a.FooterLinks__contactus {
   }
   .FooterLinks__cell:last-child{
     width: 100%;
+  }
+  .FooterLinks__cell:first-child{
+    display: none;
   }
 }
 
