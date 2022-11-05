@@ -7,8 +7,14 @@
   --avenue-dark-black: #000;
   --avenue-light-black: #333;
   --avenue-light-gray-white: #F8F8F8;
-  --avenue-light-text-color: #484c50;
   --avenue-light-border: #AAA;
+
+
+  --avenue-text-color--2: #919394;
+  --avenue-text-color--3: #484c50;
+  --avenue-text-color--dark: #000;
+
+  --avenue-input-error : rgb(157, 37, 37);
 
   --swiper-image-ratio: 33.3%;
   --swiper-width: 50%;
@@ -30,14 +36,14 @@ body {
 body::selection,
 div::selection,
 p::selection,
-span::selection  {
+span::selection {
   color: var(--avenue-white);
   background-color: var(--avenue-blue);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: inherit !important;
+  text-decoration: none !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -155,6 +161,13 @@ body::-webkit-scrollbar-button {
 
 .swiper-3d.swiper .swiper-slide-shadow-right {
   background-image: linear-gradient(to right, rgba(23, 151, 193, 0.075), rgba(0, 0, 0, 0))
+}
+
+
+.form-control:focus{
+  border-color: var(--avenue-blue);
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 4px var(--avenue-blue) !important;
 }
 
 @media screen and (max-width:480px) {

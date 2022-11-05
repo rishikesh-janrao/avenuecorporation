@@ -165,8 +165,8 @@ const Section = {
             >
               Our Packaging Solutions excels in terms of sustainability vision,
               eco-friendly solutions, core values, and operations; an one stop
-              solution for all your industrial packaging needs. We are here to
-              deliver expert packaging solutions & meet your sustainability
+              solution for all your industrial packaging needs. We are here
+              to deliver expert packaging solutions & meet your sustainability
               goals as per your requirements. If you’re rethinking your
               packaging strategy and are looking to partner with a like-minded
               supplier.
@@ -215,11 +215,134 @@ const Section = {
       </div>
     );
   },
-  ContactForm: ({}) =>{
+  ContactForm: ({}) => {
+    
+    const bt = require('bootstrap/dist/css/bootstrap.css');
+    let formData = {};
+
+    function validateForm(controls){
+      if(controls.email.value.length>0){
+        validateEmail(controls.email);
+      }
+      return !(!controls.name.validity.valid || !controls.email.validity.valid || !controls.mobile.validity.valid || !controls.msg.validity.valid);
+    }
+
+    const submitForm = (form) => {
+      form.preventDefault();
+      let controls = form.target;
+      if(validateForm(controls)){
+        const data = {};
+        data.name = controls.name.value;
+        data.email = controls.email.value;
+        data.mobile = controls.mobile.value;
+        data.msg = controls.msg.value;
+        formData = data;
+        console.log(formData);
+      }
+    };
+
+    function onlyCharacters(e) {
+      if (e.key.length == 1) {
+        if (!/^[a-zA-Z ]+$/.test(e.key)) {
+          e.preventDefault();
+        }
+      }
+    }
+    function onlyDigits(e) {
+      if (e.key.length == 1) {
+        if (!/^[0-9]+$/.test(e.key)) {
+          e.preventDefault();
+        }
+      }
+    }
+    function validateEmail(e) {
+      let AtIndex = (e.value).indexOf('@');
+      let DotIndex = (e.value).indexOf('.');
+      if (DotIndex == -1) {
+        e.setCustomValidity("Email should have format like abc@bca.com");
+        e.classList.add(styles.invalid)
+      }else{
+        AtIndex = AtIndex == -1 ? 0 : AtIndex;
+        DotIndex = DotIndex == -1 ? 9999999 : DotIndex;
+        if (AtIndex > DotIndex) {
+          e.setCustomValidity("Email should include @ and then '.'");
+          e.classList.add(styles.invalid)
+        } else {
+          e.setCustomValidity('');
+          e.classList.remove(styles.invalid)
+        }
+      }
+    }
+
     return (
       <div className={styles.ContactForm}>
-        
+        <div className={styles.contactForm_description}>
+          <p>Because Trust Matters!</p>
+          <p>
+            As a young organisation, our steps are cautious. Experienced
+            professionals thoroughly guide handholding for every action
+            taken. It has been a wonderful and blessed journey for Avenue
+            Corp so far. We would like to bestow our sincere gratitude and
+            fervent regards to our partners who trusted in us because, like you,
+            we also value our customers’ trust!
+          </p>
+        </div>
+        <div className={styles.contactForm_form}>
+          <p>Get in touch</p>
+          <form onSubmit={submitForm}>
+            <div className='form-floating mb-3'>
+              <input
+                type='text'
+                className='form-control'
+                id='floatingInputName'
+                placeholder='Name'
+                onKeyDown={onlyCharacters}
+                required
+                name='name'
+              />
+              <label htmlFor='floatingInputName'>Name</label>
+            </div>
+            <div className='form-floating mb-3'>
+              <input
+                type='email'
+                className='form-control'
+                id='floatingInputEmail'
+                placeholder='name@example.com'
+                onChange={(e)=>validateEmail(e.target)}
+                name="email"
+              />
+              <label htmlFor='floatingInputEmail'>Email address</label>
+            </div>
+            <div className='form-floating mb-3'>
+              <input
+                type='tel'
+                className='form-control'
+                id='floatingInputMobile'
+                placeholder='e.g. 839078716'
+                maxLength={10}
+                required
+                name='mobile'
+                onKeyDown={onlyDigits}
+              />
+              <label htmlFor='floatingInputMobile'>Mobile Number</label>
+            </div>
+            <div className='form-floating'>
+              <textarea
+                className='form-control'
+                placeholder='Leave a message here'
+                id='floatingTextarea2'
+                style={{ minHeight: '8em' }}
+                required
+                name='msg'
+              ></textarea>
+              <label htmlFor='floatingTextarea2'>Message</label>
+            </div>
+            <div className={styles.button}>
+              <button type='submit'>Get a callback</button>
+            </div>
+          </form>
+        </div>
       </div>
-    )
-  }
+    );
+  },
 };

@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useContext } from 'react';
 import HomeContext from '../Contexts/HomeContext';
 import styles from '../styles/Layout.module.css';
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
   }
   return (
     <div className={styles.container} onClick={closeHam}>
+      <Head><meta name="viewport" content="width=device-width, initial-scale=1" /></Head>
       <HamburgerNavbar />
       <Navbar />
       {children}

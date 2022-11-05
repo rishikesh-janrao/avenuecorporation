@@ -108,7 +108,6 @@
 }
 .subMenu li{
     padding: 0.7em;
-    padding-left: 4em;
     background-color: var(--avenue-blue);
     width: 100%;
     font-size: 0.9em;
