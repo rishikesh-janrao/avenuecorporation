@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import SwiperSlider from '../Components/SwiperSlider';
 import styles from '../styles/Home.module.css';
 
@@ -13,7 +13,18 @@ import {
   faLock,
   faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+  faWhatsapp,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
 import NumberCounter from '../Components/NumberCounter';
+import Image from 'next/image';
+import NavigationContext from '../Contexts/NavigationContext';
+
 function Home({ props }) {
   return (
     <div className={`body-container ${styles.container}`}>
@@ -29,6 +40,7 @@ function Home({ props }) {
         <Section.MeetOurClients />
         <Section.WorkCompleted reqCount={2500} />
         <Section.ContactForm />
+        <Section.FooterLinks />
       </main>
     </div>
   );
@@ -165,8 +177,8 @@ const Section = {
             >
               Our Packaging Solutions excels in terms of sustainability vision,
               eco-friendly solutions, core values, and operations; an one stop
-              solution for all your industrial packaging needs. We are here
-              to deliver expert packaging solutions & meet your sustainability
+              solution for all your industrial packaging needs. We are here to
+              deliver expert packaging solutions & meet your sustainability
               goals as per your requirements. If you’re rethinking your
               packaging strategy and are looking to partner with a like-minded
               supplier.
@@ -216,21 +228,25 @@ const Section = {
     );
   },
   ContactForm: ({}) => {
-    
     const bt = require('bootstrap/dist/css/bootstrap.css');
     let formData = {};
 
-    function validateForm(controls){
-      if(controls.email.value.length>0){
+    function validateForm(controls) {
+      if (controls.email.value.length > 0) {
         validateEmail(controls.email);
       }
-      return !(!controls.name.validity.valid || !controls.email.validity.valid || !controls.mobile.validity.valid || !controls.msg.validity.valid);
+      return !(
+        !controls.name.validity.valid ||
+        !controls.email.validity.valid ||
+        !controls.mobile.validity.valid ||
+        !controls.msg.validity.valid
+      );
     }
 
     const submitForm = (form) => {
       form.preventDefault();
       let controls = form.target;
-      if(validateForm(controls)){
+      if (validateForm(controls)) {
         const data = {};
         data.name = controls.name.value;
         data.email = controls.email.value;
@@ -256,20 +272,20 @@ const Section = {
       }
     }
     function validateEmail(e) {
-      let AtIndex = (e.value).indexOf('@');
-      let DotIndex = (e.value).indexOf('.');
+      let AtIndex = e.value.indexOf('@');
+      let DotIndex = e.value.indexOf('.');
       if (DotIndex == -1) {
-        e.setCustomValidity("Email should have format like abc@bca.com");
-        e.classList.add(styles.invalid)
-      }else{
+        e.setCustomValidity('Email should have format like abc@bca.com');
+        e.classList.add(styles.invalid);
+      } else {
         AtIndex = AtIndex == -1 ? 0 : AtIndex;
         DotIndex = DotIndex == -1 ? 9999999 : DotIndex;
         if (AtIndex > DotIndex) {
           e.setCustomValidity("Email should include @ and then '.'");
-          e.classList.add(styles.invalid)
+          e.classList.add(styles.invalid);
         } else {
           e.setCustomValidity('');
-          e.classList.remove(styles.invalid)
+          e.classList.remove(styles.invalid);
         }
       }
     }
@@ -280,11 +296,11 @@ const Section = {
           <p>Because Trust Matters!</p>
           <p>
             As a young organisation, our steps are cautious. Experienced
-            professionals thoroughly guide handholding for every action
-            taken. It has been a wonderful and blessed journey for Avenue
-            Corp so far. We would like to bestow our sincere gratitude and
-            fervent regards to our partners who trusted in us because, like you,
-            we also value our customers’ trust!
+            professionals thoroughly guide handholding for every action taken.
+            It has been a wonderful and blessed journey for Avenue Corp so far.
+            We would like to bestow our sincere gratitude and fervent regards to
+            our partners who trusted in us because, like you, we also value our
+            customers’ trust!
           </p>
         </div>
         <div className={styles.contactForm_form}>
@@ -308,8 +324,8 @@ const Section = {
                 className='form-control'
                 id='floatingInputEmail'
                 placeholder='name@example.com'
-                onChange={(e)=>validateEmail(e.target)}
-                name="email"
+                onChange={(e) => validateEmail(e.target)}
+                name='email'
               />
               <label htmlFor='floatingInputEmail'>Email address</label>
             </div>
@@ -341,6 +357,91 @@ const Section = {
               <button type='submit'>Get a callback</button>
             </div>
           </form>
+        </div>
+      </div>
+    );
+  },
+  FooterLinks: ({}) => {
+    const navContext = useContext(NavigationContext);
+    const socialLinks = navContext.socialLinks;
+
+    return (
+      <div className={styles.FooterLinks}>
+        <div className={styles.FooterLinks__cell}>
+          <Image
+            src='/pixels/logo/blue-bg.png'
+            alt='Avenue Corporation Logo'
+            layout='responsive'
+            width={80}
+            height={40}
+          />
+        </div>
+        <div className={styles.FooterLinks__cell}>
+          <label>Head Office</label>
+          <a>
+            <p>Avenue Corporation</p>
+            Gate no 984/3, M/S Shirke-Bricks Industries Compound, Next to Span
+            Pump, Sanaswadi, Tq. Shirur, Dist. Pune - 412208.
+          </a>
+        </div>
+        <div className={styles.FooterLinks__cell}>
+          <label>Contact Us</label>
+          <span className={styles.FooterLinks__contactus}>
+            <a href="mailto:marketing@avenuecorporation.in">marketing@avenuecorporation.in</a>
+            <br />
+            <a href="tel:8956747723">+91 8956747723</a>
+            <br />
+            <a href="tel:8380840125">+91 8380840125</a>
+          </span>
+          <span className={styles.socials}>
+            <Link href={socialLinks['linkedin'] || ''}>
+              <span>
+                <FontAwesomeIcon icon={faLinkedin} listItem />
+              </span>
+            </Link>
+            <Link href={socialLinks['instagram'] || ''}>
+              <span>
+                <FontAwesomeIcon icon={faInstagram} listItem />
+              </span>
+            </Link>
+            <Link href={socialLinks['twitter'] || ''}>
+              <span>
+                <FontAwesomeIcon icon={faTwitter} listItem />
+              </span>
+            </Link>
+            <Link href={socialLinks['youtube'] || ''}>
+              <span>
+                <FontAwesomeIcon icon={faYoutube} listItem />
+              </span>
+            </Link>
+            <Link href={socialLinks['whatsapp'] || ''}>
+              <span>
+                <FontAwesomeIcon icon={faWhatsapp} listItem />
+              </span>
+            </Link>
+            <Link href={socialLinks['facebook'] || ''}>
+              <span>
+                <FontAwesomeIcon icon={faFacebook} listItem />
+              </span>
+            </Link>
+          </span>
+        </div>
+        <div className={styles.FooterLinks__cell}>
+          <label>Quick Links</label>
+          <ul>
+            <li>
+              <Link href={'/about'}>About Us</Link>
+            </li>
+            <li>
+              <Link href={'/contact'}>Contact Us</Link>
+            </li>
+            <li>
+              <Link href={'/about'}>Privacy Policy</Link>
+            </li>
+            <li>
+              <Link href={'/about'}>Terms and Conditions</Link>
+            </li>
+          </ul>
         </div>
       </div>
     );

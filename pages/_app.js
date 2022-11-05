@@ -7,6 +7,7 @@ import '../styles/globals.css';
 import '../styles/z.index.css';
 import NavigationContext from '../Contexts/NavigationContext';
 import MenuList from '../Configs/MenuItems';
+import SocialLinks from '../Configs/SocialLinks';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import SliderProps from '../Configs/SliderProps';
@@ -15,7 +16,6 @@ const parser = new UAParser();
 const os = parser.getOS();
 const osName = os.name?.toLowerCase();
 const IsMobile = osName === 'ios' || osName === 'android';
-const screen = this;
 
 function App({ Component, pageProps, router }) {
   const [hamClicked, setHamClicked] = useState(false);
@@ -34,6 +34,7 @@ function App({ Component, pageProps, router }) {
         menuList: MenuList,
         selectedMenuItem: selectedMenuItem,
         setSelectedMenuItem: setSelectedMenuItem,
+        socialLinks: SocialLinks
       }}
     >
       <HomeContext.Provider
