@@ -93,7 +93,7 @@
 .whyUsPanelBody_actions {
   padding: 1em;
   font-size: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .strip {
@@ -102,7 +102,7 @@
   position: relative;
   column-gap: 1em;
   align-items: center;
-  padding: 1em 1em;
+  padding: 0.5em 1em;
   background-color: var(--avenue-white);
   border-radius: 0.5em;
   overflow: hidden;
@@ -117,8 +117,8 @@
 
 .strip span {
   display: flex;
-  height: 1.5em;
-  width: 1.5em;
+  height: 2.5em;
+  width: 2.5em;
   border-radius: 50%;
   padding: 0.4em;
   justify-content: center;
@@ -140,8 +140,8 @@
 }
 
 .strip:hover p {
-  margin-left: 1.5em;
-  transition: margin 0.1s linear 0.5s;
+  margin-left: 2em;
+  transition: margin 0.1s linear 0.1s;
 }
 
 .panelBody_actions_animator {
@@ -152,7 +152,7 @@
 .strip:hover .panelBody_actions_animator {
 
   position: absolute;
-  transform: scale(3.5);
+  transform: scale(3);
   transition: transform 0.5s ease;
 }
 
@@ -369,7 +369,6 @@
 
 .FooterLinks__cell p {
   margin: 0;
-  margin-bottom: 0.6em;
   text-transform: uppercase;
   font-size: 1.05em;
 }
