@@ -453,7 +453,7 @@ a.FooterLinks__contactus {
 }
 
 .gridItem:hover {
-  background-size: 8.5em 8.5em;
+  background-size: 10em 8.5em;
   transform: scale(2);
   transition: transform 0.2s ease-out;
   background-position: center;
