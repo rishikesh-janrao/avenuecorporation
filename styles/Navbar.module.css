@@ -98,6 +98,7 @@
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;overflow: hidden;
     transition: 0.3s ease;
+    color: var(--avenue-white);
 }
 .subMenu:hover{
     display: flex;

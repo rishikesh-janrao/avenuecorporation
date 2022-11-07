@@ -1,33 +1,54 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useContext, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useContext, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
-import { EffectCoverflow, Autoplay, Pagination, Navigation } from 'swiper';
+import { EffectCoverflow, Autoplay, Pagination, Navigation } from "swiper";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import HomeContext from '../Contexts/HomeContext';
+import HomeContext from "../Contexts/HomeContext";
 
-// import swiperStyles from '../styles/Swiper.module.css';
+import swiperStyles from "../styles/Swiper.module.css";
+import Link from "next/link";
 
 function SwiperSlider(props) {
-  const {SliderHomePageProps, SliderClientProps} = useContext(HomeContext);
+  const { SliderHomePageProps, SliderClientProps } = useContext(HomeContext);
   return (
     <>
       {props.HomeSlider && (
-        <Swiper modules={[Autoplay, Pagination, Navigation]} {...SliderHomePageProps.props}>
+        <Swiper
+          modules={[Autoplay, Pagination, Navigation]}
+          {...SliderHomePageProps.props}
+        >
           {SliderHomePageProps.slides.map((slide) => (
-            <SwiperSlide key={slide.id}>
-              <img src={slide.webPath} alt={slide.alt} />
-            </SwiperSlide>
+            <div key={slide.id}>
+              <SwiperSlide key={slide.id}>
+                <div className="slideText">
+                  <h1>{slide.slideText}</h1>
+                  <div className="button">
+                    <Link href={"#ContactForm"}><a>Tell us your requirements</a></Link>
+                  </div>
+                </div>
+                <span className={swiperStyles.ImageContainer}>
+                  <img
+                    className={swiperStyles.Image}
+                    src={slide.webPath}
+                    alt={slide.alt}
+                  />
+                </span>
+              </SwiperSlide>
+            </div>
           ))}
         </Swiper>
       )}
       {props.ClientsSlider && (
-        <Swiper modules={[Autoplay, Pagination, Navigation, EffectCoverflow]} {...SliderClientProps.props}>
+        <Swiper
+          modules={[Autoplay, Pagination, Navigation, EffectCoverflow]}
+          {...SliderClientProps.props}
+        >
           {SliderClientProps.slides.map((el) => (
             <SwiperSlide key={el.id}>
               <img src={el.path} alt={el.alt} />

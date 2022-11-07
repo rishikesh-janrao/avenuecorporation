@@ -309,7 +309,7 @@ const Section = {
     }
 
     return (
-      <div className={styles.ContactForm}>
+      <div id='ContactForm' className={styles.ContactForm}>
         <div className={styles.contactForm_description}>
           <p>Because Trust Matters!</p>
           <p>
