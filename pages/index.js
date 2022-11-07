@@ -36,6 +36,7 @@ function Home({ props }) {
       <main className={`body-sub-container ${styles.main}`}>
         <Section.HomeSlider />
         <Section.AboutUs />
+        <Section.Solutions />
         <Section.WhyUs />
         <Section.MeetOurClients />
         <Section.WorkCompleted reqCount={2500} />
@@ -138,6 +139,23 @@ const Section = {
       </div>
     </div>
   ),
+  Solutions: () => {
+    return (
+      <div className={styles.solutions}>
+        <label>Solutions</label>
+        <div className={styles.solutionsGridContainer}>
+          <div className={`${styles.gridItem} ${styles.gridItem_1}`}></div>
+          <div className={`${styles.gridItem} ${styles.gridItem_2}`}></div>
+          <div className={`${styles.gridItem} ${styles.gridItem_3}`}></div>
+        </div>
+        <div className={styles.solutionsGridContainer}>
+          <div className={`${styles.gridItem} ${styles.gridItem_4}`}></div>
+          <div className={`${styles.gridItem} ${styles.gridItem_5}`}></div>
+          <div className={`${styles.gridItem} ${styles.gridItem_6}`}></div>
+        </div>
+      </div>
+    );
+  },
   MeetOurClients: () => (
     <div className={styles.panel}>
       <label className={styles.panelTitle}>Meet Our Clients</label>
@@ -387,11 +405,13 @@ const Section = {
         <div className={styles.FooterLinks__cell}>
           <label>Contact Us</label>
           <span className={styles.FooterLinks__contactus}>
-            <a href="mailto:marketing@avenuecorporation.in">marketing@avenuecorporation.in</a>
+            <a href='mailto:marketing@avenuecorporation.in'>
+              marketing@avenuecorporation.in
+            </a>
             <br />
-            <a href="tel:8956747723">+91 8956747723</a>
+            <a href='tel:8956747723'>+91 8956747723</a>
             <br />
-            <a href="tel:8380840125">+91 8380840125</a>
+            <a href='tel:8380840125'>+91 8380840125</a>
           </span>
           <span className={styles.socials}>
             <Link href={socialLinks['linkedin'] || ''}>
