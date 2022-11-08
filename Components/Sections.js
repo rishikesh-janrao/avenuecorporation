@@ -388,7 +388,15 @@ const Sections = {
               marketing@avenuecorporation.in
             </a>
             <br />
-            <a href="tel:8956747723">+91 8956747723</a>
+            <a href="mailto:sales@avenuecorporation.in">
+              sales@avenuecorporation.in
+            </a>
+            <br />
+            <a href="mailto:salesavenuecorporation@gmail.com">
+              salesavenuecorporation@gmail.com
+            </a>
+            <br />
+            <a href="tel:9730272570">+91 9730272570</a>
             <br />
             <a href="tel:8380840125">+91 8380840125</a>
           </span>
