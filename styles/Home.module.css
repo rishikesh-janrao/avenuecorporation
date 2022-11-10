@@ -465,6 +465,7 @@ a.FooterLinks__contactus {
 
 .gridItem_1:hover {
   background-image: url('/pixels/solutions-grid/hover-images/grid-1.gif');
+  transform:  scale(1.5);
 }
 
 .gridItem_2 {
@@ -493,6 +494,7 @@ a.FooterLinks__contactus {
 }
 .gridItem_5:hover {
   background-image: url('/pixels/solutions-grid/hover-images/grid-5.gif');
+  transform: rotateX(45deg) scale(1.5);
 }
 
 .gridItem_6 {

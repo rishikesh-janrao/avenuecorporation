@@ -18,7 +18,7 @@ const SliderProps = {
     slides: [
       {
         id: 1,
-        webPath: '/pixels/home-slider/slide-1.webp',
+        webPath: '/pixels/home-slider/slide-5.png',
         mobilePath: '',
         slideText:"India's First Green Packaging Company",
         alt: 'Avenue Corporation - Home Slider - Slide 1',
