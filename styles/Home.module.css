@@ -480,6 +480,8 @@ a.FooterLinks__contactus {
 }
 .gridItem_3:hover {
   background-image: url('/pixels/solutions-grid/hover-images/grid-3.gif');
+  background-size: contain;
+  transform: scale(1.1);
 }
 
 .gridItem_4 {
