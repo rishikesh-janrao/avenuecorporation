@@ -11,6 +11,7 @@ import SocialLinks from '../Configs/SocialLinks';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import SliderProps from '../Configs/SliderProps';
+import Head from 'next/head';
 
 const parser = new UAParser();
 const os = parser.getOS();
@@ -25,8 +26,8 @@ function App({ Component, pageProps, router }) {
   const [selectedMenuItem, setSelectedMenuItem] = useState(
     currentPageId ? currentPageId : 1
   );
-  
-  const { SliderHomePageProps, SliderClientProps} = SliderProps;
+
+  const { SliderHomePageProps, SliderClientProps } = SliderProps;
 
   return (
     <NavigationContext.Provider
@@ -34,7 +35,7 @@ function App({ Component, pageProps, router }) {
         menuList: MenuList,
         selectedMenuItem: selectedMenuItem,
         setSelectedMenuItem: setSelectedMenuItem,
-        socialLinks: SocialLinks
+        socialLinks: SocialLinks,
       }}
     >
       <HomeContext.Provider
@@ -50,6 +51,11 @@ function App({ Component, pageProps, router }) {
         }}
       >
         <Layout>
+          <Head>
+            <link rel='icon' href='../pixels/favicon.ico' />
+            <link rel='apple-touch-icon' href='/example.png' />
+            <meta name="theme-color" content="#0095DA"/>
+          </Head>
           <motion.div
             key={router.route}
             initial='pageInitial'
