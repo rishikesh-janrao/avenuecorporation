@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SwiperSlider from "../Components/SwiperSlider";
-import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SwiperSlider from '../Components/SwiperSlider';
+import Link from 'next/link';
 import {
   faLightbulb,
   faLaptop,
@@ -8,7 +8,7 @@ import {
   faMoneyCheckAlt,
   faLock,
   faEnvelope,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebook,
   faInstagram,
@@ -16,13 +16,13 @@ import {
   faTwitter,
   faWhatsapp,
   faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import NumberCounter from "../Components/NumberCounter";
-import Image from "next/image";
-import NavigationContext from "../Contexts/NavigationContext";
+} from '@fortawesome/free-brands-svg-icons';
+import NumberCounter from '../Components/NumberCounter';
+import Image from 'next/image';
+import NavigationContext from '../Contexts/NavigationContext';
 
-import styles from "../styles/Home.module.css";
-import { useContext } from "react";
+import styles from '../styles/Home.module.css';
+import { useContext, useState } from 'react';
 const Sections = {
   HomeSlider: () => <SwiperSlider HomeSlider={true} />,
   AboutUs: () => (
@@ -40,12 +40,12 @@ const Sections = {
         </div>
         <div className={styles.panelBody_actions}>
           <div className={styles.panelButton}>
-            <Link href="/about">
+            <Link href='/about'>
               <a>About Us</a>
             </Link>
           </div>
           <div className={styles.panelButton}>
-            <Link href="/solutions">
+            <Link href='/solutions'>
               <a>Solutions</a>
             </Link>
           </div>
@@ -115,11 +115,20 @@ const Sections = {
     </div>
   ),
   Solutions: () => {
+    const [hoveredSlide, setHover] = useState(0);
     return (
       <div className={styles.solutions}>
         <label>Solutions</label>
         <div className={styles.solutionsGridContainer}>
-          <div className={`${styles.gridItem} ${styles.gridItem_1}`}></div>
+          <div className={`${styles.gridItem} ${styles.gridItem_1}`} onFocus={(e)=>setHover(1)}>
+            { hoveredSlide == 1 && (<Image
+              src='/pixels/solutions-grid/hover-images/grid-1.gif'
+              alt='Avenue Corporation grid 1'
+              layout='responsive'
+              width={100}
+              height={100}
+            />)}
+          </div>
           <div className={`${styles.gridItem} ${styles.gridItem_2}`}></div>
           <div className={`${styles.gridItem} ${styles.gridItem_3}`}></div>
         </div>
@@ -185,7 +194,7 @@ const Sections = {
                 styles.panelBody_actions_meet_our_clients_contact_us_button
               }
             >
-              <Link href="/about">
+              <Link href='/about'>
                 <div>Contact Us</div>
               </Link>
             </div>
@@ -200,7 +209,7 @@ const Sections = {
         <div className={styles.workCompleted__1}>
           <NumberCounter
             count={2500}
-            description="Requirements met"
+            description='Requirements met'
             isPositive={true}
             delay={1}
           />
@@ -208,7 +217,7 @@ const Sections = {
         <div className={styles.workCompleted__2}>
           <NumberCounter
             count={100}
-            description="Curated Products"
+            description='Curated Products'
             isPositive={true}
             delay={50}
           />
@@ -216,7 +225,7 @@ const Sections = {
         <div className={styles.workCompleted__3}>
           <NumberCounter
             count={20}
-            description="Product Categories"
+            description='Product Categories'
             isPositive={true}
             delay={200}
           />
@@ -225,7 +234,7 @@ const Sections = {
     );
   },
   ContactForm: ({}) => {
-    const bt = require("bootstrap/dist/css/bootstrap.css");
+    const bt = require('bootstrap/dist/css/bootstrap.css');
     let formData = {};
 
     function validateForm(controls) {
@@ -269,10 +278,10 @@ const Sections = {
       }
     }
     function validateEmail(e) {
-      let AtIndex = e.value.indexOf("@");
-      let DotIndex = e.value.indexOf(".");
+      let AtIndex = e.value.indexOf('@');
+      let DotIndex = e.value.indexOf('.');
       if (DotIndex == -1) {
-        e.setCustomValidity("Email should have format like abc@bca.com");
+        e.setCustomValidity('Email should have format like abc@bca.com');
         e.classList.add(styles.invalid);
       } else {
         AtIndex = AtIndex == -1 ? 0 : AtIndex;
@@ -281,14 +290,14 @@ const Sections = {
           e.setCustomValidity("Email should include @ and then '.'");
           e.classList.add(styles.invalid);
         } else {
-          e.setCustomValidity("");
+          e.setCustomValidity('');
           e.classList.remove(styles.invalid);
         }
       }
     }
 
     return (
-      <div id="ContactForm" className={styles.ContactForm}>
+      <div id='ContactForm' className={styles.ContactForm}>
         <div className={styles.contactForm_description}>
           <p>Because Trust Matters!</p>
           <p>
@@ -303,55 +312,55 @@ const Sections = {
         <div className={styles.contactForm_form}>
           <p>Get in touch</p>
           <form onSubmit={submitForm}>
-            <div className="form-floating mb-3">
+            <div className='form-floating mb-3'>
               <input
-                type="text"
-                className="form-control"
-                id="floatingInputName"
-                placeholder="Name"
+                type='text'
+                className='form-control'
+                id='floatingInputName'
+                placeholder='Name'
                 onKeyDown={onlyCharacters}
                 required
-                name="name"
+                name='name'
               />
-              <label htmlFor="floatingInputName">Name</label>
+              <label htmlFor='floatingInputName'>Name</label>
             </div>
-            <div className="form-floating mb-3">
+            <div className='form-floating mb-3'>
               <input
-                type="email"
-                className="form-control"
-                id="floatingInputEmail"
-                placeholder="name@example.com"
+                type='email'
+                className='form-control'
+                id='floatingInputEmail'
+                placeholder='name@example.com'
                 onChange={(e) => validateEmail(e.target)}
-                name="email"
+                name='email'
               />
-              <label htmlFor="floatingInputEmail">Email address</label>
+              <label htmlFor='floatingInputEmail'>Email address</label>
             </div>
-            <div className="form-floating mb-3">
+            <div className='form-floating mb-3'>
               <input
-                type="tel"
-                className="form-control"
-                id="floatingInputMobile"
-                placeholder="e.g. 839078716"
+                type='tel'
+                className='form-control'
+                id='floatingInputMobile'
+                placeholder='e.g. 839078716'
                 maxLength={10}
                 required
-                name="mobile"
+                name='mobile'
                 onKeyDown={onlyDigits}
               />
-              <label htmlFor="floatingInputMobile">Mobile Number</label>
+              <label htmlFor='floatingInputMobile'>Mobile Number</label>
             </div>
-            <div className="form-floating">
+            <div className='form-floating'>
               <textarea
-                className="form-control"
-                placeholder="Leave a message here"
-                id="floatingTextarea2"
-                style={{ minHeight: "8em" }}
+                className='form-control'
+                placeholder='Leave a message here'
+                id='floatingTextarea2'
+                style={{ minHeight: '8em' }}
                 required
-                name="msg"
+                name='msg'
               ></textarea>
-              <label htmlFor="floatingTextarea2">Message</label>
+              <label htmlFor='floatingTextarea2'>Message</label>
             </div>
             <div className={styles.button}>
-              <button type="submit">Get a callback</button>
+              <button type='submit'>Get a callback</button>
             </div>
           </form>
         </div>
@@ -366,9 +375,9 @@ const Sections = {
       <div className={styles.FooterLinks}>
         <div className={styles.FooterLinks__cell}>
           <Image
-            src="/pixels/logo/blue-bg.png"
-            alt="Avenue Corporation Logo"
-            layout="responsive"
+            src='/pixels/logo/blue-bg.png'
+            alt='Avenue Corporation Logo'
+            layout='responsive'
             width={80}
             height={40}
           />
@@ -384,49 +393,49 @@ const Sections = {
         <div className={styles.FooterLinks__cell}>
           <label>Contact Us</label>
           <span className={styles.FooterLinks__contactus}>
-            <a href="mailto:marketing@avenuecorporation.in">
+            <a href='mailto:marketing@avenuecorporation.in'>
               marketing@avenuecorporation.in
             </a>
             <br />
-            <a href="mailto:sales@avenuecorporation.in">
+            <a href='mailto:sales@avenuecorporation.in'>
               sales@avenuecorporation.in
             </a>
             <br />
-            <a href="mailto:salesavenuecorporation@gmail.com">
+            <a href='mailto:salesavenuecorporation@gmail.com'>
               salesavenuecorporation@gmail.com
             </a>
             <br />
-            <a href="tel:9730272570">+91 9730272570</a>
+            <a href='tel:9730272570'>+91 9730272570</a>
             <br />
-            <a href="tel:8380840125">+91 8380840125</a>
+            <a href='tel:8380840125'>+91 8380840125</a>
           </span>
           <span className={styles.socials}>
-            <Link href={socialLinks["linkedin"] || ""}>
+            <Link href={socialLinks['linkedin'] || ''}>
               <span>
                 <FontAwesomeIcon icon={faLinkedin} listItem />
               </span>
             </Link>
-            <Link href={socialLinks["instagram"] || ""}>
+            <Link href={socialLinks['instagram'] || ''}>
               <span>
                 <FontAwesomeIcon icon={faInstagram} listItem />
               </span>
             </Link>
-            <Link href={socialLinks["twitter"] || ""}>
+            <Link href={socialLinks['twitter'] || ''}>
               <span>
                 <FontAwesomeIcon icon={faTwitter} listItem />
               </span>
             </Link>
-            <Link href={socialLinks["youtube"] || ""}>
+            <Link href={socialLinks['youtube'] || ''}>
               <span>
                 <FontAwesomeIcon icon={faYoutube} listItem />
               </span>
             </Link>
-            <Link href={socialLinks["whatsapp"] || ""}>
+            <Link href={socialLinks['whatsapp'] || ''}>
               <span>
                 <FontAwesomeIcon icon={faWhatsapp} listItem />
               </span>
             </Link>
-            <Link href={socialLinks["facebook"] || ""}>
+            <Link href={socialLinks['facebook'] || ''}>
               <span>
                 <FontAwesomeIcon icon={faFacebook} listItem />
               </span>
@@ -437,16 +446,16 @@ const Sections = {
           <label>Quick Links</label>
           <ul>
             <li>
-              <Link href={"/about"}>About Us</Link>
+              <Link href={'/about'}>About Us</Link>
             </li>
             <li>
-              <Link href={"/contact"}>Contact Us</Link>
+              <Link href={'/contact'}>Contact Us</Link>
             </li>
             <li>
-              <Link href={"/about"}>Privacy Policy</Link>
+              <Link href={'/about'}>Privacy Policy</Link>
             </li>
             <li>
-              <Link href={"/about"}>Terms and Conditions</Link>
+              <Link href={'/about'}>Terms and Conditions</Link>
             </li>
           </ul>
         </div>
