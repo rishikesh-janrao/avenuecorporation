@@ -462,13 +462,11 @@ a.FooterLinks__contactus {
 .gridItem_1 {
   background-image: url('/pixels/solutions-grid/1.png');
 }
-.gridItem_1 span{
-  width: 17em !important;
-}
-/* .gridItem_1:hover {
+
+.gridItem_1:hover {
   background-image: url('/pixels/solutions-grid/hover-images/grid-1.gif');
   transform:  scale(1.5);
-} */
+}
 
 .gridItem_2 {
   background-image: url('/pixels/solutions-grid/2.png');

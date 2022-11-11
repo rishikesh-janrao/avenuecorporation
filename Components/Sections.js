@@ -115,20 +115,11 @@ const Sections = {
     </div>
   ),
   Solutions: () => {
-    const [hoveredSlide, setHover] = useState(0);
     return (
       <div className={styles.solutions}>
         <label>Solutions</label>
         <div className={styles.solutionsGridContainer}>
-          <div className={`${styles.gridItem} ${styles.gridItem_1}`} onFocus={(e)=>setHover(1)}>
-            { hoveredSlide == 1 && (<Image
-              src='/pixels/solutions-grid/hover-images/grid-1.gif'
-              alt='Avenue Corporation grid 1'
-              layout='responsive'
-              width={100}
-              height={100}
-            />)}
-          </div>
+          <div className={`${styles.gridItem} ${styles.gridItem_1}`}></div>
           <div className={`${styles.gridItem} ${styles.gridItem_2}`}></div>
           <div className={`${styles.gridItem} ${styles.gridItem_3}`}></div>
         </div>
