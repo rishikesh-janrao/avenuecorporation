@@ -40,8 +40,6 @@ function SwiperSlider(props) {
                     src={slide.webPath}
                     alt={slide.alt}
                     layout='fill'
-                    width={80}
-                    height={40}
                   />
                   {/* <img
                     className={swiperStyles.Image}
@@ -65,8 +63,6 @@ function SwiperSlider(props) {
                 src={el.path}
                 alt={el.alt}
                 layout='fill'
-                width={80}
-                height={40}
               />
               {/* <img src={el.path} alt={el.alt} /> */}
             </SwiperSlide>

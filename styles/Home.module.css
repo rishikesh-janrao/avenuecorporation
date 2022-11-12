@@ -454,17 +454,17 @@ a.FooterLinks__contactus {
 
 .gridItem:hover {
   background-size: 10em 8.5em;
-  transform: scale(2);
   transition: transform 0.2s ease-out;
   background-position: center;
 }
 .gridItem span{
   width: 17em !important;
 }
-
-.gridItem:hover{
+.gridItem:hover span{
   transform: scale(0.8);
+  transition: transform 0.3s ease-in;
 }
+
 
 .gridItem_5:hover {
   transform: rotateX(60deg);

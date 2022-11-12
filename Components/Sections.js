@@ -26,7 +26,7 @@ import { useContext, useState } from 'react';
 const Sections = {
   HomeSlider: () => <SwiperSlider HomeSlider={true} />,
   AboutUs: () => (
-    <div className={styles.panel}>
+    <div id='about' className={styles.panel}>
       <label className={styles.panelTitle}>About Us</label>
       <div className={styles.panelBody}>
         <div className={styles.panelBody_description}>
@@ -516,7 +516,7 @@ const Sections = {
             Pump, Sanaswadi, Tq. Shirur, Dist. Pune - 412208.
           </a>
         </div>
-        <div className={styles.FooterLinks__cell}>
+        <div id='contact' className={styles.FooterLinks__cell}>
           <label>Contact Us</label>
           <span className={styles.FooterLinks__contactus}>
             <a href='mailto:marketing@avenuecorporation.in'>

@@ -8,7 +8,6 @@ import '../styles/z.index.css';
 import NavigationContext from '../Contexts/NavigationContext';
 import MenuList from '../Configs/MenuItems';
 import SocialLinks from '../Configs/SocialLinks';
-import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import SliderProps from '../Configs/SliderProps';
 import Head from 'next/head';

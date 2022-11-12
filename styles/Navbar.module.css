@@ -23,6 +23,7 @@
 .list {
     list-style: none;
     right: 0.6em;
+    margin: 0;
 }
 
 .hamList {

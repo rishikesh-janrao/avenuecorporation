@@ -15,7 +15,8 @@ const MenuList = [
         id:"2",
         name:"about",
         description:"About Us",
-        path:"/about",
+        // path:"/about",
+        path:"#about",
         classes:``,
         subMenu:[]
     },
@@ -83,7 +84,8 @@ const MenuList = [
         id:"6",
         name:"contact",
         description:"Contact Us",
-        path:"/contact",
+        // path:"/contact",
+        path:"#contact",
         classes:``,
         subMenu:[]
     },

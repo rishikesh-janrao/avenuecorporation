@@ -98,7 +98,7 @@ export default Navbar;
 function SubMenu({ id, description, name, path, subMenu }) {
   return (
     <div className={navbarStyles.subMenuTitle}>
-      <a>
+      <a href={path}>
         {description}
         <span className={navbarStyles.arrow}>
           <span className={navbarStyles.arrowLine1}></span>
