@@ -30,7 +30,7 @@ function Navbar(props) {
             alt='Avenue Corporation Logo'
             layout='responsive'
             width={80}
-            height={40}
+            height={42}
           />
         </div>
       ) : (
@@ -40,7 +40,7 @@ function Navbar(props) {
             alt='Avenue Corporation Logo'
             layout='responsive'
             width={80}
-            height={40}
+            height={42}
           />
         </div>
       )}

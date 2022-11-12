@@ -508,9 +508,9 @@ const Sections = {
             height={40}
           />
         </div>
-        <div className={styles.FooterLinks__cell}>
+        <div id='address' className={styles.FooterLinks__cell}>
           <label>Head Office</label>
-          <a>
+          <a href='#address'>
             <p>Avenue Corporation</p>
             Gate no 984/3, M/S Shirke-Bricks Industries Compound, Next to Span
             Pump, Sanaswadi, Tq. Shirur, Dist. Pune - 412208.

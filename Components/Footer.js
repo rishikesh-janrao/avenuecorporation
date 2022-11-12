@@ -9,8 +9,8 @@ function Footer(props) {
     <>
     {router.route != '/' && (<Sections.MeetOurClients showClientSlider={false}/>)}
     <Sections.FooterLinks />
-    <footer className={footerStyles.footer}>
-      <a>
+    <footer id='copyright' className={footerStyles.footer}>
+      <a href='#copyright'>
         <span>© Copyright 2022 Avenue Corporation.&nbsp;</span> 
         <span>All rights reserved.</span>
       </a>
