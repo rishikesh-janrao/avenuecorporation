@@ -30,7 +30,7 @@
   flex-direction: column;
   color: var(--avenue-blue);
   row-gap: 1em;
-  margin-top: 2em;
+  margin: 2em 0em 1em 0em;
 }
 
 .panelTitle {
@@ -458,52 +458,16 @@ a.FooterLinks__contactus {
   transition: transform 0.2s ease-out;
   background-position: center;
 }
-
-.gridItem_1 {
-  background-image: url('/pixels/solutions-grid/1.png');
+.gridItem span{
+  width: 17em !important;
 }
 
-.gridItem_1:hover {
-  background-image: url('/pixels/solutions-grid/hover-images/grid-1.gif');
-  transform:  scale(1.5);
+.gridItem:hover{
+  transform: scale(0.8);
 }
 
-.gridItem_2 {
-  background-image: url('/pixels/solutions-grid/2.png');
-}
-.gridItem_2:hover {
-  background-image: url('/pixels/solutions-grid/hover-images/grid-2.gif');
-}
-
-.gridItem_3 {
-  background-image: url('/pixels/solutions-grid/3.png');
-}
-.gridItem_3:hover {
-  background-image: url('/pixels/solutions-grid/hover-images/grid-3.gif');
-  background-size: contain;
-  transform: scale(1.1);
-}
-
-.gridItem_4 {
-  background-image: url('/pixels/solutions-grid/4.png');
-}
-.gridItem_4:hover {
-  background-image: url('/pixels/solutions-grid/hover-images/grid-4.gif');
-}
-
-.gridItem_5 {
-  background-image: url('/pixels/solutions-grid/5.png');
-}
 .gridItem_5:hover {
-  background-image: url('/pixels/solutions-grid/hover-images/grid-5.gif');
-  transform: rotateX(45deg) scale(1.5);
-}
-
-.gridItem_6 {
-  background-image: url('/pixels/solutions-grid/6.png');
-}
-.gridItem_6:hover {
-  background-image: url('/pixels/solutions-grid/hover-images/grid-6.gif');
+  transform: rotateX(60deg);
 }
 
 @media screen and (max-width: 480px) {

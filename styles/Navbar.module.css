@@ -122,6 +122,11 @@
 .subMenu li:last-child{
     border-bottom: none
 }
+.subMenu li:hover{
+    background-color: var(--avenue-white);
+    color: var(--avenue-blue);
+}
+
 .subMenuTitle{
     z-index: 2;
 }

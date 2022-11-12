@@ -115,21 +115,156 @@ const Sections = {
     </div>
   ),
   Solutions: () => {
+    //START REUSABLE COMPONENT CHECK - PENDING
+    const [hover, sethover] = useState(0);
     return (
       <div className={styles.solutions}>
         <label>Solutions</label>
         <div className={styles.solutionsGridContainer}>
-          <div className={`${styles.gridItem} ${styles.gridItem_1}`}></div>
-          <div className={`${styles.gridItem} ${styles.gridItem_2}`}></div>
-          <div className={`${styles.gridItem} ${styles.gridItem_3}`}></div>
+          <div
+            className={`${styles.gridItem} ${styles.gridItem_1}`}
+            onMouseEnter={() => sethover(1)}
+            onMouseLeave={() => sethover(0)}
+          >
+            {hover == 1 ? (
+              <Image
+                src='/pixels/solutions-grid/hover-images/grid-1.gif'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            ) : (
+              <Image
+                src='/pixels/solutions-grid/1.png'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            )}
+          </div>
+          <div
+            className={`${styles.gridItem} ${styles.gridItem_2}`}
+            onMouseEnter={() => sethover(2)}
+            onMouseLeave={() => sethover(0)}
+          >
+            {hover == 2 ? (
+              <Image
+                src='/pixels/solutions-grid/hover-images/grid-2.gif'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            ) : (
+              <Image
+                src='/pixels/solutions-grid/2.png'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            )}
+          </div>
+          <div
+            className={`${styles.gridItem} ${styles.gridItem_3}`}
+            onMouseEnter={() => sethover(3)}
+            onMouseLeave={() => sethover(0)}
+          >
+            {hover == 3 ? (
+              <Image
+                src='/pixels/solutions-grid/hover-images/grid-3.gif'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            ) : (
+              <Image
+                src='/pixels/solutions-grid/3.png'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            )}
+          </div>
         </div>
         <div className={styles.solutionsGridContainer}>
-          <div className={`${styles.gridItem} ${styles.gridItem_4}`}></div>
-          <div className={`${styles.gridItem} ${styles.gridItem_5}`}></div>
-          <div className={`${styles.gridItem} ${styles.gridItem_6}`}></div>
+          <div
+            className={`${styles.gridItem} ${styles.gridItem_4}`}
+            onMouseEnter={() => sethover(4)}
+            onMouseLeave={() => sethover(0)}
+          >
+            {hover == 4 ? (
+              <Image
+                src='/pixels/solutions-grid/hover-images/grid-4.gif'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            ) : (
+              <Image
+                src='/pixels/solutions-grid/4.png'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            )}
+          </div>
+          <div
+            className={`${styles.gridItem} ${styles.gridItem_5}`}
+            onMouseEnter={() => sethover(5)}
+            onMouseLeave={() => sethover(0)}
+          >
+            {hover == 5 ? (
+              <Image
+                src='/pixels/solutions-grid/hover-images/grid-5.gif'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            ) : (
+              <Image
+                src='/pixels/solutions-grid/5.png'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            )}
+          </div>
+          <div
+            className={`${styles.gridItem} ${styles.gridItem_6}`}
+            onMouseEnter={() => sethover(6)}
+            onMouseLeave={() => sethover(0)}
+          >
+            {hover == 6 ? (
+              <Image
+                src='/pixels/solutions-grid/hover-images/grid-6.gif'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            ) : (
+              <Image
+                src='/pixels/solutions-grid/6.png'
+                alt='Avenue Corporation Logo'
+                layout='responsive'
+                width={80}
+                height={40}
+              />
+            )}
+          </div>
         </div>
       </div>
     );
+    //END REUSABLE COMPONENT CHECK - PENDING
   },
   MeetOurClients: ({ showClientSlider }) => (
     <div className={styles.panel}>
