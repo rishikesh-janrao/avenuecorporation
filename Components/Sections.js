@@ -383,6 +383,7 @@ const Sections = {
         data.name = controls.name.value;
         data.email = controls.email.value;
         data.mobile = controls.mobile.value;
+        data.companyname = controls.companyname.value;
         data.msg = controls.msg.value;
         formData = data;
         console.log(formData);
@@ -474,6 +475,17 @@ const Sections = {
               />
               <label htmlFor='floatingInputMobile'>Mobile Number</label>
             </div>
+            <div className='form-floating mb-3'>
+              <input
+                type='text'
+                className='form-control'
+                id='floatingInputCompanyName'
+                placeholder='e.g. Avenue Corporation'
+                maxLength={100}
+                name='companyname'
+              />
+              <label htmlFor='floatingInputMobile'>Company Name</label>
+            </div>
             <div className='form-floating'>
               <textarea
                 className='form-control'
@@ -551,7 +563,7 @@ const Sections = {
                 <FontAwesomeIcon icon={faTwitter} listItem />
               </span>
             </Link>
-            <Link href={socialLinks['youtube'] || ''}>
+            <Link target={'_blank'} href={socialLinks['youtube'] || ''}>
               <span>
                 <FontAwesomeIcon icon={faYoutube} listItem />
               </span>
