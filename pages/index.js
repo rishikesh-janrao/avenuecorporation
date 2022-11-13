@@ -16,7 +16,7 @@ function Home({ props }) {
         <Sections.AboutUs />
         <Sections.Solutions />
         <Sections.WhyUs />
-        <Sections.MeetOurClients showClientSlider={true}/>
+        <Sections.MeetOurClients showClientSlider={false}/>
         <Sections.WorkCompleted reqCount={2500} />
         <Sections.ContactForm />
       </main>
