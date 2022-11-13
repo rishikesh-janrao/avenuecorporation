@@ -1,0 +1,86 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2em;
+}
+
+.banner {
+    height: 25em;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 10;
+    display: flex;
+}
+
+.bannerTile {
+    height: 100%;
+    width: 100%;
+}
+
+.bannerContents {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 4em;
+    padding-top: 6em;
+    justify-content: center;
+    color: var(--avenue-white);
+}
+
+.bannerContents label {
+    font-size: 2.5em;
+}
+
+.bannerContents p {
+    font-size: 1em;
+    padding-left: 0.4em;
+}
+
+.contact_us_button {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+}
+
+.contact_us_button span {
+    display: flex;
+    background-color: var(--avenue-blue);
+    color: var(--avenue-white);
+    font-size: 1em;
+    justify-content: center;
+    border-radius: 1.2em;
+    padding: 0.3em 1em;
+    cursor: pointer;
+}
+
+.contact_us_button span:hover {
+    background-color: var(--avenue-light-blue);
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .bannerTile{
+        display: block;
+    }
+    .bannerTile span{
+        height: 40vh !important;
+    }
+    .bannerContents{
+        height: 25em;
+        padding: 0em;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        column-gap: 1em;
+    }
+    .bannerContents label{
+        font-size: 1.9em;
+    }
+    .contact_us_button{
+        justify-content: center;
+    }
+}

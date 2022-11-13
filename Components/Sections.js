@@ -22,6 +22,7 @@ import Image from 'next/image';
 import NavigationContext from '../Contexts/NavigationContext';
 
 import styles from '../styles/Home.module.css';
+import pageStyles from '../styles/Page.module.css';
 import { useContext, useState } from 'react';
 const Sections = {
   HomeSlider: () => <SwiperSlider HomeSlider={true} />,
@@ -440,9 +441,9 @@ const Sections = {
             width='600'
             height='450'
             className={styles.gmap}
-            allowfullscreen=''
+            allowFullScreen=''
             loading='lazy'
-            referrerpolicy='no-referrer-when-downgrade'
+            referrerPolicy='no-referrer-when-downgrade'
           ></iframe>
         </div>
         <div className={styles.contactForm_form}>
@@ -605,6 +606,33 @@ const Sections = {
               <Link href={'/about'}>Terms and Conditions</Link>
             </li>
           </ul>
+        </div>
+      </div>
+    );
+  },
+  PageBanner: ({ title, description, image, alt }) => {
+    return (
+      <div className={pageStyles.banner}>
+        <div className={pageStyles.bannerTile}>
+          <Image
+            src={`/pixels/pages/${image}`}
+            layout='responsive'
+            width={100}
+            height={20}
+            alt={alt}
+            objectFit={'cover'}
+          />
+        </div>
+        <div className={pageStyles.bannerContents}>
+          <label>{title}</label>
+          <p>
+            {description}
+          </p>
+          <div className={pageStyles.contact_us_button}>
+            <Link href='#contact'>
+              <span>Contact Us</span>
+            </Link>
+          </div>
         </div>
       </div>
     );
