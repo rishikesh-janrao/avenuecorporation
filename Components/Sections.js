@@ -435,6 +435,15 @@ const Sections = {
             our partners who trusted in us because, like you, we also value our
             customers’ trust!
           </p>
+          <iframe
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1889.882554922819!2d74.09764783546999!3d18.674533597432422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xae47038d89ce5a0c!2zMTjCsDQwJzI4LjMiTiA3NMKwMDUnNTUuMSJF!5e0!3m2!1sen!2sin!4v1668328830736!5m2!1sen!2sin'
+            width='600'
+            height='450'
+            className={styles.gmap}
+            allowfullscreen=''
+            loading='lazy'
+            referrerpolicy='no-referrer-when-downgrade'
+          ></iframe>
         </div>
         <div className={styles.contactForm_form}>
           <p>Get in touch</p>
@@ -522,7 +531,7 @@ const Sections = {
         </div>
         <div id='address' className={styles.FooterLinks__cell}>
           <label>Head Office</label>
-          <a href='#address'>
+          <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
             <p>Avenue Corporation</p>
             Gate no 984/3, M/S Shirke-Bricks Industries Compound, Next to Span
             Pump, Sanaswadi, Tq. Shirur, Dist. Pune - 412208.
