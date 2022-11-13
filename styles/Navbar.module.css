@@ -14,11 +14,12 @@
 }
 
 .logo {
-    display: inline-block;
+    display: block;
     min-width: 15vw;
     width: auto;
     flex-direction: column;
-    margin: 2em 0em 2em 2em;
+    margin-left: 2em;
+    padding: 2em;
 }
 .list {
     list-style: none;
