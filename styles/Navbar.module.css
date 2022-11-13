@@ -195,6 +195,7 @@
         margin-left: 2em;
         min-width: 30vw;
         height: auto;
+        padding: 0;
     }
     .logo span span{
         padding-top: 40% !important;
