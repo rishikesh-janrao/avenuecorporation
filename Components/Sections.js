@@ -284,7 +284,13 @@ const Sections = {
               styles.panelBody_actions_meet_our_clients_contact_us_image
             }
           >
-            <FontAwesomeIcon icon={faEnvelope} />
+            <Image 
+              src={"/pixels/email-image.png"}
+              layout="responsive"
+              width={100}
+              height={100}
+              alt="Email Image"
+            />
           </div>
           <div
             className={
