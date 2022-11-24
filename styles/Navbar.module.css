@@ -102,7 +102,7 @@
     transition: 0.3s ease;
     color: var(--avenue-white);
 }
-.subMenu:hover{
+.subMenu:not(.subMenuScrollHide):hover{
     display: flex;
 }
 .subMenu li:first-child{
@@ -135,6 +135,9 @@
 .subMenuTitle a:hover + .subMenu{
     display: flex;
     transition: 2s ease;
+}
+.subMenuScrollHide{
+    display: none;
 }
 .subMenuTitle a{
     display: inline-flex;

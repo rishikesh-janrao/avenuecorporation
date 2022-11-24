@@ -96,6 +96,8 @@ function Navbar(props) {
 export default Navbar;
 
 function SubMenu({ id, description, name, path, subMenu }) {
+  
+  const navContext = useContext(NavigationContext);
   return (
     <div className={navbarStyles.subMenuTitle}>
       <a href={path}>
@@ -105,7 +107,7 @@ function SubMenu({ id, description, name, path, subMenu }) {
           <span className={navbarStyles.arrowLine2}></span>
         </span>
       </a>
-      <ul className={navbarStyles.subMenu}>
+      <ul className={`${navbarStyles.subMenu} ${navContext.scrollY ? navbarStyles.subMenuScrollHide : ''}`}>
         {subMenu.map((item) => (
           <li key={item.id}>
             <Link href={path + item.path}>

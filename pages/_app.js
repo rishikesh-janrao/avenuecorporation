@@ -1,7 +1,7 @@
 import Layout from '../Components/Layout';
 import { UAParser } from 'ua-parser-js';
 import HomeContext from '../Contexts/HomeContext';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import '../styles/globals.css';
 import '../styles/z.index.css';
@@ -19,6 +19,7 @@ const IsMobile = osName === 'ios' || osName === 'android';
 
 function App({ Component, pageProps, router }) {
   const [hamClicked, setHamClicked] = useState(false);
+  const [scrollY, setScrollY] = useState(false);
   const currentPageId = MenuList.find(
     (el) => el.name == router.pathname.replace('/', '')
   )?.id;
@@ -28,6 +29,19 @@ function App({ Component, pageProps, router }) {
 
   const { SliderHomePageProps, SliderClientProps } = SliderProps;
 
+  const onScroll = useCallback(event => {
+    setScrollY(window.pageYOffset > 5);
+  }, []);
+
+  useEffect(() => {
+    //add eventlistener to window
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // remove event on unmount to prevent a memory leak with the cleanup
+    return () => {
+      window.removeEventListener("scroll", onScroll, { passive: true });
+    }
+  }, []);
+
   return (
     <NavigationContext.Provider
       value={{
@@ -35,6 +49,7 @@ function App({ Component, pageProps, router }) {
         selectedMenuItem: selectedMenuItem,
         setSelectedMenuItem: setSelectedMenuItem,
         socialLinks: SocialLinks,
+        scrollY:scrollY
       }}
     >
       <HomeContext.Provider
