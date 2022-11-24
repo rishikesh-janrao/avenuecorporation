@@ -40,6 +40,7 @@ function SwiperSlider(props) {
                     src={slide.webPath}
                     alt={slide.alt}
                     layout='fill'
+                    priority
                   />
                   {/* <img
                     className={swiperStyles.Image}
