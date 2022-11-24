@@ -4,6 +4,7 @@ import HomeContext from '../Contexts/HomeContext';
 import styles from '../styles/Layout.module.css';
 import Footer from './Footer';
 import HamburgerNavbar from './HamburgerNavbar';
+import Modal from './Modal';
 import Navbar from './Navbar';
 
 const Layout = ({ children }) => {
@@ -20,6 +21,7 @@ const Layout = ({ children }) => {
       <Navbar />
       {children}
       <Footer />
+      <Modal />
     </div>
   );
 };

@@ -232,6 +232,18 @@ body::-webkit-scrollbar-button {
   background-color: var(--avenue-light-blue);
 }
 
+.modal{
+  z-index: 101 !important;
+  width: 100vw !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  height: auto !important;
+}
+.modal-container{
+  position: absolute;
+  z-index: 103 !important;
+  opacity: 1 !important;
+}
 @media screen and (max-width:480px) {
   .swiper-slide p {
     position: absolute;

@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import SwiperSlider from '../Components/SwiperSlider';
-import Link from 'next/link';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SwiperSlider from "../Components/SwiperSlider";
+import Link from "next/link";
 import {
   faLightbulb,
   faLaptop,
@@ -8,7 +8,7 @@ import {
   faMoneyCheckAlt,
   faLock,
   faEnvelope,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
   faInstagram,
@@ -16,18 +16,18 @@ import {
   faTwitter,
   faWhatsapp,
   faYoutube,
-} from '@fortawesome/free-brands-svg-icons';
-import NumberCounter from '../Components/NumberCounter';
-import Image from 'next/image';
-import NavigationContext from '../Contexts/NavigationContext';
+} from "@fortawesome/free-brands-svg-icons";
+import NumberCounter from "../Components/NumberCounter";
+import Image from "next/image";
+import NavigationContext from "../Contexts/NavigationContext";
 
-import styles from '../styles/Home.module.css';
-import pageStyles from '../styles/Page.module.css';
-import { useContext, useState } from 'react';
+import styles from "../styles/Home.module.css";
+import pageStyles from "../styles/Page.module.css";
+import { useContext, useState } from "react";
 const Sections = {
   HomeSlider: () => <SwiperSlider HomeSlider={true} />,
   AboutUs: () => (
-    <div id='about' className={styles.panel}>
+    <div id="about" className={styles.panel}>
       <label className={styles.panelTitle}>About Us</label>
       <div className={styles.panelBody}>
         <div className={styles.panelBody_description}>
@@ -41,12 +41,12 @@ const Sections = {
         </div>
         <div className={styles.panelBody_actions}>
           <div className={styles.panelButton}>
-            <Link href='/about'>
+            <Link href="/about">
               <a>About Us</a>
             </Link>
           </div>
           <div className={styles.panelButton}>
-            <Link href='/solutions'>
+            <Link href="/solutions">
               <a>Solutions</a>
             </Link>
           </div>
@@ -129,17 +129,17 @@ const Sections = {
           >
             {hover == 1 ? (
               <Image
-                src='/pixels/solutions-grid/hover-images/grid-1.gif'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/hover-images/grid-1.gif"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
             ) : (
               <Image
-                src='/pixels/solutions-grid/1.png'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/1.png"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
@@ -152,17 +152,17 @@ const Sections = {
           >
             {hover == 2 ? (
               <Image
-                src='/pixels/solutions-grid/hover-images/grid-2.gif'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/hover-images/grid-2.gif"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
             ) : (
               <Image
-                src='/pixels/solutions-grid/2.png'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/2.png"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
@@ -175,17 +175,17 @@ const Sections = {
           >
             {hover == 3 ? (
               <Image
-                src='/pixels/solutions-grid/hover-images/grid-3.gif'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/hover-images/grid-3.gif"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
             ) : (
               <Image
-                src='/pixels/solutions-grid/3.png'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/3.png"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
@@ -200,17 +200,17 @@ const Sections = {
           >
             {hover == 4 ? (
               <Image
-                src='/pixels/solutions-grid/hover-images/grid-4.gif'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/hover-images/grid-4.gif"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
             ) : (
               <Image
-                src='/pixels/solutions-grid/4.png'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/4.png"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
@@ -223,17 +223,17 @@ const Sections = {
           >
             {hover == 5 ? (
               <Image
-                src='/pixels/solutions-grid/hover-images/grid-5.gif'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/hover-images/grid-5.gif"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
             ) : (
               <Image
-                src='/pixels/solutions-grid/5.png'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/5.png"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
@@ -246,17 +246,17 @@ const Sections = {
           >
             {hover == 6 ? (
               <Image
-                src='/pixels/solutions-grid/hover-images/grid-6.gif'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/hover-images/grid-6.gif"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
             ) : (
               <Image
-                src='/pixels/solutions-grid/6.png'
-                alt='Avenue Corporation Logo'
-                layout='responsive'
+                src="/pixels/solutions-grid/6.png"
+                alt="Avenue Corporation Logo"
+                layout="responsive"
                 width={80}
                 height={40}
               />
@@ -284,7 +284,7 @@ const Sections = {
               styles.panelBody_actions_meet_our_clients_contact_us_image
             }
           >
-            <Image 
+            <Image
               src={"/pixels/email-image.png"}
               layout="responsive"
               width={100}
@@ -327,7 +327,7 @@ const Sections = {
                 styles.panelBody_actions_meet_our_clients_contact_us_button
               }
             >
-              <Link href='/about'>
+              <Link href="/about">
                 <div>Contact Us</div>
               </Link>
             </div>
@@ -342,7 +342,7 @@ const Sections = {
         <div className={styles.workCompleted__1}>
           <NumberCounter
             count={2500}
-            description='Requirements met'
+            description="Requirements met"
             isPositive={true}
             delay={1}
           />
@@ -350,7 +350,7 @@ const Sections = {
         <div className={styles.workCompleted__2}>
           <NumberCounter
             count={100}
-            description='Curated Products'
+            description="Curated Products"
             isPositive={true}
             delay={50}
           />
@@ -358,7 +358,7 @@ const Sections = {
         <div className={styles.workCompleted__3}>
           <NumberCounter
             count={20}
-            description='Product Categories'
+            description="Product Categories"
             isPositive={true}
             delay={200}
           />
@@ -367,7 +367,7 @@ const Sections = {
     );
   },
   ContactForm: ({}) => {
-    const bt = require('bootstrap/dist/css/bootstrap.css');
+    const bt = require("bootstrap/dist/css/bootstrap.css");
     let formData = {};
 
     function validateForm(controls) {
@@ -412,10 +412,10 @@ const Sections = {
       }
     }
     function validateEmail(e) {
-      let AtIndex = e.value.indexOf('@');
-      let DotIndex = e.value.indexOf('.');
+      let AtIndex = e.value.indexOf("@");
+      let DotIndex = e.value.indexOf(".");
       if (DotIndex == -1) {
-        e.setCustomValidity('Email should have format like abc@bca.com');
+        e.setCustomValidity("Email should have format like abc@bca.com");
         e.classList.add(styles.invalid);
       } else {
         AtIndex = AtIndex == -1 ? 0 : AtIndex;
@@ -424,97 +424,97 @@ const Sections = {
           e.setCustomValidity("Email should include @ and then '.'");
           e.classList.add(styles.invalid);
         } else {
-          e.setCustomValidity('');
+          e.setCustomValidity("");
           e.classList.remove(styles.invalid);
         }
       }
     }
 
     return (
-      <div id='ContactForm' className={styles.ContactForm}>
+      <div id="ContactForm" className={styles.ContactForm}>
         <div className={styles.contactForm_description}>
           <p>Because Trust Matters!</p>
           <p>
             As a young organisation, our steps are cautious. Experienced
             professionals thoroughly guide handholding for every action taken.
-            It has been a wonderful and blessed journey for Avenue Corp so far.
-            We would like to bestow our sincere gratitude and fervent regards to
-            our partners who trusted in us because, like you, we also value our
-            customers’ trust!
+            It has been a wonderful and blessed journey for <u>Avenue Corp</u>{" "}
+            so far. We would like to bestow our sincere gratitude and fervent
+            regards to our partners who trusted in us because, like you, we also
+            value our customers’ trust!
           </p>
           <iframe
-            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1889.882554922819!2d74.09764783546999!3d18.674533597432422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xae47038d89ce5a0c!2zMTjCsDQwJzI4LjMiTiA3NMKwMDUnNTUuMSJF!5e0!3m2!1sen!2sin!4v1668328830736!5m2!1sen!2sin'
-            width='600'
-            height='450'
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1889.882554922819!2d74.09764783546999!3d18.674533597432422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xae47038d89ce5a0c!2zMTjCsDQwJzI4LjMiTiA3NMKwMDUnNTUuMSJF!5e0!3m2!1sen!2sin!4v1668328830736!5m2!1sen!2sin"
+            width="600"
+            height="450"
             className={styles.gmap}
-            allowFullScreen=''
-            loading='lazy'
-            referrerPolicy='no-referrer-when-downgrade'
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
         <div className={styles.contactForm_form}>
           <p>Get in touch</p>
           <form onSubmit={submitForm}>
-            <div className='form-floating mb-3'>
+            <div className="form-floating mb-3">
               <input
-                type='text'
-                className='form-control'
-                id='floatingInputName'
-                placeholder='Name'
+                type="text"
+                className="form-control"
+                id="floatingInputName"
+                placeholder="Name"
                 onKeyDown={onlyCharacters}
                 required
-                name='name'
+                name="name"
               />
-              <label htmlFor='floatingInputName'>Name</label>
+              <label htmlFor="floatingInputName">Name</label>
             </div>
-            <div className='form-floating mb-3'>
+            <div className="form-floating mb-3">
               <input
-                type='email'
-                className='form-control'
-                id='floatingInputEmail'
-                placeholder='name@example.com'
+                type="email"
+                className="form-control"
+                id="floatingInputEmail"
+                placeholder="name@example.com"
                 onChange={(e) => validateEmail(e.target)}
-                name='email'
+                name="email"
               />
-              <label htmlFor='floatingInputEmail'>Email address</label>
+              <label htmlFor="floatingInputEmail">Email address</label>
             </div>
-            <div className='form-floating mb-3'>
+            <div className="form-floating mb-3">
               <input
-                type='tel'
-                className='form-control'
-                id='floatingInputMobile'
-                placeholder='e.g. 839078716'
+                type="tel"
+                className="form-control"
+                id="floatingInputMobile"
+                placeholder="e.g. 839078716"
                 maxLength={10}
                 required
-                name='mobile'
+                name="mobile"
                 onKeyDown={onlyDigits}
               />
-              <label htmlFor='floatingInputMobile'>Mobile Number</label>
+              <label htmlFor="floatingInputMobile">Mobile Number</label>
             </div>
-            <div className='form-floating mb-3'>
+            <div className="form-floating mb-3">
               <input
-                type='text'
-                className='form-control'
-                id='floatingInputCompanyName'
-                placeholder='e.g. Avenue Corporation'
+                type="text"
+                className="form-control"
+                id="floatingInputCompanyName"
+                placeholder="e.g. Avenue Corporation"
                 maxLength={100}
-                name='companyname'
+                name="companyname"
               />
-              <label htmlFor='floatingInputMobile'>Company Name</label>
+              <label htmlFor="floatingInputMobile">Company Name</label>
             </div>
-            <div className='form-floating'>
+            <div className="form-floating">
               <textarea
-                className='form-control'
-                placeholder='Leave a message here'
-                id='floatingTextarea2'
-                style={{ minHeight: '8em' }}
+                className="form-control"
+                placeholder="Leave a message here"
+                id="floatingTextarea2"
+                style={{ minHeight: "8em" }}
                 required
-                name='msg'
+                name="msg"
               ></textarea>
-              <label htmlFor='floatingTextarea2'>Message</label>
+              <label htmlFor="floatingTextarea2">Message</label>
             </div>
             <div className={styles.button}>
-              <button type='submit'>Get a callback</button>
+              <button type="submit">Get a callback</button>
             </div>
           </form>
         </div>
@@ -524,19 +524,75 @@ const Sections = {
   FooterLinks: ({}) => {
     const navContext = useContext(NavigationContext);
     const socialLinks = navContext.socialLinks;
+    const showPrivacyPolicy = () => {
+      navContext.setModal({
+        styles: {
+          width: "60%",
+          height: "auto",
+          minHeight: "50%",
+        },
+        title: "Privacy Policy",
+        body: (
+          <div>
+              We{" "}
+              <q>
+                <strong>Avenue Corporation</strong>
+              </q>{" "}
+              are carrying out manufacturing of Heavy Duty Corrugated Boxes &
+              Complete Packaging Solution, is committed to grow by providing
+              it&lsquo;s all Customers a Cost-Effective Solution with Good
+              Quality Products, Services & Timely Deliveries always by reducing
+              In-Process Rejections, Machine Break down time, increasing
+              inspections at all stages & by monitoring daily production
+              planning. <br />
+              To enhance Customer&lsquo;s satisfaction{" "}
+              <q>
+                <u>Avenue Corp</u>
+              </q>{" "}
+              will strict to adherence of quality management system with all
+              legal requirements & continual improvements through proper
+              communication with customers & periodically trainings of all
+              employees. In its pursuits of excellence,{" "}
+              <q>
+                <u>Avenue Corp</u>
+              </q>{" "}
+              shall strive achievement of an Eco-Friendly Environment &
+              Employee&lsquo;s Satisfaction.{" "}
+              <q>
+                <u>Avenue Corp</u>
+              </q>{" "}
+              strive to offer a Unique Combination of Integrated Packaging
+              Solution & Services which unmatched by any other company to be the{" "}
+              <q>
+                <strong>ONLY ONE</strong>
+              </q>
+              .
+              <br />
+              <br />
+              <div style={{textAlign:"right"}}>
+                {" "}
+                Vaibhav Mumbare, Managing Director
+                <br />
+                Avenue Corporation, Pune (India)
+              </div>
+          </div>
+        ),
+      });
+      navContext.setModalVisible(true);
+    };
 
     return (
       <div className={styles.FooterLinks}>
         <div className={styles.FooterLinks__cell}>
           <Image
-            src='/pixels/logo/blue-bg.png'
-            alt='Avenue Corporation Logo'
-            layout='responsive'
+            src="/pixels/logo/blue-bg.png"
+            alt="Avenue Corporation Logo"
+            layout="responsive"
             width={80}
             height={40}
           />
         </div>
-        <div id='address' className={styles.FooterLinks__cell}>
+        <div id="address" className={styles.FooterLinks__cell}>
           <label>Head Office</label>
           <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
             <p>Avenue Corporation</p>
@@ -544,52 +600,52 @@ const Sections = {
             Pump, Sanaswadi, Tq. Shirur, Dist. Pune - 412208.
           </a>
         </div>
-        <div id='contact' className={styles.FooterLinks__cell}>
+        <div id="contact" className={styles.FooterLinks__cell}>
           <label>Contact Us</label>
           <span className={styles.FooterLinks__contactus}>
-            <a href='mailto:marketing@avenuecorporation.in'>
+            <a href="mailto:marketing@avenuecorporation.in">
               marketing@avenuecorporation.in
             </a>
             <br />
-            <a href='mailto:sales@avenuecorporation.in'>
+            <a href="mailto:sales@avenuecorporation.in">
               sales@avenuecorporation.in
             </a>
             <br />
-            <a href='mailto:salesavenuecorporation@gmail.com'>
+            <a href="mailto:salesavenuecorporation@gmail.com">
               salesavenuecorporation@gmail.com
             </a>
             <br />
-            <a href='tel:9730272570'>+91 9730272570</a>
+            <a href="tel:9730272570">+91 9730272570</a>
             <br />
-            <a href='tel:8380840125'>+91 8380840125</a>
+            <a href="tel:8380840125">+91 8380840125</a>
           </span>
           <span className={styles.socials}>
-            <Link href={socialLinks['linkedin'] || ''}>
+            <Link href={socialLinks["linkedin"] || ""}>
               <span>
                 <FontAwesomeIcon icon={faLinkedin} listItem />
               </span>
             </Link>
-            <Link href={socialLinks['instagram'] || ''}>
+            <Link href={socialLinks["instagram"] || ""}>
               <span>
                 <FontAwesomeIcon icon={faInstagram} listItem />
               </span>
             </Link>
-            <Link href={socialLinks['twitter'] || ''}>
+            <Link href={socialLinks["twitter"] || ""}>
               <span>
                 <FontAwesomeIcon icon={faTwitter} listItem />
               </span>
             </Link>
-            <Link target={'_blank'} href={socialLinks['youtube'] || ''}>
+            <Link target={"_blank"} href={socialLinks["youtube"] || ""}>
               <span>
                 <FontAwesomeIcon icon={faYoutube} listItem />
               </span>
             </Link>
-            <Link href={socialLinks['whatsapp'] || ''}>
+            <Link href={socialLinks["whatsapp"] || ""}>
               <span>
                 <FontAwesomeIcon icon={faWhatsapp} listItem />
               </span>
             </Link>
-            <Link href={socialLinks['facebook'] || ''}>
+            <Link href={socialLinks["facebook"] || ""}>
               <span>
                 <FontAwesomeIcon icon={faFacebook} listItem />
               </span>
@@ -600,17 +656,18 @@ const Sections = {
           <label>Quick Links</label>
           <ul>
             <li>
-              <Link href={'/about'}>About Us</Link>
+              <Link href={"/about"}>About Us</Link>
             </li>
             <li>
-              <Link href={'/contact'}>Contact Us</Link>
+              <Link href={"/contact"}>Contact Us</Link>
             </li>
-            <li>
-              <Link href={'/about'}>Privacy Policy</Link>
+            <li onClick={showPrivacyPolicy}>
+              Privacy Policy
+              {/* <Link href={'/about'}>Privacy Policy</Link> */}
             </li>
-            <li>
-              <Link href={'/about'}>Terms and Conditions</Link>
-            </li>
+            {/* <li>
+              <Link href={"/about"}>Terms and Conditions</Link>
+            </li> */}
           </ul>
         </div>
       </div>
@@ -622,20 +679,18 @@ const Sections = {
         <div className={pageStyles.bannerTile}>
           <Image
             src={`/pixels/pages/${image}`}
-            layout='responsive'
+            layout="responsive"
             width={100}
             height={20}
             alt={alt}
-            objectFit={'cover'}
+            objectFit={"cover"}
           />
         </div>
         <div className={pageStyles.bannerContents}>
           <label>{title}</label>
-          <p>
-            {description}
-          </p>
+          <p>{description}</p>
           <div className={pageStyles.contact_us_button}>
-            <Link href='#contact'>
+            <Link href="#contact">
               <span>Contact Us</span>
             </Link>
           </div>

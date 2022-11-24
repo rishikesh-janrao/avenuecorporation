@@ -6,7 +6,6 @@
     top: 0;
     bottom: 0;
 }
-
 @media screen and (max-width: 480px) {
     .hamMenu {
         top: 0;

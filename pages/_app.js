@@ -20,6 +20,9 @@ const IsMobile = osName === 'ios' || osName === 'android';
 function App({ Component, pageProps, router }) {
   const [hamClicked, setHamClicked] = useState(false);
   const [scrollY, setScrollY] = useState(false);
+  const [isModalVisible, setModalVisible] = useState(false);
+  const [modalDetails, setModal] = useState({});
+
   const currentPageId = MenuList.find(
     (el) => el.name == router.pathname.replace('/', '')
   )?.id;
@@ -49,7 +52,11 @@ function App({ Component, pageProps, router }) {
         selectedMenuItem: selectedMenuItem,
         setSelectedMenuItem: setSelectedMenuItem,
         socialLinks: SocialLinks,
-        scrollY:scrollY
+        scrollY:scrollY,
+        isModalVisible: isModalVisible,
+        setModalVisible: setModalVisible,
+        modalDetails:modalDetails,
+        setModal: setModal
       }}
     >
       <HomeContext.Provider

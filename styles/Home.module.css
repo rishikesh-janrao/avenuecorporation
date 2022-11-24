@@ -382,6 +382,7 @@
 
 .FooterLinks__cell li {
   margin-bottom: 0.5em;
+  cursor: pointer;
 }
 
 a.FooterLinks__contactus {
@@ -630,6 +631,17 @@ a.FooterLinks__contactus {
 
   .panelBody_description {
     padding: 0em 10vw;
+  }
+  .FooterLinks__cell:nth-child(2) {
+    width: 100%;
+  }
+  .FooterLinks__cell:last-child {
+    width: 100%;
+    margin-left: 2em;
+  }
+  .FooterLinks__cell:first-child {
+    width: 100%;
+    margin-right: 0.5em;
   }
 }
 

@@ -1,0 +1,71 @@
+.BackdropContainer{
+    width: 100vw;
+    height: auto;
+    display: flex;
+    background-color: black;
+    opacity: 0.8;
+    margin-bottom: -15em;
+}
+.Active{
+    display: flex !important;
+    justify-content: center;
+}
+.ModalContainer{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    background-color: white;
+    border-radius: 2em;
+}
+.titleContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    flex-direction: row;
+    height: 3em;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.5em;
+    height: 2em;
+    background-color: transparent;
+    text-decoration: underline;
+    border-bottom: 1px solid var(--avenue-light-gray);
+}
+.body{
+    padding: 4em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+.ModalFooter{
+    display: flex;
+    flex-direction: row;
+    height: 3.5em;
+    padding: 0.5em;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:480px) {
+    .ModalContainer{
+        width: 90% !important;
+        margin-top: 5vh;
+    }
+    .body{
+        padding: 1em;
+    }
+}
+@media (min-width:480px) and (max-width: 1000px) {
+    .ModalContainer{
+        width: 80% !important;
+        margin-top: 5vh;
+    }
+    .body{
+        padding: 2em;
+    }
+}
