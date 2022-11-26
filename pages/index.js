@@ -1,10 +1,11 @@
 import Head from 'next/head';
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/Home.module.css';
 
 import Sections from '../Components/Sections';
 
 function Home({ props }) {
+  const [active, setActive] = useState(false);
   return (
     <div className={`body-container ${styles.container}`}>
       <Head>
@@ -16,8 +17,8 @@ function Home({ props }) {
         <Sections.AboutUs />
         <Sections.Solutions />
         <Sections.WhyUs />
-        <Sections.MeetOurClients showClientSlider={false}/>
-        <Sections.WorkCompleted reqCount={2500} />
+        <Sections.MeetOurClients showClientSlider={false} setActive={setActive}/>
+        <Sections.WorkCompleted reqCount={2500} active={active} setActive={setActive} />
         <Sections.ContactForm />
       </main>
     </div>

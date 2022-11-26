@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/NumberCounter.module.css';
 
-function NumberCounter({ count, description, isPositive, delay }) {
+function NumberCounter({ count, description, isPositive, delay, start }) {
   const [reqCounter, setReqCounter] = useState(0);
   let interval = null;
   const startCounter = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    interval = setInterval(() => {
-      let updatedCounter = reqCounter++;
-      if (reqCounter <= count) setReqCounter(updatedCounter + 1);
-      else clearInterval(interval);
-    }, delay);
+    if(start){
+      interval = setInterval(() => {
+        let updatedCounter = reqCounter++;
+        if (reqCounter <= count) setReqCounter(updatedCounter + 1);
+        else clearInterval(interval);
+      }, delay);
+    }
   };
-  useEffect(startCounter, []);
+  useEffect(startCounter, [start]);
   const formatNumber = (counter) => {
     const k = counter > 999;
     const tenK = counter > 9999;

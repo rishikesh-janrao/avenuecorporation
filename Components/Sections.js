@@ -134,6 +134,7 @@ const Sections = {
                 layout="responsive"
                 width={80}
                 height={40}
+                priority
               />
             ) : (
               <Image
@@ -142,6 +143,7 @@ const Sections = {
                 layout="responsive"
                 width={80}
                 height={40}
+                priority
               />
             )}
           </div>
@@ -267,12 +269,12 @@ const Sections = {
     );
     //END REUSABLE COMPONENT CHECK - PENDING
   },
-  MeetOurClients: ({ showClientSlider }) => (
+  MeetOurClients: ({ showClientSlider, setActive }) => (
     <div className={styles.panel}>
       {showClientSlider && (
         <label className={styles.panelTitle}>Meet Our Clients</label>
       )}
-      <div className={styles.panelBody}>
+      <div className={styles.panelBody} onMouseOver={()=>showClientSlider?setActive(true):""} onBlur={()=>showClientSlider?setActive(false):""}>
         {showClientSlider && (
           <div className={styles.panelBody_description}>
             <SwiperSlider ClientsSlider={true} />
@@ -336,15 +338,16 @@ const Sections = {
       </div>
     </div>
   ),
-  WorkCompleted: ({ reqCount }) => {
+  WorkCompleted: ({ reqCount, active, setActive }) => {
     return (
-      <div className={styles.workCompleted}>
+      <div className={styles.workCompleted} onMouseOver={()=>setActive(true)} onBlur={()=>setActive(false)}>
         <div className={styles.workCompleted__1}>
           <NumberCounter
             count={2500}
             description="Requirements met"
             isPositive={true}
             delay={1}
+            start={active}
           />
         </div>
         <div className={styles.workCompleted__2}>
@@ -353,6 +356,7 @@ const Sections = {
             description="Curated Products"
             isPositive={true}
             delay={50}
+            start={active}
           />
         </div>
         <div className={styles.workCompleted__3}>
@@ -361,6 +365,7 @@ const Sections = {
             description="Product Categories"
             isPositive={true}
             delay={200}
+            start={active}
           />
         </div>
       </div>

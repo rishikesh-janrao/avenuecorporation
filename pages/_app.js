@@ -69,6 +69,7 @@ function App({ Component, pageProps, router }) {
           setHamClicked: setHamClicked,
           SliderHomePageProps: SliderHomePageProps,
           SliderClientProps: SliderClientProps,
+          window: typeof window === "undefined" ? null : window
         }}
       >
         <Layout>
