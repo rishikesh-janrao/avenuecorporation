@@ -10,6 +10,10 @@
     display: flex !important;
     justify-content: center;
 }
+.InActive{
+    display: none !important;
+    justify-content: center;
+}
 .ModalContainer{
     display: flex;
     flex-direction: column;

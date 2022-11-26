@@ -7,9 +7,10 @@ import modalStyles from "../../styles/Modal.module.css";
 function Modal({}) {
   const navContext = useContext(NavigationContext);
   const containerStyles = { ...navContext.modalDetails.styles };
+  console.log(navContext.isModalVisible);
   return (
     <motion.div
-      className={`modal ${navContext.isModalVisible ? modalStyles.Active : ""}`}
+      className={`modal ${navContext.isModalVisible ? modalStyles.Active : modalStyles.InActive}`}
       key={!navContext.isModalVisible}
       initial="pageInitial"
       animate="pageAnimate"

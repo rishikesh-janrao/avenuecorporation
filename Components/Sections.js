@@ -529,7 +529,8 @@ const Sections = {
   FooterLinks: ({}) => {
     const navContext = useContext(NavigationContext);
     const socialLinks = navContext.socialLinks;
-    const showPrivacyPolicy = () => {
+    const showPrivacyPolicy = (e) => {
+      console.log(e, navContext);
       navContext.setModal({
         styles: {
           width: "60%",
