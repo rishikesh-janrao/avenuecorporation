@@ -16,15 +16,18 @@
     margin-top: 10vh;
     background-color: white;
     border-radius: 2em;
+    border: 1px solid var(--avenue-light-blue);
 }
 .titleContainer{
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
+    background-color: var(--avenue-light-blue);
     flex-direction: row;
     height: 3em;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
 }
 .title{
     display: flex;
@@ -33,9 +36,12 @@
     width: 100%;
     font-size: 1.5em;
     height: 2em;
-    background-color: transparent;
+    /* color: var(--avenue-white); */
     text-decoration: underline;
+    background-color: transparent;
     border-bottom: 1px solid var(--avenue-light-gray);
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
 }
 .body{
     padding: 4em;
