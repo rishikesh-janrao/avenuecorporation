@@ -34,7 +34,7 @@ const SliderProps = {
         id: 3,
         webPath: '/pixels/home-slider/slide-3.png',
         mobilePath: '',
-        slideText:"Automotive/ CBU/ SKD/ CKD/ Containerization",
+        slideText:"Automotive & Containerization",
         alt: 'Avenue Corporation - Home Slider - Slide 3',
       },
       {

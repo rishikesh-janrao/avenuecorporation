@@ -16,7 +16,7 @@ const MenuList = [
         name:"about",
         description:"About Us",
         // path:"/about",
-        path:"#about",
+        path:"/about",
         classes:``,
         subMenu:[]
     },

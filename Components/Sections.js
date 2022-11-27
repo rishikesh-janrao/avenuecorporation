@@ -621,12 +621,12 @@ const Sections = {
               salesavenuecorporation@gmail.com
             </a>
             <br />
-            <a href="tel:9730272570">+91 9730272570</a>
+            <a href="tel:8956747731">+91 8956747731</a>
             <br />
-            <a href="tel:8380840125">+91 8380840125</a>
+            <a href="tel:8956747723">+91 8956747723</a>
           </span>
           <span className={styles.socials}>
-            <Link href={socialLinks["linkedin"] || ""}>
+            {/* <Link href={socialLinks["linkedin"] || ""}>
               <span>
                 <FontAwesomeIcon icon={faLinkedin} listItem />
               </span>
@@ -645,17 +645,17 @@ const Sections = {
               <span>
                 <FontAwesomeIcon icon={faYoutube} listItem />
               </span>
-            </Link>
+            </Link> */}
             <Link href={socialLinks["whatsapp"] || ""}>
               <span>
                 <FontAwesomeIcon icon={faWhatsapp} listItem />
               </span>
             </Link>
-            <Link href={socialLinks["facebook"] || ""}>
+            {/* <Link href={socialLinks["facebook"] || ""}>
               <span>
                 <FontAwesomeIcon icon={faFacebook} listItem />
               </span>
-            </Link>
+            </Link> */}
           </span>
         </div>
         <div className={styles.FooterLinks__cell}>
