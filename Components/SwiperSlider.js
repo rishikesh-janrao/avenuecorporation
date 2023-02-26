@@ -29,11 +29,6 @@ function SwiperSlider(props) {
               <SwiperSlide key={slide.id}>
                 <div className='slideText'>
                   <h1>{slide.slideText}</h1>
-                  <div className='button'>
-                    <Link href={'#ContactForm'}>
-                      <a>Tell us your requirements</a>
-                    </Link>
-                  </div>
                 </div>
                 <span className={swiperStyles.ImageContainer}>
                   <Image
