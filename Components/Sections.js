@@ -340,7 +340,7 @@ const Sections = {
   ),
   WorkCompleted: ({ reqCount, active, setActive }) => {
     return (
-      <div className={styles.workCompleted} onMouseOver={()=>setActive(true)} onBlur={()=>setActive(false)}>
+      <div className={styles.workCompleted} onMouseOver={()=>setActive(true)} onPointerOver={()=>setActive(true)} onBlur={()=>setActive(false)}>
         <div className={styles.workCompleted__1}>
           <NumberCounter
             count={2500}
@@ -435,7 +435,7 @@ const Sections = {
     }
 
     return (
-      <div id="ContactForm" className={styles.ContactForm}>
+      <div className={styles.ContactForm}>
         <div className={styles.contactForm_description}>
           <p>Because Trust Matters!</p>
           <p>
@@ -456,7 +456,7 @@ const Sections = {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div className={styles.contactForm_form}>
+        <div className={styles.contactForm_form} id="ContactForm">
           <p>Get in touch</p>
           <form onSubmit={submitForm}>
             <div className="form-floating mb-3">

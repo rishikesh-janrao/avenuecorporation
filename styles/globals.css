@@ -244,6 +244,64 @@ body::-webkit-scrollbar-button {
   z-index: 103 !important;
   opacity: 1 !important;
 }
+@keyframes extendBot {
+  0% { width: 3rem;}
+  100% { width: 40vh;}
+}
+@keyframes botExtendedText {
+  0% { opacity: 0;}
+  80% { opacity: 0.6; }
+  100% { opacity: 1;}
+}
+.bot{
+  position: fixed;
+  right: 3%;
+  top: 90%;
+  background-color: var(--avenue-blue);
+  border: 3px solid var(--avenue-white);
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+}
+.bot-holder__left{
+  width: 3rem;
+  height: 3rem;
+  border-radius: 5rem;
+  background-color: var(--avenue-white);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bot-holder__right{
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 0.8rem;
+  background-color: var(--avenue-white);
+  z-index: 103;
+}
+.active .bot-holder__right{
+  border-radius: 2rem;
+}
+.bot-text{
+  opacity: 0;
+}
+.bot.active{
+  animation: extendBot 1s forwards;
+}
+.bot.active .bot-holder__left{
+  height: 2rem;
+  margin: 1rem 1rem;
+  opacity: 1;
+  width: 80%;
+}
+.bot.active .bot-text{
+  animation: botExtendedText 1s forwards;
+}
+
 @media screen and (max-width:480px) {
   .swiper-slide p {
     position: absolute;

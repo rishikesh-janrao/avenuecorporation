@@ -307,8 +307,8 @@
     .container {
         height: 5em;
         font-size: 1em;
-        background-color: var(--avenue-white); 
-        color: var(--avenue-blue);
+        background-color: var(--avenue-blue); 
+        color: var(--avenue-white);
     }
 
     .logo {
@@ -328,7 +328,7 @@
     }
     .menu,
     .activeMenuItem{
-        color: var(--avenue-blue);
+        color: var(--avenue-white);
     }
     .arrowLine1,.arrowLine2{
         background-color: var(--avenue-blue);

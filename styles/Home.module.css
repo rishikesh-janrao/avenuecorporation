@@ -560,6 +560,8 @@ a.FooterLinks__contactus {
   .panelBody_actions_meet_our_clients_contact_us_description {
     text-align: center;
     justify-content: center;
+    margin: 0 2rem;
+    text-indent: 2%;
   }
 
   .workCompleted {
@@ -601,6 +603,7 @@ a.FooterLinks__contactus {
 
   .FooterLinks {
     flex-direction: column;
+    width: auto;
   }
 
   .FooterLinks__cell {
