@@ -4,10 +4,11 @@
     flex-direction: column;
     align-items: center;
     row-gap: 2em;
+    color: var(--avenue-blue);
 }
 
 .banner {
-    height: 25em;
+    height: auto;
     width: 100vw;
     overflow: hidden;
     z-index: 10;
@@ -59,7 +60,39 @@
 .contact_us_button span:hover {
     background-color: var(--avenue-light-blue);
 }
+.row{
 
+    display: flex;
+    width: 100vw;
+    align-items: center;
+}
+.grid__2{
+
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    flex-direction: row;
+}
+
+.vision{
+    justify-content: center;
+    flex-direction: column;
+}
+.sustainabilityVision__Title{
+    display: flex;
+    justify-content: center;
+    font-size: 2em;
+}
+.sustainabilityVision__Description{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 1em 4em;
+    font-size: 1.2em;
+    line-height: 1.5em;
+    color: var(--avenue-text-color--3);
+}
 
 
 @media screen and (max-width: 480px) {

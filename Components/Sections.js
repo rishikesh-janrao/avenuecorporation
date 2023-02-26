@@ -398,7 +398,6 @@ const Sections = {
         data.companyname = controls.companyname.value;
         data.msg = controls.msg.value;
         formData = data;
-        console.log(formData);
       }
     };
 
@@ -530,7 +529,6 @@ const Sections = {
     const navContext = useContext(NavigationContext);
     const socialLinks = navContext.socialLinks;
     const showPrivacyPolicy = (e) => {
-      console.log(e, navContext);
       navContext.setModal({
         styles: {
           width: "60%",
