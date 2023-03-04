@@ -8,6 +8,7 @@ import {
   faMoneyCheckAlt,
   faLock,
   faEnvelope,
+  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
@@ -274,7 +275,7 @@ const Sections = {
       {showClientSlider && (
         <label className={styles.panelTitle}>Meet Our Clients</label>
       )}
-      <div className={styles.panelBody} onMouseOver={()=>showClientSlider?setActive(true):""} onBlur={()=>showClientSlider?setActive(false):""}>
+      <div className={styles.panelBody} onMouseOver={() => showClientSlider ? setActive(true) : ""} onBlur={() => showClientSlider ? setActive(false) : ""}>
         {showClientSlider && (
           <div className={styles.panelBody_description}>
             <SwiperSlider ClientsSlider={true} />
@@ -340,7 +341,7 @@ const Sections = {
   ),
   WorkCompleted: ({ reqCount, active, setActive }) => {
     return (
-      <div className={styles.workCompleted} onMouseOver={()=>setActive(true)} onPointerOver={()=>setActive(true)} onBlur={()=>setActive(false)}>
+      <div className={styles.workCompleted} onMouseOver={() => setActive(true)} onPointerOver={() => setActive(true)} onBlur={() => setActive(false)}>
         <div className={styles.workCompleted__1}>
           <NumberCounter
             count={2500}
@@ -371,7 +372,7 @@ const Sections = {
       </div>
     );
   },
-  ContactForm: ({}) => {
+  ContactForm: ({ }) => {
     const bt = require("bootstrap/dist/css/bootstrap.css");
     let formData = {};
 
@@ -439,12 +440,12 @@ const Sections = {
         <div className={styles.contactForm_description}>
           <p>Because Trust Matters!</p>
           <p>
-            As a young organisation, our steps are cautious. Experienced
-            professionals thoroughly guide handholding for every action taken.
+            As a young organization, our steps are cautious. Experienced
+            professionals thoroughly guide hand-holding for every action taken.
             It has been a wonderful and blessed journey for <u>Avenue Corp</u>&nbsp;
             so far. We would like to bestow our sincere gratitude and fervent
             regards to our partners who trusted in us because, like you, we also
-            value our customers’ trust!
+            value our customer&apos;s trust!
           </p>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1889.882554922819!2d74.09764783546999!3d18.674533597432422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xae47038d89ce5a0c!2zMTjCsDQwJzI4LjMiTiA3NMKwMDUnNTUuMSJF!5e0!3m2!1sen!2sin!4v1668328830736!5m2!1sen!2sin"
@@ -454,6 +455,7 @@ const Sections = {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="google maps address"
           ></iframe>
         </div>
         <div className={styles.contactForm_form} id="ContactForm">
@@ -525,7 +527,7 @@ const Sections = {
       </div>
     );
   },
-  FooterLinks: ({}) => {
+  FooterLinks: ({ }) => {
     const navContext = useContext(NavigationContext);
     const socialLinks = navContext.socialLinks;
     const showPrivacyPolicy = (e) => {
@@ -538,47 +540,47 @@ const Sections = {
         title: "Privacy Policy",
         body: (
           <div>
-              We{" "}
-              <q>
-                <strong>Avenue Corporation</strong>
-              </q>{" "}
-              are carrying out manufacturing of Heavy Duty Corrugated Boxes &
-              Complete Packaging Solution, is committed to grow by providing
-              it&lsquo;s all Customers a Cost-Effective Solution with Good
-              Quality Products, Services & Timely Deliveries always by reducing
-              In-Process Rejections, Machine Break down time, increasing
-              inspections at all stages & by monitoring daily production
-              planning. <br />
-              To enhance Customer&lsquo;s satisfaction{" "}
-              <q>
-                <u>Avenue Corp</u>
-              </q>{" "}
-              will strict to adherence of quality management system with all
-              legal requirements & continual improvements through proper
-              communication with customers & periodically trainings of all
-              employees. In its pursuits of excellence,{" "}
-              <q>
-                <u>Avenue Corp</u>
-              </q>{" "}
-              shall strive achievement of an Eco-Friendly Environment &
-              Employee&lsquo;s Satisfaction.{" "}
-              <q>
-                <u>Avenue Corp</u>
-              </q>{" "}
-              strive to offer a Unique Combination of Integrated Packaging
-              Solution & Services which unmatched by any other company to be the{" "}
-              <q>
-                <strong>ONLY ONE</strong>
-              </q>
-              .
+            We{" "}
+            <q>
+              <strong>Avenue Corporation</strong>
+            </q>{" "}
+            are carrying out manufacturing of Heavy Duty Corrugated Boxes &
+            Complete Packaging Solution, is committed to grow by providing
+            it&lsquo;s all Customers a Cost-Effective Solution with Good
+            Quality Products, Services & Timely Deliveries always by reducing
+            In-Process Rejections, Machine Break down time, increasing
+            inspections at all stages & by monitoring daily production
+            planning. <br />
+            To enhance Customer&lsquo;s satisfaction{" "}
+            <q>
+              <u>Avenue Corp</u>
+            </q>{" "}
+            will strict to adherence of quality management system with all
+            legal requirements & continual improvements through proper
+            communication with customers & periodically trainings of all
+            employees. In its pursuits of excellence,{" "}
+            <q>
+              <u>Avenue Corp</u>
+            </q>{" "}
+            shall strive achievement of an Eco-Friendly Environment &
+            Employee&lsquo;s Satisfaction.{" "}
+            <q>
+              <u>Avenue Corp</u>
+            </q>{" "}
+            strive to offer a Unique Combination of Integrated Packaging
+            Solution & Services which unmatched by any other company to be the{" "}
+            <q>
+              <strong>ONLY ONE</strong>
+            </q>
+            .
+            <br />
+            <br />
+            <div style={{ textAlign: "right" }}>
+              {" "}
+              Vaibhav Mumbare, Managing Director
               <br />
-              <br />
-              <div style={{textAlign:"right"}}>
-                {" "}
-                Vaibhav Mumbare, Managing Director
-                <br />
-                Avenue Corporation, Pune (India)
-              </div>
+              Avenue Corporation, Pune (India)
+            </div>
           </div>
         ),
       });
@@ -597,44 +599,75 @@ const Sections = {
           />
         </div>
         <div id="address" className={styles.FooterLinks__cell}>
-          <label>Corporate Address</label>
-          <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
-            <p>Avenue Corporation</p>
-            Sector R19, Tower 41-06-09, Amanora Park Town, Hadapsar, Pune 411028
-          </a>
-        </div>
-        <div id="address" className={styles.FooterLinks__cell}>
-          <label>Plant Address</label>
-          <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
-            <p>Avenue Corporation</p>
-            Gate no 984/3, M/S Shirke-Bricks Industries Compound, Next to Span
-            Pump, Sanaswadi, Tq. Shirur, Dist. Pune - 412208.
-          </a>
+
+          <div>
+            <label>Avenue Corporation</label>
+            <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
+              <p> Corporate Address</p>
+              Sector R19, Tower 41-06-09, Amanora Park Town, Hadapsar, Pune 411028
+            </a>
+          </div>
+          <div>
+            <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
+              <p>Plant Address</p>
+              Gate no 984/3, M/S Shirke-Bricks Industries Compound, Next to Span
+              Pump, Sanaswadi, Tq. Shirur, Dist. Pune - 412208.
+            </a>
+          </div>
         </div>
         <div id="contact" className={styles.FooterLinks__cell}>
           <label>Contact Us</label>
           <span className={styles.FooterLinks__contactus}>
-            <a href="mailto:marketing@avenuecorporation.in">
-              marketing@avenuecorporation.in
-            </a>
-            <br />
-            <a href="mailto:sales@avenuecorporation.in">
-              sales@avenuecorporation.in
-            </a>
-            <br />
-            <a href="mailto:salesavenuecorporation@gmail.com">
-              salesavenuecorporation@gmail.com
-            </a>
-            <br />
-            <a href="tel:8956747731">+91 8956747731</a>
-            <br />
-            <a href="tel:8956747723">+91 8956747723</a>
-            <br />
-            <a href="tel:8956747723">+91 7038650650</a>
-            <br/>
-            <a href="https://avenuecorporation.in">
-              www.avenuecorporation.in
-            </a>
+            <span className={styles.FooterLinks__row}>
+              <span>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
+              <a href="mailto:marketing@avenuecorporation.in">
+                marketing@avenuecorporation.in
+              </a>
+            </span>
+            <span className={styles.FooterLinks__row}>
+              <span>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
+              <a href="mailto:sales@avenuecorporation.in">
+                sales@avenuecorporation.in
+              </a>
+            </span>
+            <span className={styles.FooterLinks__row}>
+              <span>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
+              <a href="mailto:salesavenuecorporation@gmail.com">
+                salesavenuecorporation@gmail.com
+              </a>
+            </span>
+            <span className={styles.FooterLinks__row}>
+              <span>
+                <FontAwesomeIcon icon={faPhone} />
+              </span>
+              <a href="tel:8956747731">+91 8956747731</a>
+            </span>
+            <span className={styles.FooterLinks__row}>
+              <span>
+                <FontAwesomeIcon icon={faPhone} />
+              </span>
+              <a href="tel:8956747723">+91 8956747723</a>
+            </span>
+            <span className={styles.FooterLinks__row}>
+              <span>
+                <FontAwesomeIcon icon={faPhone} />
+              </span>
+              <a href="tel:7038650650">+91 7038650650</a>
+            </span>
+            <span className={styles.FooterLinks__row}>
+              <span>
+                <FontAwesomeIcon icon={faGlobe} />
+              </span>
+              <a href="https://avenuecorporation.in">
+                www.avenuecorporation.in
+              </a>
+            </span>
           </span>
           <span className={styles.socials}>
             {/* <Link href={socialLinks["linkedin"] || ""}>
