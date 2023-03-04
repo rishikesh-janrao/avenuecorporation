@@ -38,7 +38,7 @@ function TechnologySection() {
       <div className={pageStyles.TechnologySection1}>
         <div>
           <Image
-            src='/../public/pixels/pages/technology-section-1.png'
+            src='/pixels/pages/technology-section-1.png'
             alt='Avenue Corporation'
             layout="fixed"
             width={500}
@@ -64,7 +64,7 @@ function TechnologySection() {
           <div className={pageStyles.TechnologySection2_ImgContainer}>
           <div className={pageStyles.TechnologySection2_ImgCircles}>
             <Image
-              src='/../public/pixels/pages/technology-section-2.1.png'
+              src='/pixels/pages/technology-section-2.1.png'
               alt='Avenue Corporation'
               layout="fixed"
               width={80}
@@ -82,7 +82,7 @@ function TechnologySection() {
           <div className={pageStyles.TechnologySection2_ImgContainer}>
           <div className={pageStyles.TechnologySection2_ImgCircles}>
             <Image
-              src='/../public/pixels/pages/technology-section-2.2.png'
+              src='/pixels/pages/technology-section-2.2.png'
               alt='Avenue Corporation'
               layout="fixed"
               width={80}
@@ -99,7 +99,7 @@ function TechnologySection() {
           <div className={pageStyles.TechnologySection2_ImgContainer}>
           <div className={pageStyles.TechnologySection2_ImgCircles}>
             <Image
-              src='/../public/pixels/pages/technology-section-2.3.png'
+              src='/pixels/pages/technology-section-2.3.png'
               alt='Avenue Corporation'
               layout="fixed"
               width={80}
@@ -116,7 +116,7 @@ function TechnologySection() {
           <div className={pageStyles.TechnologySection2_ImgContainer}>
           <div className={pageStyles.TechnologySection2_ImgCircles}>
             <Image
-              src='/../public/pixels/pages/technology-section-2.4.png'
+              src='/pixels/pages/technology-section-2.4.png'
               alt='Avenue Corporation'
               layout="fixed"
               width={80}
