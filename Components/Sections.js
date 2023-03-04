@@ -442,7 +442,7 @@ const Sections = {
           <p>
             As a young organization, our steps are cautious. Experienced
             professionals thoroughly guide hand-holding for every action taken.
-            It has been a wonderful and blessed journey for <u>Avenue Corp</u>&nbsp;
+            It has been a wonderful and blessed journey for <u>Avenue Corporation</u>&nbsp;
             so far. We would like to bestow our sincere gratitude and fervent
             regards to our partners who trusted in us because, like you, we also
             value our customer&apos;s trust!
@@ -553,19 +553,19 @@ const Sections = {
             planning. <br />
             To enhance Customer&lsquo;s satisfaction{" "}
             <q>
-              <u>Avenue Corp</u>
+              <u>Avenue Corporation</u>
             </q>{" "}
             will strict to adherence of quality management system with all
             legal requirements & continual improvements through proper
             communication with customers & periodically trainings of all
             employees. In its pursuits of excellence,{" "}
             <q>
-              <u>Avenue Corp</u>
+              <u>Avenue Corporation</u>
             </q>{" "}
             shall strive achievement of an Eco-Friendly Environment &
             Employee&lsquo;s Satisfaction.{" "}
             <q>
-              <u>Avenue Corp</u>
+              <u>Avenue Corporation</u>
             </q>{" "}
             strive to offer a Unique Combination of Integrated Packaging
             Solution & Services which unmatched by any other company to be the{" "}
@@ -602,7 +602,7 @@ const Sections = {
 
           <div>
             <label>Avenue Corporation</label>
-            <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
+            <a>
               <p> Corporate Address</p>
               Sector R19, Tower 41-06-09, Amanora Park Town, Hadapsar, Pune 411028
             </a>
