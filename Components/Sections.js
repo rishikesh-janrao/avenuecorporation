@@ -441,7 +441,7 @@ const Sections = {
           <p>
             As a young organisation, our steps are cautious. Experienced
             professionals thoroughly guide handholding for every action taken.
-            It has been a wonderful and blessed journey for <u>Avenue Corp</u>{" "}
+            It has been a wonderful and blessed journey for <u>Avenue Corp</u>&nbsp;
             so far. We would like to bestow our sincere gratitude and fervent
             regards to our partners who trusted in us because, like you, we also
             value our customers’ trust!
@@ -597,7 +597,14 @@ const Sections = {
           />
         </div>
         <div id="address" className={styles.FooterLinks__cell}>
-          <label>Head Office</label>
+          <label>Corporate Address</label>
+          <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
+            <p>Avenue Corporation</p>
+            Sector R19, Tower 41-06-09, Amanora Park Town, Hadapsar, Pune 411028
+          </a>
+        </div>
+        <div id="address" className={styles.FooterLinks__cell}>
+          <label>Plant Address</label>
           <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
             <p>Avenue Corporation</p>
             Gate no 984/3, M/S Shirke-Bricks Industries Compound, Next to Span
@@ -622,6 +629,12 @@ const Sections = {
             <a href="tel:8956747731">+91 8956747731</a>
             <br />
             <a href="tel:8956747723">+91 8956747723</a>
+            <br />
+            <a href="tel:8956747723">+91 7038650650</a>
+            <br/>
+            <a href="https://avenuecorporation.in">
+              www.avenuecorporation.in
+            </a>
           </span>
           <span className={styles.socials}>
             {/* <Link href={socialLinks["linkedin"] || ""}>
@@ -694,7 +707,7 @@ const Sections = {
           <label>{title}</label>
           <p>{description}</p>
           <div className={pageStyles.contact_us_button}>
-            <Link href="#contact">
+            <Link href="/#contact">
               <span>Contact Us</span>
             </Link>
           </div>
