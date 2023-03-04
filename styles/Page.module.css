@@ -1,119 +1,213 @@
 .container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 2em;
-    color: var(--avenue-blue);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2em;
+  color: var(--avenue-blue);
 }
 
 .banner {
-    height: auto;
-    width: 100vw;
-    overflow: hidden;
-    z-index: 10;
-    display: flex;
+  height: auto;
+  width: 100vw;
+  overflow: hidden;
+  z-index: 10;
+  display: flex;
+  background-color: var(--avenue-dark-black);
 }
 
 .bannerTile {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
 }
 
 .bannerContents {
-    position: absolute;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    padding: 4em;
-    padding-top: 6em;
-    justify-content: center;
-    color: var(--avenue-white);
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 4em;
+  padding-top: 6em;
+  justify-content: center;
+  color: var(--avenue-white);
 }
 
 .bannerContents label {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 .bannerContents p {
-    font-size: 1em;
-    padding-left: 0.4em;
+  font-size: 1em;
+  padding-left: 0.4em;
 }
 
 .contact_us_button {
-    width: 100%;
-    display: flex;
-    justify-content: left;
+  width: 100%;
+  display: flex;
+  justify-content: left;
 }
 
 .contact_us_button span {
-    display: flex;
-    background-color: var(--avenue-blue);
-    color: var(--avenue-white);
-    font-size: 1em;
-    justify-content: center;
-    border-radius: 1.2em;
-    padding: 0.3em 1em;
-    cursor: pointer;
+  display: flex;
+  background-color: var(--avenue-blue);
+  color: var(--avenue-white);
+  font-size: 1em;
+  justify-content: center;
+  border-radius: 1.2em;
+  padding: 0.3em 1em;
+  cursor: pointer;
 }
 
 .contact_us_button span:hover {
-    background-color: var(--avenue-light-blue);
+  background-color: var(--avenue-light-blue);
 }
-.row{
-
-    display: flex;
-    width: 100vw;
-    align-items: center;
+.row {
+  display: flex;
+  width: 100vw;
+  align-items: center;
 }
-.grid__2{
+.grid__2 {
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  flex-direction: row;
+}
 
+.vision {
+  justify-content: center;
+  flex-direction: column;
+}
+.sustainabilityVision__Title {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  text-align: center;
+}
+.sustainabilityVision__Description {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 1em 4em;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  color: var(--avenue-text-color--3);
+}
+
+.TechnologySection1 {
+  display: flex;
+  flex-direction: row;
+  padding: 5rem;
+  column-gap: 3em;
+}
+.TechnologySection1 div:first-child {
+  width: 40%;
+  margin-right: 7.13rem;
+}
+.TechnologySection1 div:last-child {
+  width: 60%;
+}
+.TechnologySection1 div:last-child p {
+  color: var(--avenue-text-color--3);
+  font-family: inherit;
+  line-height: 2em;
+  font-size: 1.2em;
+}
+.TechnologySection1 div span span {
+  font-size: larger;
+  font-weight: 700;
+}
+
+.TechnologySection2{
     display: flex;
-    width: 100vw;
-    align-items: center;
     flex-direction: row;
-}
-
-.vision{
+    width: 100%;
+    height: auto;
+    padding: 2em;
     justify-content: center;
+    align-items: center;
+    background-color: var(--avenue-blue);
+    color: var(--avenue-white);
+}
+.TechnologySection2__item{
+    display: flex;
     flex-direction: column;
+    padding: 1em;
+    width: 25%;
+    justify-content: center;
+    align-items: center;
 }
-.sustainabilityVision__Title{
+.TechnologySection2_ImgContainer{
     display: flex;
     justify-content: center;
-    font-size: 2em;
 }
-.sustainabilityVision__Description{
+.TechnologySection2_ImgCircles{
     display: flex;
+    border-radius: 50%;
+    background-color: var(--avenue-white);
+    padding: 1em;
+}
+.TechnologySection2__item p{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+.TechnologySection2__item h2{
+    text-align: center;
+}
+@media screen and (max-width: 480px) {
+  .bannerTile {
+    display: block;
+  }
+  .bannerTile span {
+    height: 40vh !important;
+  }
+  .bannerContents {
+    height: 25em;
+    padding: 0em;
+    align-items: center;
+    text-align: center;
     justify-content: center;
+    column-gap: 1em;
+  }
+  .bannerContents label {
+    font-size: 1.9em;
+  }
+  .sustainabilityVision__Title {
+    padding: 0 2em;
+    text-align: center;
+  }
+  .sustainabilityVision__Description {
+    padding: 1em 2em;
+  }
+  .contact_us_button {
+    justify-content: center;
+  }
+  .TechnologySection1 {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
     text-align: center;
     align-items: center;
-    padding: 1em 4em;
-    font-size: 1.2em;
-    line-height: 1.5em;
-    color: var(--avenue-text-color--3);
-}
-
-
-@media screen and (max-width: 480px) {
-    .bannerTile{
-        display: block;
-    }
-    .bannerTile span{
-        height: 40vh !important;
-    }
-    .bannerContents{
-        height: 25em;
-        padding: 0em;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-        column-gap: 1em;
-    }
-    .bannerContents label{
-        font-size: 1.9em;
-    }
-    .contact_us_button{
-        justify-content: center;
-    }
+    padding: 0;
+  }
+  .TechnologySection1 div:first-child {
+    width: 100%;
+  }
+  .TechnologySection1 div:last-child {
+    width: 100%;
+  }
+  .TechnologySection1 div p {
+    padding: 1rem;
+  }
+  .TechnologySection1Mobile {
+    display: none;
+  }
+  .TechnologySection2{
+    flex-direction: column;
+  }
+  .TechnologySection2__item{
+    width: 100%;
+  }
 }

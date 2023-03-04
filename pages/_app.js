@@ -19,6 +19,17 @@ const os = parser.getOS();
 const osName = os.name?.toLowerCase();
 const IsMobile = osName === "ios" || osName === "android";
 
+let timer = null;
+function scheduleBot(IsBotActivated,setIsBotActivated){
+  if (!timer && !IsBotActivated) {
+    timer = setTimeout(() => setIsBotActivated(true), 5000);
+  }
+  else {
+    clearTimeout(timer)
+    timer = null
+  }
+}
+
 function App({ Component, pageProps, router }) {
   const [hamClicked, setHamClicked] = useState(false);
   const [scrollY, setScrollY] = useState(false);
@@ -39,7 +50,6 @@ function App({ Component, pageProps, router }) {
     setScrollY(window.pageYOffset > 5);
   }, []);
 
-  let timer = null;
   useEffect(() => {
     //add eventlistener to window
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -49,9 +59,6 @@ function App({ Component, pageProps, router }) {
     };
   }, []);
 
-  const scheduleBotActivation = ()=> {
-    timer = setInterval(() => setIsBotActivated(true), 5000);
-  }
   return (
     <NavigationContext.Provider
       value={{
@@ -107,7 +114,7 @@ function App({ Component, pageProps, router }) {
 
         <div
           className={`bot ${IsBotActivated ? "active" : ""}`}
-          onLoad={scheduleBotActivation()}
+          onLoad={()=>scheduleBot(IsBotActivated,setIsBotActivated)}
         >
           <div className="bot-holder__left">
             <span

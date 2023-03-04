@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import React from 'react';
 import Sections from '../Components/Sections';
 
@@ -7,10 +8,12 @@ import pageStyles from '../styles/Page.module.css';
 function Technology(props) {
   const bannerDetails = {
     title: 'Technology & Innovation',
-    description:`Avenue Corporation is happy to provide its clients the creation of unique
+    description: `Avenue Corporation is happy to provide its clients the creation of unique
     packaging solution with it’s technology and innovation practices.`,
-    image: 'technology.webp',
+    image: 'Technology.jpg',
     alt: 'technology banner',
+    width: 100,
+    height: 30
   };
   return (
     <>
@@ -21,9 +24,112 @@ function Technology(props) {
       </Head>
       <div className={`body-sub-container ${pageStyles.container}`}>
         <Sections.PageBanner {...bannerDetails} />
+        <TechnologySection />
       </div>
     </>
   );
 }
 
 export default Technology;
+
+function TechnologySection() {
+  return (
+    <>
+      <div className={pageStyles.TechnologySection1}>
+        <div>
+          <Image
+            src='/../public/pixels/pages/technology-section-1.png'
+            alt='Avenue Corporation'
+            layout="fixed"
+            width={500}
+            height={700}
+          />
+        </div>
+        <div>
+
+          <h3>Innovative Sustainable Packaging Solutions</h3>
+          <p>
+            <span className={pageStyles.TechnologySection1Mobile}><span>C</span>reating the perfect range of solutions for packaging that serve purpose of efficiency, safety, and sustainability.<br />
+
+              We believe the capacity of thinking through tough times and evolving trends gives rise to something unique and great! This is why innovation is always at the core of our every strategy. A dedicated research expert team, is our power to jet through ideas and solutions that can completely change the face of packaging for all businesses.<br />
+
+              We provide bespoke packaging tailored to your needs and product requirements, irrespective of size. While technological progress is an essential blend in our innovation strategies, our main goal is to reduce waste, and contribute to environmental safety and nurturing. We ensure safe and ethical practices in all our endeavors.<br />
+            </span>
+            Our current projects in innovative sustainable packaging solutions and research include precise, efficient packaging solutions and low-cost packaging for automobile industries, and electric bikes.
+          </p>
+        </div>
+      </div>
+      <div className={pageStyles.TechnologySection2}>
+        <div className={pageStyles.TechnologySection2__item}>
+          <div className={pageStyles.TechnologySection2_ImgContainer}>
+          <div className={pageStyles.TechnologySection2_ImgCircles}>
+            <Image
+              src='/../public/pixels/pages/technology-section-2.1.png'
+              alt='Avenue Corporation'
+              layout="fixed"
+              width={80}
+              height={80}
+            />
+          </div>
+          </div>
+          <h2>Reduced wastage</h2>
+          <p>We strive to deliver solutions that help minimize wastage, along with un-compromised safety.
+          </p>
+
+        </div>
+
+        <div className={pageStyles.TechnologySection2__item}>
+          <div className={pageStyles.TechnologySection2_ImgContainer}>
+          <div className={pageStyles.TechnologySection2_ImgCircles}>
+            <Image
+              src='/../public/pixels/pages/technology-section-2.2.png'
+              alt='Avenue Corporation'
+              layout="fixed"
+              width={80}
+              height={80}
+            />
+          </div>
+          </div>
+          <h2>Sustainable</h2>
+          <p>Our packaging solutions are certified for sustainable packaging, ensuring our best effort to minimize environmental impact.</p>
+
+        </div>
+
+        <div className={pageStyles.TechnologySection2__item}>
+          <div className={pageStyles.TechnologySection2_ImgContainer}>
+          <div className={pageStyles.TechnologySection2_ImgCircles}>
+            <Image
+              src='/../public/pixels/pages/technology-section-2.3.png'
+              alt='Avenue Corporation'
+              layout="fixed"
+              width={80}
+              height={80}
+            />
+          </div>
+          </div>
+          <h2>Cost effective</h2>
+          <p>Our goal is to curate highest quality and value products, which are cost effective yet highly efficient.</p>
+
+        </div>
+
+        <div className={pageStyles.TechnologySection2__item}>
+          <div className={pageStyles.TechnologySection2_ImgContainer}>
+          <div className={pageStyles.TechnologySection2_ImgCircles}>
+            <Image
+              src='/../public/pixels/pages/technology-section-2.4.png'
+              alt='Avenue Corporation'
+              layout="fixed"
+              width={80}
+              height={80}
+            />
+          </div>
+          </div>
+          <h2>Customized solutions</h2>
+          <p>Packaging solutions tailor-made with intelligent design for efficiency and sustainability.</p>
+
+        </div>
+      </div>
+    </>
+
+  )
+}

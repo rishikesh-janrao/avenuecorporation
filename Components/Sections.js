@@ -330,7 +330,7 @@ const Sections = {
                 styles.panelBody_actions_meet_our_clients_contact_us_button
               }
             >
-              <Link href="/about">
+              <Link href="/#ContactForm">
                 <div>Contact Us</div>
               </Link>
             </div>
@@ -723,15 +723,15 @@ const Sections = {
       </div>
     );
   },
-  PageBanner: ({ title, description, image, alt }) => {
+  PageBanner: ({ title, description, image, alt, width=100, height=20 }) => {
     return (
       <div className={pageStyles.banner}>
         <div className={pageStyles.bannerTile}>
           <Image
             src={`/pixels/pages/${image}`}
             layout="responsive"
-            width={100}
-            height={20}
+            width={width}
+            height={height}
             alt={alt}
             objectFit={"cover"}
           />
