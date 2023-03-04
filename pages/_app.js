@@ -49,8 +49,8 @@ function App({ Component, pageProps, router }) {
     };
   }, []);
 
-  function scheduleBotActivation() {
-    timer = setInterval(() => setIsBotActivated(true), 2000);
+  const scheduleBotActivation = ()=> {
+    timer = setInterval(() => setIsBotActivated(true), 5000);
   }
   return (
     <NavigationContext.Provider
