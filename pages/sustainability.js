@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import React from "react";
 import Sections from "../Components/Sections";
 
@@ -8,7 +9,7 @@ function Sustainability(props) {
   const bannerDetails = {
     title: "Sustainability",
     description: `We believe in making our planet a better place to live. Avenue Corporation Packaging Solution can help you achieve your environmental goals.`,
-    image: "technology.webp",
+    image: "sustainability.jpeg",
     alt: "about banner",
   };
   return (
@@ -33,8 +34,32 @@ function Sustainability(props) {
             next.
           </div>
         </div>
-        <div className={`${pageStyles.grid__2} ${pageStyles.vision}`}>
-
+        <div className={`${pageStyles.row} ${pageStyles.row_padding_rem_4}`}>
+          <div className={pageStyles.row_cell_one_out_of_four}>
+            <h2>EcoGauge - Calculates Carbon Emission</h2>
+            <p>The need for Industrial Packaging is growing worldwide. Our Sustainability Vision is to deliver the best packaging products and monitor the entire process of internal and supply chain packaging through ‘Ecogauge’. This ensures that we can achieve our sustainability vision, empowering ourselves and helping our customers become carbon-neutral and a carbon negative organization. Avenue Corporation has developed Ecogauge, which calculates carbon emission for the total design & development process in the initial stages of development to provide sustainable design solutions with less to zero carbon footprint.</p>
+          </div>
+          <div className={pageStyles.row_cell_one_out_of_four}>
+            <Image
+              src={"/pixels/pages/sustainability-1.jpeg"}
+              alt="sustainability-due-to-reduced-carbon-emission"
+              width={260}
+              height={200}
+              layout="responsive"
+            />
+          </div>
+        </div>
+        <div className={`${pageStyles.row} ${pageStyles.row_padding_rem_4}`}>
+          <div className={pageStyles.row_cell_one_out_of_four}>
+            <video autoPlay loop muted className={pageStyles.EcoGauge__video}>
+              <source src="/pixels/pages/sustainability-2.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className={pageStyles.row_cell_one_out_of_four}>
+            <h2>EcoGauge - Calculates Carbon Emission</h2>
+            <p>The need for Industrial Packaging is growing worldwide. Our Sustainability Vision is to deliver the best packaging products and monitor the entire process of internal and supply chain packaging through ‘Ecogauge’. This ensures that we can achieve our sustainability vision, empowering ourselves and helping our customers become carbon-neutral and a carbon negative organization. Avenue Corporation has developed Ecogauge, which calculates carbon emission for the total design & development process in the initial stages of development to provide sustainable design solutions with less to zero carbon footprint.</p>
+          </div>
         </div>
       </div>
     </>

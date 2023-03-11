@@ -41,7 +41,9 @@
   font-size: 1.2em;
   padding-left: 0.4em;
 }
-
+.underline_first_word_of_title{
+  border-bottom: 0.3rem solid var(--avenue-light-blue);
+}
 .contact_us_button {
   width: 100%;
   display: flex;
@@ -125,7 +127,10 @@
   line-height: 1.5em;
   color: var(--avenue-text-color--3);
 }
-
+.EcoGauge__video{
+  width: 100%;
+  height: 100%;
+}
 .TechnologySection1 {
   display: flex;
   flex-direction: row;

@@ -721,11 +721,19 @@ const Sections = {
     );
   },
   PageBanner: ({ title, description, image, alt, width = 100, height = 20 }) => {
+    function UnderlineTitle({ title }) {
+      let titleArray = title.split(" ");
+      console.log();
+      let underlined = <span className={pageStyles.underline_first_word_of_title}>{titleArray.shift()}</span>
+      return <>
+        {underlined} {" " + titleArray.join(" ")}
+      </>
+    }
     return (
       <div className={pageStyles.banner} style={{ 'background': `url("/pixels/pages/${image}")`, 'backgroundSize': 'cover', 'backgroundPosition': "center" }}>
         <div className={pageStyles.bannerContents}>
-          <label>{title}</label>
-          <span className="underline"></span>
+          <label><UnderlineTitle title={title} /></label>
+
           <p dangerouslySetInnerHTML={{ __html: description }}></p>
           <div className={pageStyles.contact_us_button}>
             <Link href="/#contact">
