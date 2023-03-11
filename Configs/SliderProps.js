@@ -8,12 +8,11 @@ const SliderProps = {
         clickable: true,
       },
       autoplay: {
-        delay: 2500,
+        delay: 2600,
         disableOnInteraction: false,
       },
       navigation: true,
       className: 'homeSwiper',
-      delay: 200,
     },
     slides: [
       {

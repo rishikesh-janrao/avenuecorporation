@@ -33,11 +33,7 @@ const Sections = {
       <div className={styles.panelBody}>
         <div className={styles.panelBody_description}>
           <p>
-            The idea of Avenue Corporation is to provide Innovative and
-            sustainable packaging solution to reduce carbon footprint by up to
-            93% and cost reduction by 10-15%. The solution consist of using a
-            unique Engineering approach and the usage of high technology
-            eco-friendly material.
+            Avenue Packs, Fully dedicated to integrity, quality and innovation. We strive to offer a unique combination of integrated packaging solutions and services unmatched by any other company to be the best.
           </p>
         </div>
         <div className={styles.panelBody_actions}>
@@ -723,7 +719,7 @@ const Sections = {
       </div>
     );
   },
-  PageBanner: ({ title, description, image, alt, width=100, height=20 }) => {
+  PageBanner: ({ title, description, image, alt, width = 100, height = 20 }) => {
     return (
       <div className={pageStyles.banner}>
         <div className={pageStyles.bannerTile}>
