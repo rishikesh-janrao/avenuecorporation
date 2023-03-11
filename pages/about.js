@@ -9,7 +9,7 @@ function about(props) {
   const bannerDetails = {
     title: "Welcome to Avenue Corporation",
     description: `Avenue Packs, Fully dedicated to integrity, quality and innovation. <br/> We strive to offer a unique combination of integrated packaging solutions and services unmatched by any other company to be the best.`,
-    image: "about.jpg",
+    image: "about-1.jpeg",
     alt: "technology banner",
   };
   return (

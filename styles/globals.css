@@ -326,4 +326,7 @@ body::-webkit-scrollbar-button {
   .clientSwiper.swiper {
     height: 10vh;
   }
+  .slideText{
+    width: 80%;
+  }
 }
