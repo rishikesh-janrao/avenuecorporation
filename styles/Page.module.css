@@ -16,29 +16,29 @@
   background-color: var(--avenue-dark-black);
 }
 
-.bannerTile {
-  height: 100%;
-  width: 100%;
-  opacity: 0.6;
-}
-
 .bannerContents {
-  position: absolute;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  padding: 4em;
-  padding-top: 6em;
+  padding: 10% 5% 2% 5%;
   justify-content: center;
   color: var(--avenue-white);
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4));
 }
 
 .bannerContents label {
   font-size: 2.5em;
 }
+.bannerContents span[class=underline] {
+  background-color: var(--avenue-blue);
+  width: 15rem;
+  height: 0.5rem;
+  border-radius: 1rem;
+}
 
 .bannerContents p {
-  font-size: 1em;
+  font-size: 1.2em;
   padding-left: 0.4em;
 }
 
@@ -64,8 +64,39 @@
 }
 .row {
   display: flex;
-  width: 100vw;
   align-items: center;
+  column-gap: 10rem;
+}
+.row h2{
+  margin: 0;
+}
+.row p{
+  color: var(--avenue-text-color--3);
+}
+.row_padding_rem_4{
+  padding: 4rem 8rem;
+}
+.row_padding_rem_1{
+  padding: 1rem;
+}
+.row_text_center{
+  text-align: center;
+}
+.row_blue_bg{
+  background-color: var(--avenue-light-blue);
+}
+.row_white_bg{
+  background-color: var(--avenue-white);
+}
+.row_cell_one_out_of_four{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.8rem;
+  line-height: 1.8rem;
+}
+.row_cell_one_out_of_four__height_15_rem{
+  height: auto;
 }
 .grid__2 {
   display: flex;
@@ -156,13 +187,10 @@
 .TechnologySection2__item h2{
     text-align: center;
 }
+.GallarySlider{
+  padding: 10%;
+}
 @media screen and (max-width: 480px) {
-  .bannerTile {
-    display: block;
-  }
-  .bannerTile span {
-    height: 40vh !important;
-  }
   .bannerContents {
     height: 25em;
     padding: 0em;
@@ -173,6 +201,9 @@
   }
   .bannerContents label {
     font-size: 1.9em;
+  }
+  .bannerContents span[class=underline]{
+    display: none;
   }
   .sustainabilityVision__Title {
     padding: 0 2em;
@@ -209,5 +240,14 @@
   }
   .TechnologySection2__item{
     width: 100%;
+  }
+  .row{
+    flex-direction: column;
+    height: auto;
+    row-gap: 2rem;
+    padding: 2rem 0;
+  }
+  .row_cell_one_out_of_four{
+    width: 80%;
   }
 }

@@ -150,8 +150,18 @@ body::-webkit-scrollbar-button {
   width: 100vh;
   height: 20vh;
 }
+.gallarySwiper.swiper{
+  width: 100vh;
+  height: 40vh;
+}
+.gallarySwiper .swiper-slide{
+  margin: 1rem;
+  height: auto;
+  width: auto;
+}
 
-.clientSwiper .swiper-slide img {
+.clientSwiper .swiper-slide img ,
+.gallarySwiper .swiper-slide img {
   object-fit: contain;
 }
 

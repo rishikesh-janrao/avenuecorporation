@@ -44,7 +44,7 @@ function App({ Component, pageProps, router }) {
     currentPageId ? currentPageId : 1
   );
 
-  const { SliderHomePageProps, SliderClientProps } = SliderProps;
+  const { SliderHomePageProps, SliderClientProps, SliderGallaryDesktopProps, SliderGallaryMobileProps} = SliderProps;
 
   const onScroll = useCallback((event) => {
     setScrollY(window.pageYOffset > 5);
@@ -83,6 +83,8 @@ function App({ Component, pageProps, router }) {
           setHamClicked: setHamClicked,
           SliderHomePageProps: SliderHomePageProps,
           SliderClientProps: SliderClientProps,
+          SliderGallaryMobileProps: SliderGallaryMobileProps,
+          SliderGallaryDesktopProps: SliderGallaryDesktopProps,
           window: typeof window === "undefined" ? null : window,
         }}
       >

@@ -25,6 +25,7 @@ import NavigationContext from "../Contexts/NavigationContext";
 import styles from "../styles/Home.module.css";
 import pageStyles from "../styles/Page.module.css";
 import { useContext, useState } from "react";
+import HomeContext from "../Contexts/HomeContext";
 const Sections = {
   HomeSlider: () => <SwiperSlider HomeSlider={true} />,
   AboutUs: () => (
@@ -721,20 +722,11 @@ const Sections = {
   },
   PageBanner: ({ title, description, image, alt, width = 100, height = 20 }) => {
     return (
-      <div className={pageStyles.banner}>
-        <div className={pageStyles.bannerTile}>
-          <Image
-            src={`/pixels/pages/${image}`}
-            layout="responsive"
-            width={width}
-            height={height}
-            alt={alt}
-            objectFit={"cover"}
-          />
-        </div>
+      <div className={pageStyles.banner} style={{ 'background': `url("/pixels/pages/${image}")`, 'backgroundSize': 'cover', 'backgroundPosition': "center" }}>
         <div className={pageStyles.bannerContents}>
           <label>{title}</label>
-          <p>{description}</p>
+          <span className="underline"></span>
+          <p dangerouslySetInnerHTML={{ __html: description }}></p>
           <div className={pageStyles.contact_us_button}>
             <Link href="/#contact">
               <span>Contact Us</span>
@@ -744,6 +736,8 @@ const Sections = {
       </div>
     );
   },
+  GallarySlider: ({ }) => HomeContext.isMobile ?
+    <SwiperSlider GallaryMobileSlider={true} /> : <SwiperSlider GallaryDesktopSlider={true} />
 };
 
 export default Sections;
