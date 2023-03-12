@@ -2,7 +2,6 @@ import React from "react";
 import Sections from "../Components/Sections";
 import Head from 'next/head';
 
-import styles from "../styles/Home.module.css";
 import pageStyles from "../styles/Page.module.css";
 
 function about(props) {

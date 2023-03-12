@@ -9,7 +9,7 @@ function Sustainability(props) {
   const bannerDetails = {
     title: "Sustainability",
     description: `We believe in making our planet a better place to live. Avenue Corporation Packaging Solution can help you achieve your environmental goals.`,
-    image: "sustainability.jpeg",
+    image: "sustainability.png",
     alt: "about banner",
   };
   return (
