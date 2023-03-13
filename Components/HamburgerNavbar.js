@@ -29,7 +29,7 @@ function HamburgerNavbar(props) {
               menuItem.id == navContext.selectedMenuItem
                 ? navbarStyles.activeMenuItem
                 : ''
-            } ${menuItem.classes}`}
+            } ${menuItem.classes}  ${menuItem.isEnabled ? "is-hidden" : ""}`}
             onClick={() => navContext.setSelectedMenuItem(menuItem.id)}
           >
             <Link href={menuItem.path}>

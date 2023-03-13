@@ -11,12 +11,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faTwitter,
-  faWhatsapp,
-  faYoutube,
+  faWhatsapp
 } from "@fortawesome/free-brands-svg-icons";
 import NumberCounter from "../Components/NumberCounter";
 import Image from "next/image";
@@ -26,6 +21,8 @@ import styles from "../styles/Home.module.css";
 import pageStyles from "../styles/Page.module.css";
 import { useContext, useState } from "react";
 import HomeContext from "../Contexts/HomeContext";
+import Products from "../Configs/Products";
+import Row from "./Row";
 const Sections = {
   HomeSlider: () => <SwiperSlider HomeSlider={true} />,
   AboutUs: () => (
@@ -608,7 +605,7 @@ const Sections = {
             <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
               <p>Plant Address</p>
               Gate no 984/3, M/S Shirke-Bricks Industries Compound, Next to Span
-              Pump, Sanaswadi, Tq. Shirur, Dist. Pune - 412208.
+              Pump, Sanaswadi, Taluka: Shirur, Dist. Pune - 412208.
             </a>
           </div>
         </div>
@@ -745,7 +742,89 @@ const Sections = {
     );
   },
   GallarySlider: ({ }) => HomeContext.isMobile ?
-    <SwiperSlider GallaryMobileSlider={true} /> : <SwiperSlider GallaryDesktopSlider={true} />
+    <SwiperSlider GallaryMobileSlider={true} /> : <SwiperSlider GallaryDesktopSlider={true} />,
+  SustainabilityProducts: ({ }) => {
+
+    const homeContext = useContext(HomeContext);
+    const IsMobile = homeContext.isMobile;
+    return (
+      <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"} classList={`${pageStyles.SustainabilityProductsSection}`}>
+        <Row justifyContent={"center"} alignItems={"center"} flexDirection={"row"}>
+          <h1>Sustainability Products</h1>
+        </Row>
+        <Row justifyContent={"center"} alignItems={"center"} classList={"mobile-switchable-row"}>
+          <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+            <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+              <h3 className={`${pageStyles.row_cell_one_out_of_two} ${pageStyles.justify_center}`}>Wooden Pallets Vs ESP Pallets</h3>
+              <Row justifyContent={"center"} alignItems={"center"} flexDirection={IsMobile ? "row" : "column"}>
+                <Sections.Products productsInRow={4} totalRows={1} productType={"Wooden Pallets Vs ESP Pallets"} />
+              </Row>
+            </Row>
+            <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+              <h3 className={`${pageStyles.row_cell_one_out_of_two} ${pageStyles.justify_center}`}>Wooden Boxes Vs Corrugation</h3>
+              <Row justifyContent={"center"} alignItems={"center"} flexDirection={IsMobile ? "row" : "column"}>
+                <Sections.Products productsInRow={4} totalRows={1} productType={"Wooden Boxes Vs Corrugation"} />
+              </Row>
+            </Row>
+          </Row>
+          <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+            <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+              <h3 className={`${pageStyles.row_cell_one_out_of_two} ${pageStyles.justify_center}`}>VCI Vs Biodegradable VCI</h3>
+              <Row justifyContent={"center"} alignItems={"center"} flexDirection={IsMobile ? "row" : "column"}>
+                <Sections.Products productsInRow={4} totalRows={1} productType={"VCI Vs Biodegradable VCI"} />
+              </Row>
+            </Row>
+            <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+              <h3 className={`${pageStyles.row_cell_one_out_of_two} ${pageStyles.justify_center}`}>Wooden Boxes Vs Corrugation Accessories</h3>
+              <Row justifyContent={"center"} alignItems={"center"} flexDirection={IsMobile ? "row" : "column"}>
+                <Sections.Products productsInRow={4} totalRows={1} productType={"Wooden Boxes Vs Corrugation Accessories"} />
+              </Row>
+            </Row>
+          </Row>
+        </Row>
+      </Row>
+    )
+  },
+  Products: ({ productsInRow, totalRows, productType }) => {
+    const [products, setProducts] = useState([]);
+
+    if (products.length === 0) {
+      switch (productType) {
+        case "Wooden Pallets Vs ESP Pallets":
+          setProducts([...Products.SustainabilityProducts["Wooden Pallets Vs ESP Pallets"]]);
+          break;
+        case "Wooden Boxes Vs Corrugation":
+          setProducts([...Products.SustainabilityProducts["Wooden Boxes Vs Corrugation"]]);
+          break;
+
+        case "VCI Vs Biodegradable VCI":
+          setProducts([...Products.SustainabilityProducts["VCI Vs Biodegradable VCI"]]);
+          break;
+        case "Wooden Boxes Vs Corrugation Accessories":
+          setProducts([...Products.SustainabilityProducts["Wooden Boxes Vs Corrugation Accessories"]]);
+          break;
+      }
+    }
+    return (
+      <Row justifyContent={"center"} alignItems={"center"} flexDirection={"row"}>
+        {products.map((el) => <div key={el.name} className={pageStyles.productContainer}>
+          <div className={pageStyles.productImage}>
+            <Image
+              layout="responsive"
+              src={el.src}
+              alt={el.alt}
+              width={pageStyles.productImage.width || 100}
+              height={pageStyles.productImage.height || 80}
+            />
+          </div>
+          <div className={pageStyles.productDescription}>
+            <h5>{el.name}</h5>
+          </div>
+        </div>)}
+
+      </Row>
+    )
+  }
 };
 
 export default Sections;

@@ -1,10 +1,21 @@
 import Head from 'next/head';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from '../styles/Home.module.css';
 
 import Sections from '../Components/Sections';
+import HomeContext from '../Contexts/HomeContext';
 
 function Home({ props }) {
+
+  const homeContext = useContext(HomeContext);
+  Home.getInitialProps = async ({ req }) => {
+    const userAgent = req ? req.headers['user-agent'] : ""
+    let isMobile = Boolean(userAgent.match(
+      /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
+    )) || homeContext.isMobile
+    homeContext.setIsMobile(isMobile)
+    return {}
+  }
   const [active, setActive] = useState(false);
   return (
     <div className={`body-container ${styles.container}`}>

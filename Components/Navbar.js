@@ -49,11 +49,10 @@ function Navbar(props) {
           {navContext.menuList.map((menuItem) => (
             <li
               key={menuItem.id}
-              className={`${navbarStyles.listItem} ${
-                menuItem.id == navContext.selectedMenuItem
+              className={`${navbarStyles.listItem} ${menuItem.id == navContext.selectedMenuItem
                   ? navbarStyles.activeMenuItem
                   : ''
-              } ${menuItem.classes}`}
+                } ${menuItem.classes} ${menuItem.isEnabled ? "is-hidden" : ""}`}
               onClick={() => navContext.setSelectedMenuItem(menuItem.id)}
             >
               {menuItem.subMenu.length > 0 ? (
@@ -69,25 +68,21 @@ function Navbar(props) {
       </nav>
 
       <div
-        className={`hamburger-container ${navbarStyles.hamburgerContainer} ${
-          hamClicked ? navbarStyles.change : ''
-        }`}
+        className={`hamburger-container ${navbarStyles.hamburgerContainer} ${hamClicked ? navbarStyles.change : ''
+          }`}
         onClick={() => setHamClicked(!hamClicked)}
       >
         <div
-          className={`${navbarStyles.hamburgerLine} ${
-            hamClicked ? navbarStyles.change1 : ''
-          } `}
+          className={`${navbarStyles.hamburgerLine} ${hamClicked ? navbarStyles.change1 : ''
+            } `}
         ></div>
         <div
-          className={`${navbarStyles.hamburgerLine} ${
-            hamClicked ? navbarStyles.change2 : ''
-          } `}
+          className={`${navbarStyles.hamburgerLine} ${hamClicked ? navbarStyles.change2 : ''
+            } `}
         ></div>
         <div
-          className={`${navbarStyles.hamburgerLine} ${
-            hamClicked ? navbarStyles.change3 : ''
-          } `}
+          className={`${navbarStyles.hamburgerLine} ${hamClicked ? navbarStyles.change3 : ''
+            } `}
         ></div>
       </div>
     </header>
@@ -96,7 +91,7 @@ function Navbar(props) {
 export default Navbar;
 
 function SubMenu({ id, description, name, path, subMenu }) {
-  
+
   const navContext = useContext(NavigationContext);
   return (
     <div className={navbarStyles.subMenuTitle}>

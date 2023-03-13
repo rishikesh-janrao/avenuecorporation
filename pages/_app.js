@@ -17,7 +17,6 @@ import Image from "next/image";
 const parser = new UAParser();
 const os = parser.getOS();
 const osName = os.name?.toLowerCase();
-const IsMobile = osName === "ios" || osName === "android";
 
 let timer = null;
 function scheduleBot(IsBotActivated,setIsBotActivated){
@@ -36,7 +35,7 @@ function App({ Component, pageProps, router }) {
   const [isModalVisible, setModalVisible] = useState(false);
   const [modalDetails, setModal] = useState({});
   const [IsBotActivated, setIsBotActivated] = useState(false);
-
+  const [IsMobile, setIsMobile] = useState(osName === "ios" || osName === "android");
   const currentPageId = MenuList.find(
     (el) => el.name == router.pathname.replace("/", "")
   )?.id;
@@ -77,8 +76,9 @@ function App({ Component, pageProps, router }) {
         value={{
           state: {
             hamClicked: hamClicked,
+            isMobile: IsMobile ,
           },
-          isMobile: IsMobile,
+          setIsMobile:setIsMobile,
           platform: osName,
           setHamClicked: setHamClicked,
           SliderHomePageProps: SliderHomePageProps,
