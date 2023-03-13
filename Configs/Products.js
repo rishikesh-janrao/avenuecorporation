@@ -24,7 +24,7 @@ const ProductsByPages = {
             {
                 id: "",
                 name: "Sustainable Palletless Box",
-                src: "/pixels/products/sustainable-palletless-box.jpeg",
+                src: "/pixels/products/sustainable-palletless-box.png",
                 alt: "Sustainable Palletless Box"
             }
         ],
