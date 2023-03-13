@@ -160,7 +160,7 @@
   background-color: var(--avenue-white);
 }
 .productDescription{
-  height: 2rem;
+  height: auto;
 }
 .productDescription h5{
   color: var(--avenue-text-color--3);
