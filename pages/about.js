@@ -21,13 +21,17 @@ function about(props) {
 
       <div className={`body-sub-container ${pageStyles.container}`}>
         <Sections.PageBanner {...bannerDetails} />
-        <div className={`${pageStyles.row} ${pageStyles.row_padding_rem_4} ${pageStyles.row_text_center} ${pageStyles.row_blue_bg}`}>
-          <div className={`${pageStyles.row_cell_one_out_of_two} ${pageStyles.row_cell_one_out_of_two__height_15_rem} ${pageStyles.row_white_bg} ${pageStyles.row_padding_rem_1}`}>
-            <h2>About Us</h2>
+        <div className={`${pageStyles.row} ${pageStyles.row_padding_rem_4} ${pageStyles.row_text_center} ${pageStyles.row_blue_bg} bg-dark-blue`}>
+          <div className={`about-us--home-page ${pageStyles.row_cell_one_out_of_two} ${pageStyles.row_cell_one_out_of_two__height_15_rem} ${pageStyles.row_padding_rem_1}`}>
+            <div className="about-us--home-page-outer">
+              <h3 className="about-us--home-page-inner">About Us</h3>
+            </div>
             <p>Avenue Corporation aspires to be a collaborative corporate organization rather than a competitive one, delivering Industrial Packaging Solution across the world. Our fervent aim is to build a product that continuously provides value for all stakeholders while reducing carbon footprint and ecological sustainability.</p>
           </div>
-          <div className={`${pageStyles.row_cell_one_out_of_two} ${pageStyles.row_cell_one_out_of_two__height_15_rem} ${pageStyles.row_white_bg} ${pageStyles.row_padding_rem_1}`}>
-            <h2>Who We Are</h2>
+          <div className={`about-us--home-page  ${pageStyles.row_cell_one_out_of_two} ${pageStyles.row_cell_one_out_of_two__height_15_rem} ${pageStyles.row_padding_rem_1}`}>
+            <div className="about-us--home-page-outer">
+              <h3 className="about-us--home-page-inner">Who we are</h3>
+            </div>
             <p>Avenue Corporation is a well-organized, well-engineered industrial packaging manufacturer and developer of customized packaging solutions for the global market. Our dedication to you is underpinned by our experience in offering strategic solutions in the automotive supply chain using cutting-edge packaging technologies in the automotive supply chain.</p>
           </div>
         </div>

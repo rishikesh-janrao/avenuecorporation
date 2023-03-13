@@ -640,6 +640,12 @@ const Sections = {
               <span>
                 <FontAwesomeIcon icon={faPhone} />
               </span>
+              <a href="tel:7038650650">+91 7038650650</a>
+            </span>
+            <span className={styles.FooterLinks__row}>
+              <span>
+                <FontAwesomeIcon icon={faPhone} />
+              </span>
               <a href="tel:8956747731">+91 8956747731</a>
             </span>
             <span className={styles.FooterLinks__row}>
@@ -647,12 +653,6 @@ const Sections = {
                 <FontAwesomeIcon icon={faPhone} />
               </span>
               <a href="tel:8956747723">+91 8956747723</a>
-            </span>
-            <span className={styles.FooterLinks__row}>
-              <span>
-                <FontAwesomeIcon icon={faPhone} />
-              </span>
-              <a href="tel:7038650650">+91 7038650650</a>
             </span>
             <span className={styles.FooterLinks__row}>
               <span>
