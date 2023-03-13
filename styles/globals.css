@@ -343,6 +343,8 @@ body::-webkit-scrollbar-button {
 .row {
   display: flex;
   width: 100%;
+  row-gap: 50%;
+  column-gap: 5%;
 }
 
 .flex-direction-row {
@@ -359,6 +361,7 @@ body::-webkit-scrollbar-button {
 }
 .justify-content-center {
   justify-content: center;
+  text-align: center;
 }
 .justify-content-right {
   justify-content: right;
@@ -399,5 +402,6 @@ body::-webkit-scrollbar-button {
   }
   .mobile-switchable-row{
     flex-direction: column;
+    row-gap: 5%;
   }
 }
