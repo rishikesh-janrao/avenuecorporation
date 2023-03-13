@@ -340,7 +340,7 @@ body::-webkit-scrollbar-button {
   animation: botExtendedText 1s forwards;
 }
 
-.row {
+.product-row {
   display: flex;
   width: 100%;
   row-gap: 50%;

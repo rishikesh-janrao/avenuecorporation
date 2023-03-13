@@ -756,13 +756,13 @@ const Sections = {
           <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
             <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
               <h3 className={`${pageStyles.row_cell_one_out_of_two} ${pageStyles.justify_center}`}>Wooden Pallets Vs ESP Pallets</h3>
-              <Row justifyContent={"center"} alignItems={"center"} flexDirection={IsMobile ? "row" : "column"}>
+              <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
                 <Sections.Products productsInRow={4} totalRows={1} productType={"Wooden Pallets Vs ESP Pallets"} />
               </Row>
             </Row>
             <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
               <h3 className={`${pageStyles.row_cell_one_out_of_two} ${pageStyles.justify_center}`}>Wooden Boxes Vs Corrugation</h3>
-              <Row justifyContent={"center"} alignItems={"center"} flexDirection={IsMobile ? "row" : "column"}>
+              <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
                 <Sections.Products productsInRow={4} totalRows={1} productType={"Wooden Boxes Vs Corrugation"} />
               </Row>
             </Row>
@@ -770,13 +770,13 @@ const Sections = {
           <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
             <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
               <h3 className={`${pageStyles.row_cell_one_out_of_two} ${pageStyles.justify_center}`}>VCI Vs Biodegradable VCI</h3>
-              <Row justifyContent={"center"} alignItems={"center"} flexDirection={IsMobile ? "row" : "column"}>
+              <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
                 <Sections.Products productsInRow={4} totalRows={1} productType={"VCI Vs Biodegradable VCI"} />
               </Row>
             </Row>
             <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
               <h3 className={`${pageStyles.row_cell_one_out_of_two} ${pageStyles.justify_center}`}>Wooden Boxes Vs Corrugation Accessories</h3>
-              <Row justifyContent={"center"} alignItems={"center"} flexDirection={IsMobile ? "row" : "column"}>
+              <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
                 <Sections.Products productsInRow={4} totalRows={1} productType={"Wooden Boxes Vs Corrugation Accessories"} />
               </Row>
             </Row>
