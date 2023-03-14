@@ -11,7 +11,7 @@ function Footer(props) {
     <Sections.FooterLinks />
     <footer id='copyright' className={footerStyles.footer}>
       <a href='#copyright'>
-        <span>© Copyright 2022 Avenue Packs.&nbsp;</span> 
+        <span>© Copyright 2022 Avenue Corporation.&nbsp;</span> 
         <span>All rights reserved.</span>
       </a>
     </footer>

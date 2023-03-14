@@ -1,3 +1,3 @@
 export const SiteConfig = {
-    OrganizationName: "Avenue Packs"
+    OrganizationName: "Avenue Corporation"
 }
