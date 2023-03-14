@@ -27,7 +27,7 @@ function Navbar(props) {
         <div className={navbarStyles.logo}>
           <Image
             src='/pixels/logo/white-bg.png'
-            alt='Avenue Corporation Logo'
+            alt='Avenue Packs Logo'
             layout='responsive'
             width={80}
             height={42}
@@ -37,7 +37,7 @@ function Navbar(props) {
         <div className={navbarStyles.logo}>
           <Image
             src='/pixels/logo/blue-bg.png'
-            alt='Avenue Corporation Logo'
+            alt='Avenue Packs Logo'
             layout='responsive'
             width={80}
             height={42}

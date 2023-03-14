@@ -60,7 +60,7 @@ const ModalBody = () => {
         layout="responsive"
         width={800}
         height={300}
-        alt="pop up cover - privacy policy - avenue corporation"
+        alt="pop up cover - privacy policy - Avenue Packs"
       />
       {navContext.modalDetails.body}
     </div>
