@@ -382,29 +382,26 @@ body::-webkit-scrollbar-button {
 .mobile-switchable-row{
   flex-direction: row;
 }
-
-.about-us--home-page{
-  background-color: var(--avenue-light-blue);
-  outline: 2px solid var(--avenue-white);
-}
 .about-us--home-page p{
   color: var(--avenue-white);
   margin-bottom: 0;
 }
 .about-us--home-page-inner{
-  background-color: var(--avenue-white);
   border-radius: 2rem;
-  color: var(--avenue-blue);
+  color: var(--avenue-white);
   margin: 0;
 }
 .about-us--home-page-outer{
   background-color: var(--avenue-blue);
   border-radius: 2rem;
   padding: 0.5rem;
-  outline: 2px solid var(--avenue-light-gray-white);
+  /* outline: 2px solid var(--avenue-light-gray-white); */
 }
 .bg-dark-blue{
   background-color: var(--avenue-blue);
+}
+.phone a{
+  text-decoration: underline;
 }
 @media screen and (max-width: 480px) {
   .swiper-slide p {
