@@ -381,7 +381,17 @@ const Sections = {
         !controls.msg.validity.valid
       );
     }
-
+    const getCallbackUrl = ({ name, email = "", mobile, companyname = "", msg }) => {
+      const url =  `https://api.whatsapp.com/send?phone=918956747731&text=Hi, 
+    I need more info on cost-effective solutions for sustainable and export packaging.
+    My Information:
+    Name - ${name},
+    ${email.length > 0 ? "Email - " + email + "," : ""}
+    ${companyname.length > 0 ? "Company Name - " + companyname + "," : ""}
+    Mobile - ${mobile},
+    Message - ${msg}.`;
+    return encodeURI(url);
+    }
     const submitForm = (form) => {
       form.preventDefault();
       let controls = form.target;
@@ -393,6 +403,10 @@ const Sections = {
         data.companyname = controls.companyname.value;
         data.msg = controls.msg.value;
         formData = data;
+        let url = getCallbackUrl({ ...data });
+        let linkEle = document.getElementById("callbackUrl");
+        linkEle.setAttribute("href",url)
+        linkEle.click()
       }
     };
 
@@ -514,7 +528,9 @@ const Sections = {
               <label htmlFor="floatingTextarea2">Message</label>
             </div>
             <div className={styles.button}>
-              <button type="submit">Get a callback</button>
+              <a id="callbackUrl">
+                <button type="submit">Get a callback</button>
+              </a>
             </div>
           </form>
         </div>
