@@ -134,7 +134,7 @@ function App({ Component, pageProps, router }) {
             {!IsBotActivated && (
               <Image
                 src="/pixels/logo/bot-logo.png"
-                alt="Avenue Corporation ChatBot Logo"
+                alt=" AvenuePacks ChatBot Logo"
                 layout="responsive"
                 width={100}
                 height={100}
