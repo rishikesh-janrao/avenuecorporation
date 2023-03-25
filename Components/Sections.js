@@ -498,7 +498,7 @@ const Sections = {
                 className="form-control"
                 id="floatingInputMobile"
                 placeholder="e.g. 839078716"
-                maxLength={10}
+                minLength={10}
                 required
                 name="mobile"
                 onKeyDown={onlyDigits}
