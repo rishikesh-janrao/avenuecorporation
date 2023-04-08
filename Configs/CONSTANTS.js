@@ -9,7 +9,7 @@ export const SiteConfig = {
       url: "https://avenuecorporation.in",
       label: "www.avenuecorporation.in",
     },
-    name: "Avenue Packs",
+    name: "Avenue Corporation",
   },
   avenue_packs: {
     emails: [
