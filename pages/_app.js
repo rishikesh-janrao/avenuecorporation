@@ -13,20 +13,20 @@ import SliderProps from "../Configs/SliderProps";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { SiteConfig } from "../Configs/CONSTANTS";
 
 const parser = new UAParser();
 const os = parser.getOS();
 const osName = os.name?.toLowerCase();
-const IsMobile = osName === "ios" || osName === "android"
+const IsMobile = osName === "ios" || osName === "android";
 
 let timer = null;
-function scheduleBot(IsBotActivated,setIsBotActivated){
+function scheduleBot(IsBotActivated, setIsBotActivated) {
   if (!timer && !IsBotActivated) {
     timer = setTimeout(() => setIsBotActivated(true), 5000);
-  }
-  else {
-    clearTimeout(timer)
-    timer = null
+  } else {
+    clearTimeout(timer);
+    timer = null;
   }
 }
 
@@ -43,8 +43,14 @@ function App({ Component, pageProps, router }) {
   const [selectedMenuItem, setSelectedMenuItem] = useState(
     currentPageId ? currentPageId : 1
   );
+  const [siteConfig, setSiteConfig] = useState(SiteConfig.avenue_packs);
 
-  const { SliderHomePageProps, SliderClientProps, SliderGallaryDesktopProps, SliderGallaryMobileProps} = SliderProps;
+  const {
+    SliderHomePageProps,
+    SliderClientProps,
+    SliderGallaryDesktopProps,
+    SliderGallaryMobileProps,
+  } = SliderProps;
 
   const onScroll = useCallback((event) => {
     setScrollY(window.pageYOffset > 5);
@@ -54,6 +60,16 @@ function App({ Component, pageProps, router }) {
     //add eventlistener to window
     window.addEventListener("scroll", onScroll, { passive: true });
     // remove event on unmount to prevent a memory leak with the cleanup
+    if (location) {
+      switch (location.host.split(".")[0]) {
+        case "avenuecorporation":
+          setSiteConfig(SiteConfig.avenue_corporation);
+          break;
+        default:
+          setSiteConfig(SiteConfig.avenue_packs);
+          break;
+      }
+    }
     return () => {
       window.removeEventListener("scroll", onScroll, { passive: true });
     };
@@ -71,6 +87,7 @@ function App({ Component, pageProps, router }) {
         setModalVisible: setModalVisible,
         modalDetails: modalDetails,
         setModal: setModal,
+        siteConfig: siteConfig,
       }}
     >
       <HomeContext.Provider
@@ -78,7 +95,7 @@ function App({ Component, pageProps, router }) {
           state: {
             hamClicked: hamClicked,
           },
-          isMobile: IsMobile ,
+          isMobile: IsMobile,
           platform: osName,
           setHamClicked: setHamClicked,
           SliderHomePageProps: SliderHomePageProps,
@@ -116,7 +133,7 @@ function App({ Component, pageProps, router }) {
 
         <div
           className={`bot ${IsBotActivated ? "active" : ""}`}
-          onLoad={()=>scheduleBot(IsBotActivated,setIsBotActivated)}
+          onLoad={() => scheduleBot(IsBotActivated, setIsBotActivated)}
         >
           <div className="bot-holder__left">
             <span
@@ -134,7 +151,7 @@ function App({ Component, pageProps, router }) {
             {!IsBotActivated && (
               <Image
                 src="/pixels/logo/bot-logo.png"
-                alt="Avenue Corporation ChatBot Logo"
+                alt="ChatBot Logo"
                 layout="responsive"
                 width={100}
                 height={100}

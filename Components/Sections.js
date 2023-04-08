@@ -10,9 +10,7 @@ import {
   faEnvelope,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import {
-  faWhatsapp
-} from "@fortawesome/free-brands-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import NumberCounter from "../Components/NumberCounter";
 import Image from "next/image";
 import NavigationContext from "../Contexts/NavigationContext";
@@ -25,91 +23,103 @@ import Products from "../Configs/Products";
 import Row from "./Row";
 const Sections = {
   HomeSlider: () => <SwiperSlider HomeSlider={true} />,
-  AboutUs: () => (
-    <div id="about" className={styles.panel}>
-      <label className={styles.panelTitle}>About Us</label>
-      <div className={styles.panelBody}>
-        <div className={styles.panelBody_description}>
-          <p>
-            Avenue Corporation, Fully dedicated to integrity, quality and innovation. We strive to offer a unique combination of integrated packaging solutions and services unmatched by any other company to be the best.
-          </p>
-        </div>
-        <div className={styles.panelBody_actions}>
-          <div className={styles.panelButton}>
-            <Link href="/about">
-              <a>About Us</a>
-            </Link>
+  AboutUs: () => {
+    const { siteConfig } = useContext(NavigationContext);
+    return (
+      <div id="about" className={styles.panel}>
+        <label className={styles.panelTitle}>About Us</label>
+        <div className={styles.panelBody}>
+          <div className={styles.panelBody_description}>
+            <p>
+              {siteConfig.name}, Fully dedicated to integrity, quality and
+              innovation. We strive to offer a unique combination of integrated
+              packaging solutions and services unmatched by any other company to
+              be the best.
+            </p>
           </div>
-          <div className={styles.panelButton}>
-            <Link href="/solutions">
-              <a>Solutions</a>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
-  ),
-  WhyUs: () => (
-    <div className={`${styles.panel} ${styles.whyUsPanel}`}>
-      <label className={styles.panelTitle}>Why choose us ?</label>
-      <div className={styles.panelBody}>
-        <div className={styles.panelBody_description}>
-          <p>
-            Bringing the best-in-class industrial packaging solution to you,
-            Avenue Corporation is a packaging engineering company that stands
-            out for its eco-friendly, innovative, cost-effective & smart
-            catalogue of products
-          </p>
-        </div>
-        <div
-          className={`${styles.panelBody_actions} ${styles.whyUsPanelBody_actions}`}
-        >
-          <div className={styles.strip}>
-            <span className={styles.panelBody_actions_animator}></span>
-            <span>
-              <FontAwesomeIcon className={styles.faIcons} icon={faLightbulb} />
-            </span>
-            <p>Innovation & Technology</p>
-          </div>
-          <div className={styles.strip}>
-            <span className={styles.panelBody_actions_animator}></span>
-            <span>
-              <FontAwesomeIcon className={styles.faIcons} icon={faGlobe} />
-            </span>
-            <p>Sustainability</p>
-          </div>
-          <div className={styles.strip}>
-            <span className={styles.panelBody_actions_animator}></span>
-            <span>
-              <FontAwesomeIcon className={styles.faIcons} icon={faLaptop} />
-            </span>
-            <p>Industry 4.0</p>
-          </div>
-        </div>
-        <div
-          className={`${styles.panelBody_actions} ${styles.whyUsPanelBody_actions}`}
-        >
-          <div className={styles.strip}>
-            <span className={styles.panelBody_actions_animator}></span>
-            <span>
-              <FontAwesomeIcon
-                className={styles.faIcons}
-                icon={faMoneyCheckAlt}
-              />
-            </span>
-            <p>Cost-effective</p>
-          </div>
-          <div className={styles.strip}>
-            <span className={styles.panelBody_actions_animator}></span>
-            <span>
-              <FontAwesomeIcon className={styles.faIcons} icon={faLock} />
-            </span>
-            <p>Reliable & Safe</p>
+          <div className={styles.panelBody_actions}>
+            <div className={styles.panelButton}>
+              <Link href="/about">
+                <a>About Us</a>
+              </Link>
+            </div>
+            <div className={styles.panelButton}>
+              <Link href="/solutions">
+                <a>Solutions</a>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  ),
+    );
+  },
+  WhyUs: () => {
+    const { siteConfig } = useContext(NavigationContext);
+    return (
+      <div className={`${styles.panel} ${styles.whyUsPanel}`}>
+        <label className={styles.panelTitle}>Why choose us ?</label>
+        <div className={styles.panelBody}>
+          <div className={styles.panelBody_description}>
+            <p>
+              Bringing the best-in-class industrial packaging solution to you,
+              {siteConfig.name} is a packaging engineering company that stands
+              out for its eco-friendly, innovative, cost-effective & smart
+              catalogue of products
+            </p>
+          </div>
+          <div
+            className={`${styles.panelBody_actions} ${styles.whyUsPanelBody_actions}`}
+          >
+            <div className={styles.strip}>
+              <span className={styles.panelBody_actions_animator}></span>
+              <span>
+                <FontAwesomeIcon
+                  className={styles.faIcons}
+                  icon={faLightbulb}
+                />
+              </span>
+              <p>Innovation & Technology</p>
+            </div>
+            <div className={styles.strip}>
+              <span className={styles.panelBody_actions_animator}></span>
+              <span>
+                <FontAwesomeIcon className={styles.faIcons} icon={faGlobe} />
+              </span>
+              <p>Sustainability</p>
+            </div>
+            <div className={styles.strip}>
+              <span className={styles.panelBody_actions_animator}></span>
+              <span>
+                <FontAwesomeIcon className={styles.faIcons} icon={faLaptop} />
+              </span>
+              <p>Industry 4.0</p>
+            </div>
+          </div>
+          <div
+            className={`${styles.panelBody_actions} ${styles.whyUsPanelBody_actions}`}
+          >
+            <div className={styles.strip}>
+              <span className={styles.panelBody_actions_animator}></span>
+              <span>
+                <FontAwesomeIcon
+                  className={styles.faIcons}
+                  icon={faMoneyCheckAlt}
+                />
+              </span>
+              <p>Cost-effective</p>
+            </div>
+            <div className={styles.strip}>
+              <span className={styles.panelBody_actions_animator}></span>
+              <span>
+                <FontAwesomeIcon className={styles.faIcons} icon={faLock} />
+              </span>
+              <p>Reliable & Safe</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  },
   Solutions: () => {
     //START REUSABLE COMPONENT CHECK - PENDING
     const [hover, sethover] = useState(0);
@@ -125,7 +135,7 @@ const Sections = {
             {hover == 1 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-1.gif"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -134,7 +144,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/1.png"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -150,7 +160,7 @@ const Sections = {
             {hover == 2 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-2.gif"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -158,7 +168,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/2.png"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -173,7 +183,7 @@ const Sections = {
             {hover == 3 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-3.gif"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -181,7 +191,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/3.png"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -198,7 +208,7 @@ const Sections = {
             {hover == 4 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-4.gif"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -206,7 +216,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/4.png"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -221,7 +231,7 @@ const Sections = {
             {hover == 5 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-5.gif"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -229,7 +239,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/5.png"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -244,7 +254,7 @@ const Sections = {
             {hover == 6 ? (
               <Image
                 src="/pixels/solutions-grid/hover-images/grid-6.gif"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -252,7 +262,7 @@ const Sections = {
             ) : (
               <Image
                 src="/pixels/solutions-grid/6.png"
-                alt="Avenue Corporation Logo"
+                alt="Logo"
                 layout="responsive"
                 width={80}
                 height={40}
@@ -264,78 +274,90 @@ const Sections = {
     );
     //END REUSABLE COMPONENT CHECK - PENDING
   },
-  MeetOurClients: ({ showClientSlider, setActive }) => (
-    <div className={styles.panel}>
-      {showClientSlider && (
-        <label className={styles.panelTitle}>Meet Our Clients</label>
-      )}
-      <div className={styles.panelBody} onMouseOver={() => showClientSlider ? setActive(true) : ""} onBlur={() => showClientSlider ? setActive(false) : ""}>
+  MeetOurClients: ({ showClientSlider, setActive }) => {
+    const { siteConfig } = useContext(NavigationContext);
+    return (
+      <div className={styles.panel}>
         {showClientSlider && (
-          <div className={styles.panelBody_description}>
-            <SwiperSlider ClientsSlider={true} />
-          </div>
+          <label className={styles.panelTitle}>Meet Our Clients</label>
         )}
-        <div className={styles.panelBody_actions_meet_our_clients_container}>
-          <div
-            className={
-              styles.panelBody_actions_meet_our_clients_contact_us_image
-            }
-          >
-            <Image
-              src={"/pixels/email-image.png"}
-              layout="responsive"
-              width={100}
-              height={100}
-              alt="Email Image"
-            />
-          </div>
-          <div
-            className={
-              styles.panelBody_actions_meet_our_clients_contact_us_note
-            }
-          >
+        <div
+          className={styles.panelBody}
+          onMouseOver={() => (showClientSlider ? setActive(true) : "")}
+          onBlur={() => (showClientSlider ? setActive(false) : "")}
+        >
+          {showClientSlider && (
+            <div className={styles.panelBody_description}>
+              <SwiperSlider ClientsSlider={true} />
+            </div>
+          )}
+          <div className={styles.panelBody_actions_meet_our_clients_container}>
             <div
               className={
-                styles.panelBody_actions_meet_our_clients_contact_us_title
+                styles.panelBody_actions_meet_our_clients_contact_us_image
               }
             >
-              Avenue Corporation engineered packaging solution
+              <Image
+                src={"/pixels/email-image.png"}
+                layout="responsive"
+                width={100}
+                height={100}
+                alt="Email Image"
+              />
             </div>
             <div
               className={
-                styles.panelBody_actions_meet_our_clients_contact_us_divider
-              }
-            ></div>
-            <div
-              className={
-                styles.panelBody_actions_meet_our_clients_contact_us_description
+                styles.panelBody_actions_meet_our_clients_contact_us_note
               }
             >
-              Our Packaging Solutions excels in terms of sustainability vision,
-              eco-friendly solutions, core values, and operations; an one stop
-              solution for all your industrial packaging needs. We are here to
-              deliver expert packaging solutions & meet your sustainability
-              goals as per your requirements. If you’re rethinking your
-              packaging strategy and are looking to partner with a like-minded
-              supplier.
-            </div>
-            <div
-              className={
-                styles.panelBody_actions_meet_our_clients_contact_us_button
-              }
-            >
-              <Link href="/#ContactForm">
-                <div>Contact Us</div>
-              </Link>
+              <div
+                className={
+                  styles.panelBody_actions_meet_our_clients_contact_us_title
+                }
+              >
+                {siteConfig.name} engineered packaging solution
+              </div>
+              <div
+                className={
+                  styles.panelBody_actions_meet_our_clients_contact_us_divider
+                }
+              ></div>
+              <div
+                className={
+                  styles.panelBody_actions_meet_our_clients_contact_us_description
+                }
+              >
+                Our Packaging Solutions excels in terms of sustainability
+                vision, eco-friendly solutions, core values, and operations; an
+                one stop solution for all your industrial packaging needs. We
+                are here to deliver expert packaging solutions & meet your
+                sustainability goals as per your requirements. If you’re
+                rethinking your packaging strategy and are looking to partner
+                with a like-minded supplier.
+              </div>
+              <div
+                className={
+                  styles.panelBody_actions_meet_our_clients_contact_us_button
+                }
+              >
+                <Link href="/#ContactForm">
+                  <div>Contact Us</div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  ),
+    );
+  },
   WorkCompleted: ({ reqCount, active, setActive }) => {
     return (
-      <div className={styles.workCompleted} onMouseOver={() => setActive(true)} onPointerOver={() => setActive(true)} onBlur={() => setActive(false)}>
+      <div
+        className={styles.workCompleted}
+        onMouseOver={() => setActive(true)}
+        onPointerOver={() => setActive(true)}
+        onBlur={() => setActive(false)}
+      >
         <div className={styles.workCompleted__1}>
           <NumberCounter
             count={2500}
@@ -366,9 +388,11 @@ const Sections = {
       </div>
     );
   },
-  ContactForm: ({ }) => {
+  ContactForm: ({}) => {
     const bt = require("bootstrap/dist/css/bootstrap.css");
     let formData = {};
+
+    const { siteConfig } = useContext(NavigationContext);
 
     function validateForm(controls) {
       if (controls.email.value.length > 0) {
@@ -381,7 +405,13 @@ const Sections = {
         !controls.msg.validity.valid
       );
     }
-    const getCallbackUrl = ({ name, email = "", mobile, companyname = "", msg }) => {
+    const getCallbackUrl = ({
+      name,
+      email = "",
+      mobile,
+      companyname = "",
+      msg,
+    }) => {
       const url = `https://api.whatsapp.com/send?phone=918956747731&text=Hi, 
     I need more info on cost-effective solutions for sustainable and export packaging.
     My Information:
@@ -391,7 +421,7 @@ const Sections = {
     Mobile - ${mobile},
     Message - ${msg}.`;
       return encodeURI(url);
-    }
+    };
     const submitForm = (form) => {
       form.preventDefault();
       let controls = form.target;
@@ -405,8 +435,8 @@ const Sections = {
         formData = data;
         let url = getCallbackUrl({ ...data });
         let linkEle = document.getElementById("callbackUrl");
-        linkEle.setAttribute("href", url)
-        linkEle.click()
+        linkEle.setAttribute("href", url);
+        linkEle.click();
       }
     };
 
@@ -450,10 +480,10 @@ const Sections = {
           <p>
             As a young organization, our steps are cautious. Experienced
             professionals thoroughly guide hand-holding for every action taken.
-            It has been a wonderful and blessed journey for <u>Avenue Corporation</u>&nbsp;
-            so far. We would like to bestow our sincere gratitude and fervent
-            regards to our partners who trusted in us because, like you, we also
-            value our customer&apos;s trust!
+            It has been a wonderful and blessed journey for{" "}
+            <u>{siteConfig.name}</u>&nbsp; so far. We would like to bestow our
+            sincere gratitude and fervent regards to our partners who trusted in
+            us because, like you, we also value our customer&apos;s trust!
           </p>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1889.882554922819!2d74.09764783546999!3d18.674533597432422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xae47038d89ce5a0c!2zMTjCsDQwJzI4LjMiTiA3NMKwMDUnNTUuMSJF!5e0!3m2!1sen!2sin!4v1668328830736!5m2!1sen!2sin"
@@ -510,7 +540,7 @@ const Sections = {
                 type="text"
                 className="form-control"
                 id="floatingInputCompanyName"
-                placeholder="e.g. Avenue Corporation"
+                placeholder={`e.g. ${siteConfig.name}`}
                 maxLength={100}
                 name="companyname"
               />
@@ -537,8 +567,9 @@ const Sections = {
       </div>
     );
   },
-  FooterLinks: ({ }) => {
+  FooterLinks: ({}) => {
     const navContext = useContext(NavigationContext);
+    const { siteConfig } = navContext;
     const socialLinks = navContext.socialLinks;
     const showPrivacyPolicy = (e) => {
       navContext.setModal({
@@ -552,30 +583,29 @@ const Sections = {
           <div>
             We{" "}
             <q>
-              <strong>Avenue Corporation</strong>
+              <strong>{siteConfig.name}</strong>
             </q>{" "}
             are carrying out manufacturing of Heavy Duty Corrugated Boxes &
             Complete Packaging Solution, is committed to grow by providing
-            it&lsquo;s all Customers a Cost-Effective Solution with Good
-            Quality Products, Services & Timely Deliveries always by reducing
-            In-Process Rejections, Machine Break down time, increasing
-            inspections at all stages & by monitoring daily production
-            planning. <br />
+            it&lsquo;s all Customers a Cost-Effective Solution with Good Quality
+            Products, Services & Timely Deliveries always by reducing In-Process
+            Rejections, Machine Break down time, increasing inspections at all
+            stages & by monitoring daily production planning. <br />
             To enhance Customer&lsquo;s satisfaction{" "}
             <q>
-              <u>Avenue Corporation</u>
+              <u>{siteConfig.name}</u>
             </q>{" "}
-            will strict to adherence of quality management system with all
-            legal requirements & continual improvements through proper
-            communication with customers & periodically trainings of all
-            employees. In its pursuits of excellence,{" "}
+            will strict to adherence of quality management system with all legal
+            requirements & continual improvements through proper communication
+            with customers & periodically trainings of all employees. In its
+            pursuits of excellence,{" "}
             <q>
-              <u>Avenue Corporation</u>
+              <u>{siteConfig.name}</u>
             </q>{" "}
             shall strive achievement of an Eco-Friendly Environment &
             Employee&lsquo;s Satisfaction.{" "}
             <q>
-              <u>Avenue Corporation</u>
+              <u>{siteConfig.name}</u>
             </q>{" "}
             strive to offer a Unique Combination of Integrated Packaging
             Solution & Services which unmatched by any other company to be the{" "}
@@ -589,7 +619,7 @@ const Sections = {
               {" "}
               Vaibhav Mumbare, Managing Director
               <br />
-              Avenue Corporation, Pune (India)
+              {siteConfig.name}, Pune (India)
             </div>
           </div>
         ),
@@ -602,19 +632,19 @@ const Sections = {
         <div className={styles.FooterLinks__cell}>
           <Image
             src="/pixels/logo/blue-bg.png"
-            alt="Avenue Corporation Logo"
+            alt="Logo"
             layout="responsive"
             width={80}
             height={40}
           />
         </div>
         <div id="address" className={styles.FooterLinks__cell}>
-
           <div>
-            <label>Avenue Corporation</label>
+            <label>{siteConfig.name}</label>
             <a>
               <p> Corporate Address</p>
-              Sector R19, Tower 41-06-09, Amanora Park Town, Hadapsar, Pune 411028
+              Sector R19, Tower 41-06-09, Amanora Park Town, Hadapsar, Pune
+              411028
             </a>
           </div>
           <div>
@@ -628,23 +658,19 @@ const Sections = {
         <div id="contact" className={styles.FooterLinks__cell}>
           <label>Contact Us</label>
           <span className={styles.FooterLinks__contactus}>
-            {
-              process.env.salesEmails.map((email) => (
-                <span key={email} className={styles.FooterLinks__row}>
-                  <span>
-                    <FontAwesomeIcon icon={faEnvelope} />
-                  </span>
-                  <a href={`mailto:${email}`}>
-                    {email}
-                  </a>
+            {siteConfig.emails.forEach((email) => (
+              <span key={email} className={styles.FooterLinks__row}>
+                <span>
+                  <FontAwesomeIcon icon={faEnvelope} />
                 </span>
-              ))
-            }
+                <a href={`mailto:${email}`}>{email}</a>
+              </span>
+            ))}
             <span className={styles.FooterLinks__row}>
               <span>
                 <FontAwesomeIcon icon={faPhone} />
               </span>
-              <a href="tel:7038650650" >+91 7038 650 650</a>
+              <a href="tel:7038650650">+91 7038 650 650</a>
             </span>
             <span className={styles.FooterLinks__row}>
               <span>
@@ -662,9 +688,7 @@ const Sections = {
               <span>
                 <FontAwesomeIcon icon={faGlobe} />
               </span>
-              <a href={process.env.siteUrl.url}>
-                {process.env.siteUrl.label}
-              </a>
+              <a href={siteConfig.siteUrl.url}>{siteConfig.siteUrl.label}</a>
             </span>
           </span>
           <span className={styles.socials}>
@@ -721,19 +745,41 @@ const Sections = {
       </div>
     );
   },
-  PageBanner: ({ title, description, image, alt, width = 100, height = 20 }) => {
+  PageBanner: ({
+    title,
+    description,
+    image,
+    alt,
+    width = 100,
+    height = 20,
+  }) => {
     function UnderlineTitle({ title }) {
       let titleArray = title.split(" ");
       console.log();
-      let underlined = <span className={pageStyles.underline_first_word_of_title}>{titleArray.shift()}</span>
-      return <>
-        {underlined} {" " + titleArray.join(" ")}
-      </>
+      let underlined = (
+        <span className={pageStyles.underline_first_word_of_title}>
+          {titleArray.shift()}
+        </span>
+      );
+      return (
+        <>
+          {underlined} {" " + titleArray.join(" ")}
+        </>
+      );
     }
     return (
-      <div className={pageStyles.banner} style={{ 'background': `url("/pixels/pages/${image}")`, 'backgroundSize': 'cover', 'backgroundPosition': "center" }}>
+      <div
+        className={pageStyles.banner}
+        style={{
+          background: `url("/pixels/pages/${image}")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className={pageStyles.bannerContents}>
-          <label><UnderlineTitle title={title} /></label>
+          <label>
+            <UnderlineTitle title={title} />
+          </label>
 
           <p dangerouslySetInnerHTML={{ __html: description }}></p>
           <div className={pageStyles.contact_us_button}>
@@ -745,49 +791,129 @@ const Sections = {
       </div>
     );
   },
-  GallarySlider: ({ }) => HomeContext.isMobile ?
-    <SwiperSlider GallaryMobileSlider={true} /> : <SwiperSlider GallaryDesktopSlider={true} />,
-  SustainabilityProducts: ({ }) => {
-
+  GallarySlider: ({}) =>
+    HomeContext.isMobile ? (
+      <SwiperSlider GallaryMobileSlider={true} />
+    ) : (
+      <SwiperSlider GallaryDesktopSlider={true} />
+    ),
+  SustainabilityProducts: ({}) => {
     const homeContext = useContext(HomeContext);
     const IsMobile = homeContext.isMobile;
     return (
-      <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"} classList={`${pageStyles.SustainabilityProductsSection}`}>
-        <Row justifyContent={"center"} alignItems={"center"} flexDirection={"row"}>
+      <Row
+        justifyContent={"center"}
+        alignItems={"center"}
+        flexDirection={"column"}
+        classList={`${pageStyles.SustainabilityProductsSection}`}
+      >
+        <Row
+          justifyContent={"center"}
+          alignItems={"center"}
+          flexDirection={"row"}
+        >
           <h1>Sustainability Products</h1>
         </Row>
-        <Row justifyContent={"center"} alignItems={"center"} classList={"mobile-switchable-row"}>
-          <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-            <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-              <h3 className={`${pageStyles.justify_center}`}>Wooden Pallets Vs ESP Pallets</h3>
-              <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-                <Sections.Products productsInRow={4} totalRows={1} productType={"Wooden Pallets Vs ESP Pallets"} />
+        <Row
+          justifyContent={"center"}
+          alignItems={"center"}
+          classList={"mobile-switchable-row"}
+        >
+          <Row
+            justifyContent={"center"}
+            alignItems={"center"}
+            flexDirection={"column"}
+          >
+            <Row
+              justifyContent={"center"}
+              alignItems={"center"}
+              flexDirection={"column"}
+            >
+              <h3 className={`${pageStyles.justify_center}`}>
+                Wooden Pallets Vs ESP Pallets
+              </h3>
+              <Row
+                justifyContent={"center"}
+                alignItems={"center"}
+                flexDirection={"column"}
+              >
+                <Sections.Products
+                  productsInRow={4}
+                  totalRows={1}
+                  productType={"Wooden Pallets Vs ESP Pallets"}
+                />
               </Row>
             </Row>
-            <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-              <h3 className={`${pageStyles.justify_center}`}>Wooden Boxes Vs Corrugation</h3>
-              <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-                <Sections.Products productsInRow={4} totalRows={1} productType={"Wooden Boxes Vs Corrugation"} />
+            <Row
+              justifyContent={"center"}
+              alignItems={"center"}
+              flexDirection={"column"}
+            >
+              <h3 className={`${pageStyles.justify_center}`}>
+                Wooden Boxes Vs Corrugation
+              </h3>
+              <Row
+                justifyContent={"center"}
+                alignItems={"center"}
+                flexDirection={"column"}
+              >
+                <Sections.Products
+                  productsInRow={4}
+                  totalRows={1}
+                  productType={"Wooden Boxes Vs Corrugation"}
+                />
               </Row>
             </Row>
           </Row>
-          <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-            <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-              <h3 className={`${pageStyles.justify_center}`}>VCI Vs Biodegradable VCI</h3>
-              <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-                <Sections.Products productsInRow={4} totalRows={1} productType={"VCI Vs Biodegradable VCI"} />
+          <Row
+            justifyContent={"center"}
+            alignItems={"center"}
+            flexDirection={"column"}
+          >
+            <Row
+              justifyContent={"center"}
+              alignItems={"center"}
+              flexDirection={"column"}
+            >
+              <h3 className={`${pageStyles.justify_center}`}>
+                VCI Vs Biodegradable VCI
+              </h3>
+              <Row
+                justifyContent={"center"}
+                alignItems={"center"}
+                flexDirection={"column"}
+              >
+                <Sections.Products
+                  productsInRow={4}
+                  totalRows={1}
+                  productType={"VCI Vs Biodegradable VCI"}
+                />
               </Row>
             </Row>
-            <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-              <h3 className={`${pageStyles.justify_center}`}>Wooden Boxes Vs Corrugation Accessories</h3>
-              <Row justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
-                <Sections.Products productsInRow={4} totalRows={1} productType={"Wooden Boxes Vs Corrugation Accessories"} />
+            <Row
+              justifyContent={"center"}
+              alignItems={"center"}
+              flexDirection={"column"}
+            >
+              <h3 className={`${pageStyles.justify_center}`}>
+                Wooden Boxes Vs Corrugation Accessories
+              </h3>
+              <Row
+                justifyContent={"center"}
+                alignItems={"center"}
+                flexDirection={"column"}
+              >
+                <Sections.Products
+                  productsInRow={4}
+                  totalRows={1}
+                  productType={"Wooden Boxes Vs Corrugation Accessories"}
+                />
               </Row>
             </Row>
           </Row>
         </Row>
       </Row>
-    )
+    );
   },
   Products: ({ productsInRow, totalRows, productType }) => {
     const [products, setProducts] = useState([]);
@@ -795,40 +921,55 @@ const Sections = {
     if (products.length === 0) {
       switch (productType) {
         case "Wooden Pallets Vs ESP Pallets":
-          setProducts([...Products.SustainabilityProducts["Wooden Pallets Vs ESP Pallets"]]);
+          setProducts([
+            ...Products.SustainabilityProducts["Wooden Pallets Vs ESP Pallets"],
+          ]);
           break;
         case "Wooden Boxes Vs Corrugation":
-          setProducts([...Products.SustainabilityProducts["Wooden Boxes Vs Corrugation"]]);
+          setProducts([
+            ...Products.SustainabilityProducts["Wooden Boxes Vs Corrugation"],
+          ]);
           break;
 
         case "VCI Vs Biodegradable VCI":
-          setProducts([...Products.SustainabilityProducts["VCI Vs Biodegradable VCI"]]);
+          setProducts([
+            ...Products.SustainabilityProducts["VCI Vs Biodegradable VCI"],
+          ]);
           break;
         case "Wooden Boxes Vs Corrugation Accessories":
-          setProducts([...Products.SustainabilityProducts["Wooden Boxes Vs Corrugation Accessories"]]);
+          setProducts([
+            ...Products.SustainabilityProducts[
+              "Wooden Boxes Vs Corrugation Accessories"
+            ],
+          ]);
           break;
       }
     }
     return (
-      <Row justifyContent={"center"} alignItems={"center"} flexDirection={"row"}>
-        {products.map((el) => <div key={el.name} className={pageStyles.productContainer}>
-          <div className={pageStyles.productImage}>
-            <Image
-              layout="responsive"
-              src={el.src}
-              alt={el.alt}
-              width={pageStyles.productImage.width || 100}
-              height={pageStyles.productImage.height || 80}
-            />
+      <Row
+        justifyContent={"center"}
+        alignItems={"center"}
+        flexDirection={"row"}
+      >
+        {products.map((el) => (
+          <div key={el.name} className={pageStyles.productContainer}>
+            <div className={pageStyles.productImage}>
+              <Image
+                layout="responsive"
+                src={el.src}
+                alt={el.alt}
+                width={pageStyles.productImage.width || 100}
+                height={pageStyles.productImage.height || 80}
+              />
+            </div>
+            <div className={pageStyles.productDescription}>
+              <h5>{el.name}</h5>
+            </div>
           </div>
-          <div className={pageStyles.productDescription}>
-            <h5>{el.name}</h5>
-          </div>
-        </div>)}
-
+        ))}
       </Row>
-    )
-  }
+    );
+  },
 };
 
 export default Sections;

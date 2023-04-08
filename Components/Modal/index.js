@@ -9,7 +9,9 @@ function Modal({}) {
   const containerStyles = { ...navContext.modalDetails.styles };
   return (
     <motion.div
-      className={`modal ${navContext.isModalVisible ? modalStyles.Active : modalStyles.InActive}`}
+      className={`modal ${
+        navContext.isModalVisible ? modalStyles.Active : modalStyles.InActive
+      }`}
       key={!navContext.isModalVisible}
       initial="pageInitial"
       animate="pageAnimate"
@@ -53,6 +55,7 @@ const ModalTitle = () => {
 };
 const ModalBody = () => {
   const navContext = useContext(NavigationContext);
+  const { siteConfig } = useContext(NavigationContext);
   return (
     <div className={modalStyles.body}>
       <Image
@@ -60,7 +63,7 @@ const ModalBody = () => {
         layout="responsive"
         width={800}
         height={300}
-        alt="pop up cover - privacy policy - Avenue Corporation"
+        alt={`pop up cover - privacy policy - ${siteConfig.name}`}
       />
       {navContext.modalDetails.body}
     </div>
