@@ -382,7 +382,7 @@ const Sections = {
       );
     }
     const getCallbackUrl = ({ name, email = "", mobile, companyname = "", msg }) => {
-      const url =  `https://api.whatsapp.com/send?phone=918956747731&text=Hi, 
+      const url = `https://api.whatsapp.com/send?phone=918956747731&text=Hi, 
     I need more info on cost-effective solutions for sustainable and export packaging.
     My Information:
     Name - ${name},
@@ -390,7 +390,7 @@ const Sections = {
     ${companyname.length > 0 ? "Company Name - " + companyname + "," : ""}
     Mobile - ${mobile},
     Message - ${msg}.`;
-    return encodeURI(url);
+      return encodeURI(url);
     }
     const submitForm = (form) => {
       form.preventDefault();
@@ -405,7 +405,7 @@ const Sections = {
         formData = data;
         let url = getCallbackUrl({ ...data });
         let linkEle = document.getElementById("callbackUrl");
-        linkEle.setAttribute("href",url)
+        linkEle.setAttribute("href", url)
         linkEle.click()
       }
     };
@@ -628,30 +628,18 @@ const Sections = {
         <div id="contact" className={styles.FooterLinks__cell}>
           <label>Contact Us</label>
           <span className={styles.FooterLinks__contactus}>
-            <span className={styles.FooterLinks__row}>
-              <span>
-                <FontAwesomeIcon icon={faEnvelope} />
-              </span>
-              <a href="mailto:marketing@avenuecorporation.in">
-                marketing@avenuecorporation.in
-              </a>
-            </span>
-            <span className={styles.FooterLinks__row}>
-              <span>
-                <FontAwesomeIcon icon={faEnvelope} />
-              </span>
-              <a href="mailto:sales@avenuecorporation.in">
-                sales@avenuecorporation.in
-              </a>
-            </span>
-            <span className={styles.FooterLinks__row}>
-              <span>
-                <FontAwesomeIcon icon={faEnvelope} />
-              </span>
-              <a href="mailto:salesavenuecorporation@gmail.com">
-                salesavenuecorporation@gmail.com
-              </a>
-            </span>
+            {
+              process.env.salesEmails.map((email) => (
+                <span key={email} className={styles.FooterLinks__row}>
+                  <span>
+                    <FontAwesomeIcon icon={faEnvelope} />
+                  </span>
+                  <a href={`mailto:${email}`}>
+                    {email}
+                  </a>
+                </span>
+              ))
+            }
             <span className={styles.FooterLinks__row}>
               <span>
                 <FontAwesomeIcon icon={faPhone} />
@@ -674,8 +662,8 @@ const Sections = {
               <span>
                 <FontAwesomeIcon icon={faGlobe} />
               </span>
-              <a href="https://avenuecorporation.in">
-                www.avenuecorporation.in
+              <a href={process.env.siteUrl.url}>
+                {process.env.siteUrl.label}
               </a>
             </span>
           </span>
