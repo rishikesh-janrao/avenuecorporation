@@ -5,7 +5,7 @@ import Head from "next/head";
 import pageStyles from "../styles/Page.module.css";
 import NavigationContext from "../Contexts/NavigationContext";
 
-function about(props) {
+function About(props) {
   const { siteConfig } = useContext(NavigationContext);
   const bannerDetails = {
     title: `Welcome to ${siteConfig.name}`,
@@ -62,4 +62,4 @@ function about(props) {
   );
 }
 
-export default about;
+export default About;
