@@ -1,6 +1,13 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
 const fs = require("fs");
+export let ActiveUsers = [];
+const checkActiveUsers = setInterval(() => {
+  ActiveUsers = ActiveUsers.filter(
+    (el) => (Date.now() - el.timestamp) / 1000 / 60 >= 1
+  );
+}, 60000);
+
 try {
   if (fs.existsSync("tracker.json")) {
     fs.readFile("tracker.json", "utf8", function (err, data) {
@@ -24,7 +31,6 @@ try {
 } catch (err) {
   console.error(err);
 }
-
 
 export default function handler(req, res) {
   const { action } = req.query;
@@ -52,6 +58,11 @@ export default function handler(req, res) {
             };
             trackerData.history.push(data);
           }
+          ActiveUsers.push({
+            ip: clientData.ip,
+            domain: clientData.origin,
+            timestamp: Date.now(),
+          });
           fs.writeFileSync("tracker.json", JSON.stringify(trackerData));
           res.status(200).json({ status: "tracked" });
         });
@@ -72,11 +83,11 @@ export default function handler(req, res) {
         break;
     }
   }
-  if (parsedAction === "REQUEST") {
-    // POST GET CALL
-    fs.readFile("tracker.json", "utf8", function (err, data) {
-      const trackerData = JSON.parse(data);
-      res.status(200).json(trackerData);
+  if (parsedAction === "REQUEST_ACTIVE_USERS") {
+    // GET CALL
+    res.status(200).json({
+      avenuepacks:ActiveUsers.filter(el=>el.domain === "avenue-packs").length,
+      avenuecorporation:ActiveUsers.filter(el=>el.domain === "avenue-corporation").length
     });
   }
 }

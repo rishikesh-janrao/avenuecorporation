@@ -66,8 +66,6 @@ function App({ Component, pageProps, router }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     // remove event on unmount to prevent a memory leak with the cleanup
 
-
-
     if (location) {
       //sets backend server from here based on the domain its currently hosted on
       setServer(location.origin);
@@ -86,7 +84,7 @@ function App({ Component, pageProps, router }) {
       if (navigator && locationStatus === "") {
         let clientData = {
           name: "",
-          email:"",
+          email: "",
           browserName: navigator.appName,
           platform: navigator.platform,
           userAgent: navigator.userAgent,
@@ -94,27 +92,47 @@ function App({ Component, pageProps, router }) {
           origin: siteConfig.domain,
         };
         locationStatus = "PENDING";
+        getLocationData()
+          .then(({ ip }) => {
+            if (ip && location) {
+              setIp(ip);
+              clientData.ip = ip;
+              const timestamp = Date.now();
 
-        getLocationData().then(({ ip }) => {
-          if (ip && location) {
-            setIp(ip);
-            clientData.ip = ip;
-            const timestamp = Date.now();
+              //set tracker record for every visit
+              setTrackRecord({
+                payload: {
+                  clientData,
+                  timestamp,
+                },
+                params: {
+                  action: "ADD",
+                },
+              }).then((res) => {
+                locationStatus = "SAVED";
 
-            //set tracker record for every visit
-            setTrackRecord({
-              payload: {
-                clientData,
-                timestamp,
-              },
-              params: {
-                action: "ADD",
-              },
-            }).then((res) => {
-              locationStatus = "SAVED";
-            });
-          }
-        });
+                const interval = setInterval(() => {
+                  const timestamp = Date.now();
+
+                  //set tracker record for every visit
+                  setTrackRecord({
+                    payload: {
+                      clientData,
+                      timestamp,
+                    },
+                    params: {
+                      action: "ADD",
+                    },
+                  }).then((res) => {
+                    locationStatus = "SAVED";
+                  });
+                }, 60000);
+              });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       }
     }
 
