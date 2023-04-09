@@ -14,11 +14,14 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { SiteConfig } from "../Configs/CONSTANTS";
+import ServicesManager from "../Modules/services";
+import ThirdPartyServices from "../Modules/thirdParty";
 
 const parser = new UAParser();
 const os = parser.getOS();
 const osName = os.name?.toLowerCase();
 const IsMobile = osName === "ios" || osName === "android";
+let locationStatus = "";
 
 let timer = null;
 function scheduleBot(IsBotActivated, setIsBotActivated) {
@@ -31,6 +34,8 @@ function scheduleBot(IsBotActivated, setIsBotActivated) {
 }
 
 function App({ Component, pageProps, router }) {
+  const { setServer, setTrackRecord } = ServicesManager();
+  const { getLocationData } = ThirdPartyServices();
   const [hamClicked, setHamClicked] = useState(false);
   const [scrollY, setScrollY] = useState(false);
   const [isModalVisible, setModalVisible] = useState(false);
@@ -44,6 +49,7 @@ function App({ Component, pageProps, router }) {
     currentPageId ? currentPageId : 1
   );
   const [siteConfig, setSiteConfig] = useState(SiteConfig.avenue_packs);
+  const [ip, setIp] = useState("");
 
   const {
     SliderHomePageProps,
@@ -55,12 +61,18 @@ function App({ Component, pageProps, router }) {
   const onScroll = useCallback((event) => {
     setScrollY(window.pageYOffset > 5);
   }, []);
-
   useEffect(() => {
     //add eventlistener to window
     window.addEventListener("scroll", onScroll, { passive: true });
     // remove event on unmount to prevent a memory leak with the cleanup
+
+
+
     if (location) {
+      //sets backend server from here based on the domain its currently hosted on
+      setServer(location.origin);
+
+      //sets site config based on current domain
       switch (location.host.split(".")[0]) {
         case "avenuecorporation":
           setSiteConfig(SiteConfig.avenue_corporation);
@@ -69,7 +81,43 @@ function App({ Component, pageProps, router }) {
           setSiteConfig(SiteConfig.avenue_packs);
           break;
       }
+
+      //get location data for client
+      if (navigator && locationStatus === "") {
+        let clientData = {
+          name: "",
+          email:"",
+          browserName: navigator.appName,
+          platform: navigator.platform,
+          userAgent: navigator.userAgent,
+          ip: "",
+          origin: siteConfig.domain,
+        };
+        locationStatus = "PENDING";
+
+        getLocationData().then(({ ip }) => {
+          if (ip && location) {
+            setIp(ip);
+            clientData.ip = ip;
+            const timestamp = Date.now();
+
+            //set tracker record for every visit
+            setTrackRecord({
+              payload: {
+                clientData,
+                timestamp,
+              },
+              params: {
+                action: "ADD",
+              },
+            }).then((res) => {
+              locationStatus = "SAVED";
+            });
+          }
+        });
+      }
     }
+
     return () => {
       window.removeEventListener("scroll", onScroll, { passive: true });
     };
@@ -88,6 +136,9 @@ function App({ Component, pageProps, router }) {
         modalDetails: modalDetails,
         setModal: setModal,
         siteConfig: siteConfig,
+        state: {
+          ip: ip,
+        },
       }}
     >
       <HomeContext.Provider

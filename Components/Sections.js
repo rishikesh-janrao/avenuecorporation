@@ -21,6 +21,7 @@ import { useContext, useState } from "react";
 import HomeContext from "../Contexts/HomeContext";
 import Products from "../Configs/Products";
 import Row from "./Row";
+import ServicesManager from "../Modules/services";
 const Sections = {
   HomeSlider: () => <SwiperSlider HomeSlider={true} />,
   AboutUs: () => {
@@ -390,9 +391,11 @@ const Sections = {
   },
   ContactForm: ({}) => {
     const bt = require("bootstrap/dist/css/bootstrap.css");
-    let formData = {};
 
-    const { siteConfig } = useContext(NavigationContext);
+    const {
+      siteConfig,
+      state: { ip },
+    } = useContext(NavigationContext);
 
     function validateForm(controls) {
       if (controls.email.value.length > 0) {
@@ -423,6 +426,7 @@ const Sections = {
       return encodeURI(url);
     };
     const submitForm = (form) => {
+      const { setTrackRecord, addEnquiry } = ServicesManager();
       form.preventDefault();
       let controls = form.target;
       if (validateForm(controls)) {
@@ -432,11 +436,40 @@ const Sections = {
         data.mobile = controls.mobile.value;
         data.companyname = controls.companyname.value;
         data.msg = controls.msg.value;
-        formData = data;
-        let url = getCallbackUrl({ ...data });
-        let linkEle = document.getElementById("callbackUrl");
-        linkEle.setAttribute("href", url);
-        linkEle.click();
+        data.domain = siteConfig.domain
+
+        setTrackRecord({
+          payload: {
+            clientData: {
+              name: data.name || "",
+              email: data.email,
+              ip: ip,
+            },
+          },
+          params: {
+            action: "UPDATE",
+          },
+        })
+          .then((res) => {
+            console.log("Updated Name");
+          })
+          .then((el) => {
+            addEnquiry({
+              payload: data,
+              params: {
+                action: "ADD",
+              },
+            })
+              .then((res) => {
+                console.log("Added enquiry");
+              })
+              .then((el) => {
+                let url = getCallbackUrl({ ...data });
+                let linkEle = document.getElementById("callbackUrl");
+                linkEle.setAttribute("href", url);
+                linkEle.click();
+              });
+          });
       }
     };
 
@@ -755,7 +788,6 @@ const Sections = {
   }) => {
     function UnderlineTitle({ title }) {
       let titleArray = title.split(" ");
-      console.log();
       let underlined = (
         <span className={pageStyles.underline_first_word_of_title}>
           {titleArray.shift()}
