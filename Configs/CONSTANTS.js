@@ -10,6 +10,7 @@ export const SiteConfig = {
       label: "www.avenuecorporation.in",
     },
     name: "Avenue Corporation",
+    domain:"avenue-corporation"
   },
   avenue_packs: {
     emails: [
@@ -22,5 +23,6 @@ export const SiteConfig = {
       label: "www.avenuepacks.com",
     },
     name: "Avenue Packs",
+    domain:"avenue-packs"
   },
 };
