@@ -1,64 +1,21 @@
-const fs = require("fs");
-try {
-  if (fs.existsSync("./entrees.json")) {
-    fs.readFile("entrees.json", "utf8", function (err, data) {
-      if (!data) {
-        fs.writeFileSync(
-          "entrees.json",
-          JSON.stringify({
-            enquiries: [],
-          })
-        );
-      }
-    });
-  } else {
-    fs.writeFileSync(
-      "entrees.json",
-      JSON.stringify({
-        enquiries: [],
-      })
-    );
-  }
-} catch (err) {
-  console.error(err);
-}
+import { FBServices } from "../../Modules/firebase";
+const {insertEnquiry } = FBServices();
 
 export default function handler(req, res) {
   const { action } = req.query;
   const parsedAction = atob(action);
   if (req.method === "POST") {
     if (req.body) {
-      const { email } = req.body;
-      if (parsedAction === "ADD") {
-        fs.readFile("entrees.json", "utf8", function (err, data) {
-          if (data) {
-            const { enquiries } = JSON.parse(data);
-            let found = false;
-            enquiries.find((entry) => {
-              if (entry.email === email) {
-                entry = req.body;
-                found = true;
-              }
-            });
-            if (!found) {
-              enquiries.push(req.body);
-            }
-            fs.writeFileSync(
-              "entrees.json",
-              JSON.stringify({
-                enquiries,
-              })
-            );
-            res.status(200).json({ status: "added" });
-          }
-          if (err) {
-            console.log(err);
-          }
-        });
+      const { timestamp: t, clientData } = req.body;
+
+      switch (parsedAction) {
+        case "ADD":
+          //POST CALL
+          const insertCompleted = (response) => {
+            res.status(200).json({ status: "tracked", ...response });
+          };
+          insertEnquiry(clientData, insertCompleted);
       }
     }
   }
-  //   else if(req.method === "GET"){
-
-  //   }
 }
