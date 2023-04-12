@@ -71,11 +71,12 @@ function App({ Component, pageProps, router }) {
       setServer(location.origin);
 
       //sets site config based on current domain
-      switch (location.host.split(".")[0]) {
+      const hostname = location.host.split(".")[0];
+      switch (hostname) {
         case "avenuecorporation":
           setSiteConfig(SiteConfig.avenue_corporation);
           break;
-        default:
+        case "avenuepacks":
           setSiteConfig(SiteConfig.avenue_packs);
           break;
       }
