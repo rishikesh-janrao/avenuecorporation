@@ -95,8 +95,9 @@ function App({ Component, pageProps, router }) {
         getLocationData()
           .then(({ ip }) => {
             if (ip && location) {
-              setIp(ip);
-              clientData.ip = ip;
+              let formattedIP = ip.replace(/[&\/\\#, +()$~%.'":*?<>{}]/g,"_")
+              setIp(formattedIP);
+              clientData.ip = formattedIP;
               const timestamp = Date.now();
 
               //set tracker record for every visit

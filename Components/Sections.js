@@ -436,7 +436,8 @@ const Sections = {
         data.mobile = controls.mobile.value;
         data.companyname = controls.companyname.value;
         data.msg = controls.msg.value;
-        data.domain = siteConfig.domain
+        data.domain = siteConfig.domain;
+        data.ip = ip;
 
         setTrackRecord({
           payload: {
@@ -444,10 +445,11 @@ const Sections = {
               name: data.name || "",
               email: data.email,
               ip: ip,
+              origin: siteConfig.domain,
             },
           },
           params: {
-            action: "UPDATE",
+            action: "ADD",
           },
         })
           .then((res) => {
@@ -455,7 +457,9 @@ const Sections = {
           })
           .then((el) => {
             addEnquiry({
-              payload: data,
+              payload: {
+                clientData: data,
+              },
               params: {
                 action: "ADD",
               },
@@ -764,7 +768,7 @@ const Sections = {
               <Link href={"/about"}>About Us</Link>
             </li>
             <li>
-              <Link href={"/contact"}>Contact Us</Link>
+              <Link href={"/#contact"}>Contact Us</Link>
             </li>
             <li onClick={showPrivacyPolicy}>
               Privacy Policy
