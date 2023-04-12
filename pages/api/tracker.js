@@ -39,15 +39,17 @@ export default function handler(req, res) {
         avenuepacks: 0,
         avenuecorporation: 0,
       };
-      Object.keys(data).map((key) => {
-        if (key) {
-          if (data[`${key}`].domain === "avenue-packs") {
-            activeUsers.avenuepacks++;
-          } else if (data[`${key}`].domain === "avenue-corporation") {
-            activeUsers.avenuecorporation++;
+      if (data) {
+        Object.keys(data).map((key) => {
+          if (key) {
+            if (data[`${key}`].domain === "avenue-packs") {
+              activeUsers.avenuepacks++;
+            } else if (data[`${key}`].domain === "avenue-corporation") {
+              activeUsers.avenuecorporation++;
+            }
           }
-        }
-      });
+        });
+      }
       return res.status(200).json(activeUsers);
     }
     getActiveUsers(response);
