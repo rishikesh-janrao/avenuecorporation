@@ -69,11 +69,8 @@ export default async function handler(req, res) {
             }
           }
         });
-
-        return res.status(200).json(activeUsers);
-      } else {
-        return res.status(200).json({ STATUS: "NO_ACTIVE_USERS" });
       }
+      return res.status(200).json(activeUsers);
     }
 
     getActiveUsers(response);
