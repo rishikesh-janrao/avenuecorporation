@@ -395,6 +395,9 @@ const Sections = {
     const {
       siteConfig,
       state: { ip },
+      setModalVisible,
+      setModal
+
     } = useContext(NavigationContext);
 
     function validateForm(controls) {
@@ -465,13 +468,29 @@ const Sections = {
               },
             })
               .then((res) => {
-                console.log("Added enquiry");
+                form.target.reset();
               })
               .then((el) => {
-                let url = getCallbackUrl({ ...data });
-                let linkEle = document.getElementById("callbackUrl");
-                linkEle.setAttribute("href", url);
-                linkEle.click();
+                setModal({
+                  styles: {
+                    width: "50%",
+                    height: "auto",
+                    minHeight: "30%",
+                  },
+                  title: "Enquiry Saved",
+                  body: (
+                    <div className={styles.enquirySubmitted}>
+                      <h4>Thanks for visiting {siteConfig.name}.</h4><br/>
+                     Your enquiry has been saved and will shortly be answered by our marketing team.<br/>
+                     Our marketing team might contact you soon !<br/>
+                     If you still need quick assistance then please reach out us on Whatsapp or <Link href={getCallbackUrl({ ...data })}>click here</Link>
+                     
+                     <br/><br/>
+                     Happy Packaging !
+                    </div>
+                  ),
+                });
+                setModalVisible(true);
               });
           });
       }
