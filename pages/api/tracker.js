@@ -3,6 +3,25 @@
 import { FBServices } from "../../Modules/firebase";
 const { insertTrack, deleteTrack, getActiveUsers } = FBServices();
 
+import Cors from "cors";
+
+const cors = Cors({
+  methods: ["POST", "GET", "HEAD"],
+});
+
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+}
+
 const checkActiveUsers = setInterval(() => {
   function response(data) {
     if (data)
@@ -17,7 +36,8 @@ const checkActiveUsers = setInterval(() => {
   getActiveUsers(response);
 }, 60000);
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
+  await runMiddleware(req, res, cors);
   const { action } = req.query;
   const parsedAction = atob(action);
   if (req.body) {
@@ -49,9 +69,13 @@ export default function handler(req, res) {
             }
           }
         });
+
+        return res.status(200).json(activeUsers);
+      } else {
+        return res.status(200).json({ STATUS: "NO_ACTIVE_USERS" });
       }
-      return res.status(200).json(activeUsers);
     }
+
     getActiveUsers(response);
   }
 }
