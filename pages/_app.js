@@ -48,7 +48,7 @@ function App({ Component, pageProps, router }) {
   const [selectedMenuItem, setSelectedMenuItem] = useState(
     currentPageId ? currentPageId : 1
   );
-  const [siteConfig, setSiteConfig] = useState(SiteConfig.avenue_packs);
+  const [siteConfig, setSiteConfig] = useState(SiteConfig.avenue_corporation);
   const [ip, setIp] = useState("");
 
   const {
