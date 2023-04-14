@@ -18,7 +18,11 @@ export default function handler(req, res) {
       case "GETALL":
         function response(data) {
           if (data) {
-            res.status(200).json(data);
+            let list = [];
+            Object.keys(data).map((key) => {
+              list.push(data[key]);
+            });
+            res.status(200).json(list);
           }
         }
         getAllEnquiries(response);

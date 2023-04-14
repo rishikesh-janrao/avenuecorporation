@@ -37,7 +37,7 @@ export const FBServices = () => {
         console.log("Enquiry is added");
       })
       .catch((error) => {
-        console.log("Adding enquiry failed", error);
+        logError(error)
       });
   };
 
@@ -65,7 +65,7 @@ export const FBServices = () => {
         }
       })
       .catch((error) => {
-        console.log("Tracker failed", error);
+        logError(error)
       });
   };
   const deleteTrack = (reference="/activeusers/", key, msg = "deleted expired active user") => {
@@ -74,14 +74,25 @@ export const FBServices = () => {
     });
   };
 
-  const getAllEnquiries = (response,reference = "enquiries/") => GET_COMMAND(reference,response)
+  const getAllEnquiries = (response,reference = "enquiries/") => GET_COMMAND(reference,response);
 
 
+  const logError = (error)=> INSERT_COMMAND(
+    error,
+    "errors/" + Date.now()
+  )
+    .then((res) => {
+      console.log("Error is logged",res);
+    })
+    .catch((error) => {
+      logError(error)
+    });
   return {
     insertTrack,
     getActiveUsers,
     deleteTrack,
     insertEnquiry,
-    getAllEnquiries
+    getAllEnquiries,
+    logError
   };
 }
