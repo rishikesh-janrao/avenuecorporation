@@ -74,9 +74,7 @@ export const FBServices = () => {
     });
   };
 
-  const getAllEnquiries = (response,reference = "enquiries/") => {
-    GET_COMMAND(reference).then(res=>response(res))
-  };
+  const getAllEnquiries = (response,reference = "enquiries/") => GET_COMMAND(reference,response)
 
 
   return {
