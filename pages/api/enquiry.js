@@ -1,7 +1,26 @@
 import { FBServices } from "../../Modules/firebase";
 const { insertEnquiry, getAllEnquiries } = FBServices();
+import Cors from "cors";
 
-export default function handler(req, res) {
+const cors = Cors({
+  methods: ["POST", "GET", "HEAD"],
+});
+
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+}
+
+export default async function handler(req, res) {
+  await runMiddleware(req, res, cors);
   const { action } = req.query;
   const parsedAction = atob(action);
   if (req.body) {
