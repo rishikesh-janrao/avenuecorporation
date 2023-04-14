@@ -15,18 +15,19 @@ export default function handler(req, res) {
         };
         insertEnquiry(clientData, insertCompleted);
         break;
-      case "GETALL":
-        function response(data) {
-          if (data) {
-            let list = [];
-            Object.keys(data).map((key) => {
-              list.push(data[key]);
-            });
-            res.status(200).json(list);
-          }
-        }
-        getAllEnquiries(response);
-        break;
     }
+  }
+
+  if (parsedAction === "GETALL") {
+    function response(data) {
+      if (data) {
+        let list = [];
+        Object.keys(data).map((key) => {
+          list.push(data[key]);
+        });
+        res.status(200).json(list);
+      }
+    }
+    getAllEnquiries(response);
   }
 }
