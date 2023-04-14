@@ -23,27 +23,26 @@ export const FBServices = () => {
   //SERVICES
   const getActiveUsers = (response, reference = "activeusers/") =>
     GET_COMMAND(reference, response);
-    const getTrackRecord = (response, reference = "activeusers/") =>
+  const getTrackRecord = (response, reference = "activeusers/") =>
     GET_COMMAND(reference, response);
 
-  const insertEnquiry = (enquiry, insertCompleted) =>{
-    
-    getTrackRecord(insertCompleted, "tracker/"+enquiry.ip)
+  const insertEnquiry = (enquiry, insertCompleted) => {
+    getTrackRecord(insertCompleted, "tracker/" + enquiry.ip);
     return INSERT_COMMAND(
       enquiry,
       "enquiries/" + maskEmailForFirebase(enquiry.email)
     )
       .then((res) => {
-        insertCompleted(res)
-        console.log("Enquiry is added")
+        insertCompleted(res);
+        console.log("Enquiry is added");
       })
       .catch((error) => {
-        console.log("Adding enquiry failed",error);
+        console.log("Adding enquiry failed", error);
       });
-    }
+  };
 
-  const insertTrack = (track, insertCompleted) =>
-    INSERT_COMMAND(
+  const insertTrack = (track, insertCompleted) => {
+    return INSERT_COMMAND(
       track,
       "tracker/" +
         (track.email.length > 1
@@ -66,18 +65,25 @@ export const FBServices = () => {
         }
       })
       .catch((error) => {
-        console.log("Tracker failed",error);
+        console.log("Tracker failed", error);
       });
-  const deleteTrack = (key) => {
-    remove(ref(database, `/activeusers/${key}`)).then((res) => {
-      console.log("deleted expired active user");
+  };
+  const deleteTrack = (reference="/activeusers/", key, msg = "deleted expired active user") => {
+    DELETE_COMMAND(`${reference}${key}`).then((res) => {
+      console.log(msg);
     });
   };
+
+  const getAllEnquiries = (response,reference = "enquiries/") => {
+    GET_COMMAND(reference).then(res=>response(res))
+  };
+
 
   return {
     insertTrack,
     getActiveUsers,
     deleteTrack,
     insertEnquiry,
+    getAllEnquiries
   };
-};
+}

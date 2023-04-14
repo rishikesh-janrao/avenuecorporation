@@ -394,7 +394,7 @@ const Sections = {
 
     const {
       siteConfig,
-      state: { ip },
+      state: { ip, coords },
       setModalVisible,
       setModal
 
@@ -441,6 +441,8 @@ const Sections = {
         data.msg = controls.msg.value;
         data.domain = siteConfig.domain;
         data.ip = ip;
+        data.location = coords;
+        data.timestamp = Date.now()
 
         setTrackRecord({
           payload: {
@@ -714,7 +716,7 @@ const Sections = {
         <div id="contact" className={styles.FooterLinks__cell}>
           <label>Contact Us</label>
           <span className={styles.FooterLinks__contactus}>
-            {siteConfig.emails.forEach((email) => (
+            {siteConfig.emails.map((email) => (
               <span key={email} className={styles.FooterLinks__row}>
                 <span>
                   <FontAwesomeIcon icon={faEnvelope} />
