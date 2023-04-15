@@ -396,8 +396,7 @@ const Sections = {
       siteConfig,
       state: { ip, coords },
       setModalVisible,
-      setModal
-
+      setModal,
     } = useContext(NavigationContext);
 
     function validateForm(controls) {
@@ -442,7 +441,50 @@ const Sections = {
         data.domain = siteConfig.domain;
         data.ip = ip;
         data.location = coords;
-        data.timestamp = Date.now()
+        data.timestamp = Date.now();
+        const AddEquiry = () => {
+          addEnquiry({
+            payload: {
+              clientData: data,
+            },
+            params: {
+              action: "ADD",
+            },
+          })
+            .then((res) => {
+              form.target.reset();
+            })
+            .then((el) => {
+              setModal({
+                styles: {
+                  width: "50%",
+                  height: "auto",
+                  minHeight: "30%",
+                },
+                title: "Enquiry Saved",
+                body: (
+                  <div className={styles.enquirySubmitted}>
+                    <h4>Thanks for visiting {siteConfig.name}.</h4>
+                    <br />
+                    Your enquiry has been saved and will shortly be answered by
+                    our marketing team.
+                    <br />
+                    Our marketing team might contact you soon !<br />
+                    If you still need quick assistance then please reach out us
+                    on Whatsapp or{" "}
+                    <Link href={getCallbackUrl({ ...data })}>click here</Link>
+                    <br />
+                    <br />
+                    Happy Packaging !
+                  </div>
+                ),
+              });
+              setModalVisible(true);
+            })
+            .catch((err) => {
+              AddEquiry();
+            });
+        };
 
         setTrackRecord({
           payload: {
@@ -461,39 +503,7 @@ const Sections = {
             console.log("Updated Name");
           })
           .then((el) => {
-            addEnquiry({
-              payload: {
-                clientData: data,
-              },
-              params: {
-                action: "ADD",
-              },
-            })
-              .then((res) => {
-                form.target.reset();
-              })
-              .then((el) => {
-                setModal({
-                  styles: {
-                    width: "50%",
-                    height: "auto",
-                    minHeight: "30%",
-                  },
-                  title: "Enquiry Saved",
-                  body: (
-                    <div className={styles.enquirySubmitted}>
-                      <h4>Thanks for visiting {siteConfig.name}.</h4><br/>
-                     Your enquiry has been saved and will shortly be answered by our marketing team.<br/>
-                     Our marketing team might contact you soon !<br/>
-                     If you still need quick assistance then please reach out us on Whatsapp or <Link href={getCallbackUrl({ ...data })}>click here</Link>
-                     
-                     <br/><br/>
-                     Happy Packaging !
-                    </div>
-                  ),
-                });
-                setModalVisible(true);
-              });
+            AddEquiry();
           });
       }
     };
