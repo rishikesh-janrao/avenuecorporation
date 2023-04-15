@@ -48,8 +48,9 @@ function App({ Component, pageProps, router }) {
   const [selectedMenuItem, setSelectedMenuItem] = useState(
     currentPageId ? currentPageId : 1
   );
-  const [siteConfig, setSiteConfig] = useState(SiteConfig.avenue_packs);
+  const [siteConfig, setSiteConfig] = useState(SiteConfig.avenue_corporation);
   const [ip, setIp] = useState("");
+  const [coords, setCoords] = useState({});
 
   const {
     SliderHomePageProps,
@@ -71,11 +72,12 @@ function App({ Component, pageProps, router }) {
       setServer(location.origin);
 
       //sets site config based on current domain
-      switch (location.host.split(".")[0]) {
+      const hostname = location.host.split(".")[0];
+      switch (hostname) {
         case "avenuecorporation":
           setSiteConfig(SiteConfig.avenue_corporation);
           break;
-        default:
+        case "avenuepacks":
           setSiteConfig(SiteConfig.avenue_packs);
           break;
       }
@@ -90,50 +92,74 @@ function App({ Component, pageProps, router }) {
           userAgent: navigator.userAgent,
           ip: "",
           origin: siteConfig.domain,
+          coordinates: {},
         };
+        const saveTracks = () => {
+          getLocationData()
+            .then(({ ip }) => {
+              if (ip && location) {
+                let formattedIP = ip.replace(
+                  /[&\/\\#, +()$~%.'":*?<>{}]/g,
+                  "_"
+                );
+                setIp(formattedIP);
+                clientData.ip = formattedIP;
+                const timestamp = Date.now();
+
+                //set tracker record for every visit
+                setTrackRecord({
+                  payload: {
+                    clientData,
+                    timestamp,
+                  },
+                  params: {
+                    action: "ADD",
+                  },
+                }).then((res) => {
+                  locationStatus = "SAVED";
+
+                  const interval = setInterval(() => {
+                    const timestamp = Date.now();
+
+                    //set tracker record for every visit
+                    setTrackRecord({
+                      payload: {
+                        clientData,
+                        timestamp,
+                      },
+                      params: {
+                        action: "ADD",
+                      },
+                    }).then((res) => {
+                      locationStatus = "SAVED";
+                    });
+                  }, 60000);
+                });
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        };
+        const successCallback = (data) => {
+          clientData.coordinates = {
+            lat: ""+data.coords.latitude,
+            long: ""+data.coords.longitude,
+          };
+          setCoords(clientData.coordinates)
+          saveTracks();
+        };
+
+        const errorCallback = (error) => {
+          console.log(error);
+          saveTracks();
+        };
+
+        navigator.geolocation.getCurrentPosition(
+          successCallback,
+          errorCallback
+        );
         locationStatus = "PENDING";
-        getLocationData()
-          .then(({ ip }) => {
-            if (ip && location) {
-              let formattedIP = ip.replace(/[&\/\\#, +()$~%.'":*?<>{}]/g,"_")
-              setIp(formattedIP);
-              clientData.ip = formattedIP;
-              const timestamp = Date.now();
-
-              //set tracker record for every visit
-              setTrackRecord({
-                payload: {
-                  clientData,
-                  timestamp,
-                },
-                params: {
-                  action: "ADD",
-                },
-              }).then((res) => {
-                locationStatus = "SAVED";
-
-                const interval = setInterval(() => {
-                  const timestamp = Date.now();
-
-                  //set tracker record for every visit
-                  setTrackRecord({
-                    payload: {
-                      clientData,
-                      timestamp,
-                    },
-                    params: {
-                      action: "ADD",
-                    },
-                  }).then((res) => {
-                    locationStatus = "SAVED";
-                  });
-                }, 60000);
-              });
-            }
-          })
-          .catch((err) => {
-            console.log(err);
-          });
       }
     }
 
@@ -157,6 +183,7 @@ function App({ Component, pageProps, router }) {
         siteConfig: siteConfig,
         state: {
           ip: ip,
+          coords:coords
         },
       }}
     >

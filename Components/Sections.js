@@ -394,7 +394,9 @@ const Sections = {
 
     const {
       siteConfig,
-      state: { ip },
+      state: { ip, coords },
+      setModalVisible,
+      setModal,
     } = useContext(NavigationContext);
 
     function validateForm(controls) {
@@ -438,6 +440,51 @@ const Sections = {
         data.msg = controls.msg.value;
         data.domain = siteConfig.domain;
         data.ip = ip;
+        data.location = coords;
+        data.timestamp = Date.now();
+        const AddEquiry = () => {
+          addEnquiry({
+            payload: {
+              clientData: data,
+            },
+            params: {
+              action: "ADD",
+            },
+          })
+            .then((res) => {
+              form.target.reset();
+            })
+            .then((el) => {
+              setModal({
+                styles: {
+                  width: "50%",
+                  height: "auto",
+                  minHeight: "30%",
+                },
+                title: "Enquiry Saved",
+                body: (
+                  <div className={styles.enquirySubmitted}>
+                    <h4>Thanks for visiting {siteConfig.name}.</h4>
+                    <br />
+                    Your enquiry has been saved and will shortly be answered by
+                    our marketing team.
+                    <br />
+                    Our marketing team might contact you soon !<br />
+                    If you still need quick assistance then please reach out us
+                    on Whatsapp or{" "}
+                    <Link href={getCallbackUrl({ ...data })}>click here</Link>
+                    <br />
+                    <br />
+                    Happy Packaging !
+                  </div>
+                ),
+              });
+              setModalVisible(true);
+            })
+            .catch((err) => {
+              AddEquiry();
+            });
+        };
 
         setTrackRecord({
           payload: {
@@ -456,23 +503,7 @@ const Sections = {
             console.log("Updated Name");
           })
           .then((el) => {
-            addEnquiry({
-              payload: {
-                clientData: data,
-              },
-              params: {
-                action: "ADD",
-              },
-            })
-              .then((res) => {
-                console.log("Added enquiry");
-              })
-              .then((el) => {
-                let url = getCallbackUrl({ ...data });
-                let linkEle = document.getElementById("callbackUrl");
-                linkEle.setAttribute("href", url);
-                linkEle.click();
-              });
+            AddEquiry();
           });
       }
     };
@@ -695,7 +726,7 @@ const Sections = {
         <div id="contact" className={styles.FooterLinks__cell}>
           <label>Contact Us</label>
           <span className={styles.FooterLinks__contactus}>
-            {siteConfig.emails.forEach((email) => (
+            {siteConfig.emails.map((email) => (
               <span key={email} className={styles.FooterLinks__row}>
                 <span>
                   <FontAwesomeIcon icon={faEnvelope} />

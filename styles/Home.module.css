@@ -13,7 +13,6 @@
   row-gap: 2em;
 }
 
-
 .logo {
   height: 1em;
   margin-left: 0.5rem;
@@ -486,8 +485,11 @@ a.FooterLinks__contactus {
   width: 100%;
   flex-direction: row;
 }
-.FooterLinks__cell div:first-child{
+.FooterLinks__cell div:first-child {
   margin-bottom: 1em;
+}
+.enquirySubmitted a{
+  text-decoration: underline !important;
 }
 @media screen and (max-width: 480px) {
   .container {
@@ -635,6 +637,9 @@ a.FooterLinks__contactus {
   }
   .gridItem {
     margin-bottom: 1em;
+  }
+  .enquirySubmitted {
+    padding-left: 10%;
   }
 }
 
