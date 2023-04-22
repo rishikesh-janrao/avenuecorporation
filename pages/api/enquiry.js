@@ -14,6 +14,34 @@ function runMiddleware(req, res, fn) {
       if (result instanceof Error) {
         return reject(result);
       }
+      const { action } = req.query;
+      const parsedAction = atob(action);
+      if (req.body) {
+        const { timestamp: t, clientData } = req.body;
+
+        switch (parsedAction) {
+          case "ADD":
+            //POST CALL
+            const insertCompleted = (response) => {
+              res.status(200).json({ status: "tracked", ...response });
+            };
+            insertEnquiry(clientData, insertCompleted);
+            break;
+        }
+      }
+
+      if (parsedAction === "GETALL") {
+        function response(data) {
+          if (data) {
+            let list = [];
+            Object.keys(data).map((key) => {
+              list.push(data[key]);
+            });
+            res.status(200).json(list);
+          }
+        }
+        getAllEnquiries(response);
+      }
       return resolve(result);
     });
   });
@@ -21,32 +49,4 @@ function runMiddleware(req, res, fn) {
 
 export default async function handler(req, res) {
   await runMiddleware(req, res, cors);
-  const { action } = req.query;
-  const parsedAction = atob(action);
-  if (req.body) {
-    const { timestamp: t, clientData } = req.body;
-
-    switch (parsedAction) {
-      case "ADD":
-        //POST CALL
-        const insertCompleted = (response) => {
-          res.status(200).json({ status: "tracked", ...response });
-        };
-        insertEnquiry(clientData, insertCompleted);
-        break;
-    }
-  }
-
-  if (parsedAction === "GETALL") {
-    function response(data) {
-      if (data) {
-        let list = [];
-        Object.keys(data).map((key) => {
-          list.push(data[key]);
-        });
-        res.status(200).json(list);
-      }
-    }
-    getAllEnquiries(response);
-  }
 }
