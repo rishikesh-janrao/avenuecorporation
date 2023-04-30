@@ -143,10 +143,10 @@ function App({ Component, pageProps, router }) {
         };
         const successCallback = (data) => {
           clientData.coordinates = {
-            lat: ""+data.coords.latitude,
-            long: ""+data.coords.longitude,
+            lat: "" + data.coords.latitude,
+            long: "" + data.coords.longitude,
           };
-          setCoords(clientData.coordinates)
+          setCoords(clientData.coordinates);
           saveTracks();
         };
 
@@ -183,7 +183,7 @@ function App({ Component, pageProps, router }) {
         siteConfig: siteConfig,
         state: {
           ip: ip,
-          coords:coords
+          coords: coords,
         },
       }}
     >

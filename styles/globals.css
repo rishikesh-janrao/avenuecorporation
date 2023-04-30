@@ -388,7 +388,8 @@ body::-webkit-scrollbar-button {
 }
 .about-us--home-page-inner{
   border-radius: 2rem;
-  color: var(--avenue-white);
+  color: var(--avenue-blue);
+  background-color: var(--avenue-light-gray-white);
   margin: 0;
 }
 .about-us--home-page-outer{

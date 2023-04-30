@@ -53,7 +53,7 @@ function Navbar(props) {
                 menuItem.id == navContext.selectedMenuItem
                   ? navbarStyles.activeMenuItem
                   : ""
-              } ${menuItem.classes} ${menuItem.isEnabled ? "is-hidden" : ""}`}
+              } ${menuItem.classes} ${menuItem.isDisabled ? "is-hidden" : ""}`}
               onClick={() => navContext.setSelectedMenuItem(menuItem.id)}
             >
               {menuItem.subMenu.length > 0 ? (
