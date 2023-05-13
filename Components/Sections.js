@@ -554,7 +554,7 @@ const Sections = {
             us because, like you, we also value our customer&apos;s trust!
           </p>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1889.882554922819!2d74.09764783546999!3d18.674533597432422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xae47038d89ce5a0c!2zMTjCsDQwJzI4LjMiTiA3NMKwMDUnNTUuMSJF!5e0!3m2!1sen!2sin!4v1668328830736!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3777.158524281712!2d73.80035341489679!3d18.79108738725203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDQ3JzI3LjkiTiA3M8KwNDgnMDkuMiJF!5e0!3m2!1sen!2sin!4v1683951113057!5m2!1sen!2sin"
             width="600"
             height="450"
             className={styles.gmap}

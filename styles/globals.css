@@ -409,10 +409,11 @@ body::-webkit-scrollbar-button {
   display: flex;
   align-self: flex-end;
   top: 2.5%;
-  color: var(--avenue-white);
   z-index: 100;
   right: 2%;
-  text-decoration: underline;
+  width: 5rem;
+  height: 4rem;
+  opacity: 0.8;
 }
 @media screen and (max-width: 480px) {
   .swiper-slide p {
@@ -436,6 +437,8 @@ body::-webkit-scrollbar-button {
     row-gap: 5%;
   }
   .iso-number {
-    top: 0.5%;
+    top: 1%;
+    width: 2.5rem;
+    height: 2rem;
   }
 }

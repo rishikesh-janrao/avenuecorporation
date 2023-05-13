@@ -16,6 +16,13 @@ const SliderProps = {
     },
     slides: [
       {
+        id: 0,
+        webPath: "/pixels/home-slider/slide-0.png",
+        mobilePath: "",
+        slideText: "EN ISO 9001:2015",
+        alt: "",
+      },
+      {
         id: 1,
         webPath: "/pixels/home-slider/slide-5.png",
         mobilePath: "",

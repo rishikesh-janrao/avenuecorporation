@@ -1,22 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useContext, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useContext, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
 // import required modules
-import { EffectCoverflow, Autoplay, Pagination, Navigation } from 'swiper';
+import { EffectCoverflow, Autoplay, Pagination, Navigation } from "swiper";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import HomeContext from '../Contexts/HomeContext';
+import HomeContext from "../Contexts/HomeContext";
 
-import swiperStyles from '../styles/Swiper.module.css';
-import Link from 'next/link';
-import Image from 'next/image';
+import swiperStyles from "../styles/Swiper.module.css";
+import Link from "next/link";
+import Image from "next/image";
 
 function SwiperSlider(props) {
-  const { SliderHomePageProps, SliderClientProps, SliderGallaryDesktopProps, SliderGallaryMobileProps } = useContext(HomeContext);
+  const {
+    SliderHomePageProps,
+    SliderClientProps,
+    SliderGallaryDesktopProps,
+    SliderGallaryMobileProps,
+  } = useContext(HomeContext);
   return (
     <>
       {props.HomeSlider && (
@@ -27,14 +32,14 @@ function SwiperSlider(props) {
           {SliderHomePageProps.slides.map((slide) => (
             <div key={slide.id}>
               <SwiperSlide key={slide.id}>
-                <div className='slideText'>
+                <div className="slideText">
                   <h1>{slide.slideText}</h1>
                 </div>
                 <span className={swiperStyles.ImageContainer}>
                   <Image
                     src={slide.webPath}
                     alt={slide.alt}
-                    layout='fill'
+                    layout="fill"
                     priority
                   />
                   {/* <img
@@ -43,6 +48,15 @@ function SwiperSlider(props) {
                     alt={slide.alt}
                   /> */}
                 </span>
+                {slide.id == 0 && (
+                <div className="iso-number">
+                  <Image
+                    src="/pixels/home-slider/tuv.png"
+                    alt="Logo"
+                    layout="fill"
+                  />
+                </div>
+              )}
               </SwiperSlide>
             </div>
           ))}
@@ -55,11 +69,7 @@ function SwiperSlider(props) {
         >
           {SliderClientProps.slides.map((el) => (
             <SwiperSlide key={el.id}>
-              <Image
-                src={el.path}
-                alt={el.alt}
-                layout='fill'
-              />
+              <Image src={el.path} alt={el.alt} layout="fill" />
               {/* <img src={el.path} alt={el.alt} /> */}
             </SwiperSlide>
           ))}
@@ -72,11 +82,7 @@ function SwiperSlider(props) {
         >
           {SliderClientProps.slides.map((el) => (
             <SwiperSlide key={el.id}>
-              <Image
-                src={el.path}
-                alt={el.alt}
-                layout='fill'
-              />
+              <Image src={el.path} alt={el.alt} layout="fill" />
               {/* <img src={el.path} alt={el.alt} /> */}
             </SwiperSlide>
           ))}
@@ -89,11 +95,7 @@ function SwiperSlider(props) {
         >
           {SliderClientProps.slides.map((el) => (
             <SwiperSlide key={el.id}>
-              <Image
-                src={el.path}
-                alt={el.alt}
-                layout='fill'
-              />
+              <Image src={el.path} alt={el.alt} layout="fill" />
               {/* <img src={el.path} alt={el.alt} /> */}
             </SwiperSlide>
           ))}
