@@ -718,8 +718,8 @@ const Sections = {
           <div>
             <a href="https://www.google.com/maps/place/18%C2%B040'28.3%22N+74%C2%B005'55.1%22E/@18.6745336,74.0976478,18z/data=!3m1!4b1!4m5!3m4!1s0x0:0xae47038d89ce5a0c!8m2!3d18.6745336!4d74.0986327?hl=en">
               <p>Plant Address</p>
-              Gate no 984/3, M/S Shirke-Bricks Industries Compound, Next to Span
-              Pump, Sanaswadi, Taluka: Shirur, Dist. Pune - 412208.
+              Plot No. PAP-W-1/3-1754 Chakan Industrial Estate,
+              Tal. Khed, Pune 410501, Maharashtra, India.
             </a>
           </div>
         </div>

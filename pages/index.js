@@ -16,6 +16,7 @@ function Home({ props }) {
       </Head>
       <main className={`body-sub-container ${styles.main}`}>
         <Sections.HomeSlider />
+        <label className="iso-number">EN ISO 9001:2015</label>
         <Sections.AboutUs />
         <Sections.Solutions />
         <Sections.WhyUs />
