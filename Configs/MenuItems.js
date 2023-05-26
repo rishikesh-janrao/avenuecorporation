@@ -25,7 +25,7 @@ const MenuList = [
         name:"solutions",
         description:"Solutions",
         path:"/solutions",
-        isDisabled:false,
+        isDisabled:true,
         classes:`${navbarStyles.hasSubMenu}`,
         subMenu:[
             {
