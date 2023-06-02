@@ -98,7 +98,7 @@
     background-color: transparent;
     flex-direction: column;
     border-bottom-left-radius: 5%;
-    border-bottom-right-radius: 5%;overflow: hidden;
+    border-bottom-right-radius: 5%;
     transition: 0.3s ease;
     color: var(--avenue-white);
 }

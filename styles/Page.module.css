@@ -233,6 +233,22 @@
 .GallarySlider{
   padding: 10%;
 }
+.DesignEngineering {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem !important;
+  width: 80%;
+  font-size: large;
+}
+.DesignEngineering label{
+  font-size: larger;
+}
+.DesignEngineering li{
+  line-height: 2.5rem;
+  font-size: medium;
+  text-align: left;
+  color: var(--avenue-text-color--3);
+}
 @media screen and (max-width: 480px) {
   .bannerContents {
     height: 25em;

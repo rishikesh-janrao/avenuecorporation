@@ -16,6 +16,7 @@ import Image from "next/image";
 import { SiteConfig } from "../Configs/CONSTANTS";
 import ServicesManager from "../Modules/services";
 import ThirdPartyServices from "../Modules/thirdParty";
+import UnderConstruction from "./underconstruction";
 
 const parser = new UAParser();
 const os = parser.getOS();
@@ -202,7 +203,8 @@ function App({ Component, pageProps, router }) {
           window: typeof window === "undefined" ? null : window,
         }}
       >
-        <Layout>
+        <UnderConstruction  customClass="main-page-under-construction" />
+        {/* <Layout>
           <Head>
             <link rel="icon" href="../pixels/favicon.ico" />
             <link rel="apple-touch-icon" href="/example.png" />
@@ -255,7 +257,7 @@ function App({ Component, pageProps, router }) {
               />
             )}
           </div>
-        </div>
+        </div> */}
       </HomeContext.Provider>
     </NavigationContext.Provider>
   );

@@ -1,15 +1,13 @@
 import Head from "next/head";
 import React from "react";
 import Sections from "../../Components/Sections";
-
-import styles from "../../styles/Home.module.css";
 import pageStyles from "../../styles/Page.module.css";
 
 function DesignEngineering(props) {
   const bannerDetails = {
-    title: "About",
-    description: `Engineered industrial packaging firm providing bespoke packaging and design solutions to the worldwide market.`,
-    image: "technology.webp",
+    title: "Design & Engineering",
+    description: `Design Thinking, Co Design, Co Innovation, Cost Optiization, and Sustainability are all firmly embedded in the Econovus Design methodology.`,
+    image: "design_and_engineering_banner.jpg",
     alt: "technology banner",
   };
   return (
@@ -22,6 +20,21 @@ function DesignEngineering(props) {
 
       <div className={`body-sub-container ${pageStyles.container}`}>
         <Sections.PageBanner {...bannerDetails} />
+
+        <div className={pageStyles.DesignEngineering}>
+          <div>
+            <label>
+              Econovus’ design approach is based on the following pillars:
+            </label>
+            <ul>
+              <li>Regulatory Compliance</li>
+              <li>Technical Performance</li>
+              <li>Cost Effectiveness</li>
+              <li>Optimizing Resources</li>
+              <li>Sustainability</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </>
   );
