@@ -203,8 +203,8 @@ function App({ Component, pageProps, router }) {
           window: typeof window === "undefined" ? null : window,
         }}
       >
-        <UnderConstruction  customClass="main-page-under-construction" />
-        {/* <Layout>
+        {/* <UnderConstruction  customClass="main-page-under-construction" /> */}
+        <Layout>
           <Head>
             <link rel="icon" href="../pixels/favicon.ico" />
             <link rel="apple-touch-icon" href="/example.png" />
@@ -257,7 +257,7 @@ function App({ Component, pageProps, router }) {
               />
             )}
           </div>
-        </div> */}
+        </div>
       </HomeContext.Provider>
     </NavigationContext.Provider>
   );
